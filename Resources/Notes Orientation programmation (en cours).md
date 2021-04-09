@@ -1,55 +1,9 @@
-Contenu {#contenu .TOC-Heading}
-=======
+# Contenu
 
-[1. Introduction à la programmation. Algorithmique
-2](#introduction-à-la-programmation.-algorithmique)
 
-[2. Écriture et lecture 3](#écriture-et-lecture)
+<br>
 
-[2.1. Écriture 3](#écriture)
-
-[2.2. Lecture 3](#lecture)
-
-[3. Les variables 5](#les-variables)
-
-[4. Expressions et operateurs 8](#expressions-et-operateurs)
-
-[4.1. Expressions Arithmétiques et Operateurs Arithmétiques
-9](#expressions-arithmétiques-et-operateurs-arithmétiques)
-
-[4.2. Opérateur de concaténation 9](#opérateur-de-concaténation)
-
-[5. Les tests (IFs) 10](#les-tests-ifs)
-
-[5.1. Expressions Logiques: Operateurs Logiques de base
-(\<,\>,\>=,\<=,==,\<\>)
-12](#expressions-logiques-operateurs-logiques-de-base)
-
-[5.2. Operateurs Logiques AND, OR, NOT et XOR
-12](#operateurs-logiques-and-or-not-et-xor)
-
-[5.3. Les IF imbriqués 15](#les-if-imbriqués)
-
-[6. Les Boucles 17](#les-boucles)
-
-[6.1. Boucle While 18](#boucle-while)
-
-[6.2. Compter en utilisant une boucle
-20](#compter-en-utilisant-une-boucle)
-
-[6.3. Quand est-ce qu\'on utilise de boucles ?
-22](#quand-est-ce-quon-utilise-de-boucles)
-
-[6.4. Boucle For 24](#boucle-for)
-
-[6.5. Boucles imbriqués 25](#boucles-imbriqués)
-
-[7. Les tableaux (arrays) 27](#les-tableaux-arrays)
-
-[7.1. Les tableaux et les boucles 30](#les-tableaux-et-les-boucles)
-
-Introduction à la programmation. Algorithmique
-----------------------------------------------
+## 1. Introduction à la programmation. Algorithmique
 
 Pour que l'ordinateur réalise la fonction qu'on souhaite on doit créer
 un **programme**. Un programme est une suite d'instructions dans un
@@ -100,13 +54,10 @@ de programmation sont basés sur quatre éléments :
 
 4.  les **boucles (WHILE, FOR)**
 
-```{=html}
-<!-- -->
-```
-2.   Écriture et lecture
-    -------------------
 
-    1.  ### Écriture
+## 2.   Écriture et lecture
+
+### 2.1. Écriture
 
 Les instructions d'**écriture** permettent au programme de « envoyer de
 données à un dispositif de sortie». Dans notre contexte ça veut juste
@@ -121,11 +72,13 @@ Pour afficher quoi qui ce soit sur l'écran on utilise **echo** ou
 
 **Exemple :**
 
-**print (\"Bienvenu\");**
+```php
+print ("Bienvenu");
 
-**echo (2\*5+6);**
+echo (2*5+6);
+```
 
-### Lecture
+### 2.2. Lecture
 
 Les instructions de **lecture** permettent à l'utilisateur de « recevoir
 de données d'un dispositif d'entrée». Dans notre contexte, c'est juste
@@ -145,7 +98,9 @@ Pour l'utiliser, vous devez faire appel à la fonction **read()**
 
 **Exemple :**
 
-**\$nomUtilisateur = read() ;**
+```php
+$nomUtilisateur = read() ;
+```
 
 Quand le programme rencontre une instruction **read**, l'exécution
 s'interrompt et l'ordinateur attend la frappe d'une valeur au clavier.
@@ -189,9 +144,9 @@ modifiée (pas son nom !).
 
 **Ex: quelques variables dans la mémoire vive**
 
-\$prixAnanas = 2.50;
+$prixAnanas = 2.50;
 
-\$salaire= 20000 ;
+$salaire= 20000 ;
 
 ![](media/image1.png){width="1.9889687226596675in"
 height="1.913043525809274in"}
@@ -209,51 +164,51 @@ veut. Par exemple:
 
 Le prix des ananas est maintenant 3 euros\...
 
-\$prixAnanas = 3.00;
+$prixAnanas = 3.00;
 
 les ananas coutent maintenant 1 euro de moins\...
 
-\$prixAnanas = \$prixAnanas -- 1;
+$prixAnanas = $prixAnanas -- 1;
 
 et le prix est doublé!
 
-\$prixAnanas = \$prixAnanas \* 2;
+$prixAnanas = $prixAnanas \* 2;
 
 Considérons maintenant la variable **monPrenom**
 
-\$monPrenom = \"Ismael\";
+$monPrenom = \"Ismael\";
 
 Si je change mon prénom je dois juste faire:
 
-\$monPrenom = \"Achab\";
+$monPrenom = \"Achab\";
 
 Pour finir, je peux affecter une variable avec la valeur d\'une autre
 variable. Considérons les variables **prixOrangeTable** et
 **prixOrangeJus**.
 
-\$prixOrangeTable = 2.00;
+$prixOrangeTable = 2.00;
 
-\$prixOrangeJus = 1.80;
+$prixOrangeJus = 1.80;
 
 Si on fait :
 
-\$prixOrangeTable = \$prixOrangeJus;
+$prixOrangeTable = $prixOrangeJus;
 
 le prix des oranges de table sera maintenant de 1.80 euros.
 
 Si on **continue** l\'algorithme en faisant:
 
-\$prixOrangeJus = \$prixOrangeTable;
+$prixOrangeJus = $prixOrangeTable;
 
-la variable \$prixOrangeJus contiendra 1.80, vu qu'on a changé
-\$prixOrangeTable à 1.80 juste avant. **L\'ordre des instructions
+la variable $prixOrangeJus contiendra 1.80, vu qu'on a changé
+$prixOrangeTable à 1.80 juste avant. **L\'ordre des instructions
 déterminera toujours le résultat de l\'algorithme, qui est lancé
 séquentiellement.**
 
-En **PHP**, toutes les variables sont précédées du symbole \'\$\' et
+En **PHP**, toutes les variables sont précédées du symbole \'$\' et
 chaque instruction fini par \";\"
 
-**\$prixFinal = \$prixBase - \$montantReduction;**
+**$prixFinal = $prixBase - $montantReduction;**
 
 Expressions et operateurs
 -------------------------
@@ -261,11 +216,11 @@ Expressions et operateurs
 Prenons quelques instructions qu\'on a utilisées dans les algorithmes
 précédents:
 
-\$prixOrangeTable = 2.00;
+$prixOrangeTable = 2.00;
 
-\$prixOrangeJus = 1.80;
+$prixOrangeJus = 1.80;
 
-\$prixAnanas = \$prixAnanas \* 2;
+$prixAnanas = $prixAnanas \* 2;
 
 A gauche du signe **=** il y a **toujours** uniquement un nom de
 variable, mais à droit il y a ce qu\'on appelle une **expression.**
@@ -287,13 +242,13 @@ contient 1.80
 
 **Expression: Valeur de l\'expression:**
 
-\$prixAnanas\*2 7
+$prixAnanas\*2 7
 
-6+\$prixAnanas 9.5
+6+$prixAnanas 9.5
 
-\$prixOrangeJus+2 3.80
+$prixOrangeJus+2 3.80
 
-\$prixOrangeJus+\$prixAnanas 5.30
+$prixOrangeJus+$prixAnanas 5.30
 
 A continuation on va étudier les expressions arithmétiques et les
 opérateurs arithmétiques.
@@ -318,11 +273,11 @@ opérateurs arithmétiques.
 
 23 / 4
 
-\$prix \* 3
+$prix \* 3
 
-\$age - 20
+$age - 20
 
-\$prix \* \$tva - 30
+$prix \* $tva - 30
 
 On a le droit d'utiliser les parenthèses avec les mêmes règles qu'en
 mathématiques. La multiplication et la division ont « naturellement »
@@ -341,13 +296,13 @@ là-dedans, que du normal.
 Cet opérateur permet de concaténer, autrement dit d'agglomérer, **deux
 chaînes de caractères**. En PHP l\'opérateur est le symbole \".\"
 
-\$nom1 = \"Joe\";
+$nom1 = \"Joe\";
 
-\$nom2 = \"Mary\";
+$nom2 = \"Mary\";
 
-\$nom3 = \$nom2 . \$nom1;
+$nom3 = $nom2 . $nom1;
 
-La valeur de \$nom3 sera \"MaryJoe\"
+La valeur de $nom3 sera \"MaryJoe\"
 
 Les tests (IFs)
 ---------------
@@ -433,13 +388,13 @@ de notre âge on obtient :
 > **FAUSSE. Les conditions sont des « expressions logiques »** (pas
 > arithmétiques!). Voici quelques exemples de base:
 >
-> \$age\>18
+> $age\>18
 >
-> \$prix\<=300
+> $prix\<=300
 >
-> \$nomUtilisateur == \"Marie\"
+> $nomUtilisateur == \"Marie\"
 >
-> \$motPasse \<\> \"3JK2-35\"
+> $motPasse \<\> \"3JK2-35\"
 
 Observez que les expressions logiques contiennent **des valeurs
 connectées par des opérateurs logiques**. Les **opérateurs** **logiques
@@ -466,7 +421,7 @@ qu'on a vues jusqu'à présent. Considérez par exemple « l'âge est entre
 l'âge est inférieure à 18 ». On est en train de combiner deux
 conditions.
 
-(\$age\>12 **AND** \$age\<18)
+($age\>12 **AND** $age\<18)
 
 On vient d'utiliser un autre **opérateur logique**, le mot clé **AND.**
 Cette expression logique vaut TRUE si l\'âge vaut entre 13 et 17 et
@@ -475,29 +430,29 @@ false dans le reste des cas.
 **Operateur AND : l\'expression Condition1 AND Condition2** sera vraie
 uniquement si les deux conditions sont vraies
 
-Ex : \$age\>12 **AND** \$age\<18
+Ex : $age\>12 **AND** $age\<18
 
 > Sera vrai si l'âge est supérieur à 12 et inférieure à 18
 
 **Operateur OR : l\'expression** **Condition1 OR Condition2** sera vraie
 si au moins une de conditions qui interviennent dans le OR est vraie.
 
-Ex : \$nombreEnfants\>2 **OR \$**revenus\<10000
+Ex : $nombreEnfants\>2 **OR $**revenus\<10000
 
 **Operateur NOT: l\'expression** **NOT (Condition1)** sera vraie si la
 condition est fausse.
 
 Ex :
 
-**!**(\$etatCompte == \"bloquée\")
+**!**($etatCompte == \"bloquée\")
 
-**!**(\$etatCivil == \"marié\")
+**!**($etatCivil == \"marié\")
 
 > On peut se demander pourquoi utiliser NOT si on pourrait faire juste:
 
-\$etatCompte \<\> \"bloquée\"
+$etatCompte \<\> \"bloquée\"
 
-\$etatCivil \<\> \"marié\"
+$etatCivil \<\> \"marié\"
 
 C'est dans la programmation pratique où cet opérateur logique va
 s'avérer très utile, et il sera souvent exprimé avec le symbole
@@ -553,21 +508,21 @@ true AND false OR (4\<8)
 >
 > **echo** \"Entrez la température de l'eau :\";
 >
-> \$temp= read();
+> $temp= read();
 >
-> **if** (\$temp \<= 0) {
+> **if** ($temp \<= 0) {
 >
 > **echo** \"C'est de la glace\";
 >
 > }
 >
-> **if** (\$temp \> 0 **AND** \$temp \< 100 ) {
+> **if** ($temp \> 0 **AND** $temp \< 100 ) {
 >
 > **echo** \"C'est du liquide\";
 >
 > }
 >
-> **if** (\$temp \> 100 ) {
+> **if** ($temp \> 100 ) {
 >
 > **echo** \"C'est de la vapeur\";
 >
@@ -576,23 +531,23 @@ true AND false OR (4\<8)
 > **echo** \"Au revoir\";
 
 Construire un test de cette manière a un désavantage : la machine est
-obligée de réaliser tous les tests (\$temp\<=0 ? \$temp\>0 et \<100 ?
-\$temp \>100 ?), même s'ils sont mutuellement exclusifs\...
+obligée de réaliser tous les tests ($temp\<=0 ? $temp\>0 et \<100 ?
+$temp \>100 ?), même s'ils sont mutuellement exclusifs\...
 
 Nous pouvons structurer le test d'une autre façon pour obtenir le même
 résultat, grâce **à l\'imbrication de tests**:
 
 > **echo** \"Entrez la temp. de l'eau :\";
 >
-> \$temp = read();
+> $temp = read();
 >
-> **if** (\$temp \<= 0){
+> **if** ($temp \<= 0){
 >
 > **echo** \"C'est de la glace\";
 >
 > }
 >
-> **elseif** (\$temp \< 100){
+> **elseif** ($temp \< 100){
 >
 > **echo** \"C'est du liquide\";
 >
@@ -628,8 +583,8 @@ On exécute le premier test (Temp\<=0)  et
         température n'est pas \<0 ni \<100... alors elle est \>=100 !
 
 Remarquez aussi que si les deux premiers tests ne sont pas vrais nous ne
-sommes même pas obligés de réaliser un troisième test: si \$temp n\'est
-pas inférieure à 0 ni inférieure à 100.... \$temp est forcément \>=100
+sommes même pas obligés de réaliser un troisième test: si $temp n\'est
+pas inférieure à 0 ni inférieure à 100.... $temp est forcément \>=100
 et l'eau est forcément de la vapeur!
 
 > On aurait pu mettre autant de elseIfs qu'on veut, il suffit de bien
@@ -648,15 +603,15 @@ Les Boucles
 
 **echo** \"Voulez-vous un chocolat ? (O/N)\";
 
-\$rep= read();
+$rep= read();
 
-**if** (\$rep == \"O\"){
+**if** ($rep == \"O\"){
 
 **echo** \"Tenez votre chocolat\";
 
 }
 
-**elseif** (\$rep == \"N\") {
+**elseif** ($rep == \"N\") {
 
 **echo** \"Ok, pas de chocolat!\";
 
@@ -669,23 +624,23 @@ Les Boucles
 
 **echo** \"Voulez-vous un chocolat ? (O/N)\";
 
-\$rep= read();
+$rep= read();
 
-**if** (\$rep\<\>\"O\" **AND** \$rep\<\>\"N\"){
+**if** ($rep\<\>\"O\" **AND** $rep\<\>\"N\"){
 
 **echo** \"Saisie erronée. Recommencez.\";
 
-\$rep= read();
+$rep= read();
 
 }
 
-**if** (\$rep == \"O\"){
+**if** ($rep == \"O\"){
 
 **echo** \"Tenez votre chocolat\";
 
 }
 
-**elseif** (\$rep == \"N\") {
+**elseif** ($rep == \"N\") {
 
 **echo** \"Ok, pas de chocolat!\";
 
@@ -698,31 +653,31 @@ plusieurs fois, on devrait utiliser plusieurs IF:
 
 **echo** \"Voulez-vous un chocolat ? (O/N)\";
 
-\$rep= read();
+$rep= read();
 
-**if** (\$rep\<\>\"O\" **AND** \$rep\<\>\"N\"){
-
-**echo** \"Saisie erronée. Recommencez.\";
-
-\$rep= read();
-
-}
-
-**if** (\$rep\<\>\"O\" **AND** \$rep\<\>\"N\"){
+**if** ($rep\<\>\"O\" **AND** $rep\<\>\"N\"){
 
 **echo** \"Saisie erronée. Recommencez.\";
 
-\$rep= read();
+$rep= read();
 
 }
 
-**if** (\$rep == \"O\"){
+**if** ($rep\<\>\"O\" **AND** $rep\<\>\"N\"){
+
+**echo** \"Saisie erronée. Recommencez.\";
+
+$rep= read();
+
+}
+
+**if** ($rep == \"O\"){
 
 **echo** \"Tenez votre chocolat\";
 
 }
 
-**elseif** (\$rep == \"N\") {
+**elseif** ($rep == \"N\") {
 
 **echo** \"Ok, pas de chocolat!\";
 
@@ -761,30 +716,30 @@ accolades. Le processus se répète pendant que la condition soit vraie.
 
 **Exemple:**
 
-Le programme teste la valeur de la variable \$rep et répète le code dans
+Le programme teste la valeur de la variable $rep et répète le code dans
 la boucle pendant que la valeur est différente de \"O\" et \"N\".
 
 En **PHP (attention aux accolades!)**
 
 > **echo** \"Voulez-vous un chocolat ? (O/N)\";
 >
-> \$rep= read();
+> $rep= read();
 >
-> **while** (\$rep\<\>\"O\" **AND** \$rep\<\>\"N\"){
+> **while** ($rep\<\>\"O\" **AND** $rep\<\>\"N\"){
 >
 > **echo** \"Saisie erronée. Recommencez.\";
 >
-> \$rep= read();
+> $rep= read();
 >
 > }
 >
-> **if** (\$rep == \"O\"){
+> **if** ($rep == \"O\"){
 >
 > **echo** \"Tenez votre chocolat\";
 >
 > }
 >
-> **elseif** (\$rep == \"N\") {
+> **elseif** ($rep == \"N\") {
 >
 > **echo** \"Ok, pas de chocolat!\";
 >
@@ -797,13 +752,13 @@ nombre défini de fois.
 
 **Exemple:** afficher les valeurs de 0 à 15
 
-\$compteur = 0;
+$compteur = 0;
 
-**while** (\$compteur\<= 15){
+**while** ($compteur\<= 15){
 
-**echo** \$compteur;
+**echo** $compteur;
 
-\$compteur = \$compteur + 1;
+$compteur = $compteur + 1;
 
 }
 
@@ -823,15 +778,15 @@ uniquement à déterminer le nombre de répétitions.**
 Dans ce cas, le compteur nous sert uniquement à répéter les
 instructions, mais on ne l\'utilise nulle part ailleurs.
 
-\$compteur **= 0;**
+$compteur **= 0;**
 
-**while** (\$compteur\<= 5){
+**while** ($compteur\<= 5){
 
-\$nom= read();
+$nom= read();
 
-**echo** \"Bonjour \" . \$nom;
+**echo** \"Bonjour \" . $nom;
 
-\$compteur = \$compteur + 1;
+$compteur = $compteur + 1;
 
 }
 
@@ -847,25 +802,25 @@ de conséquences graves.
 
 **Exemple:** quel est le problème de cette boucle? Et la solution?
 
-\$compteur = 0;
+$compteur = 0;
 
-**while** (\$compteur\<= 5){
+**while** ($compteur\<= 5){
 
-\$nom= read();
+$nom= read();
 
-**echo** \"Bonjour \" . \$nom;
+**echo** \"Bonjour \" . $nom;
 
 }
 
 **Exemple:** quel est le problème de cette boucle? Et la solution?
 
-**while** (\$compteur\<= 50){
+**while** ($compteur\<= 50){
 
-\$nom= read();
+$nom= read();
 
-**echo** \"Bonjour \" . \$nom;
+**echo** \"Bonjour \" . $nom;
 
-\$compteur + 1;
+$compteur + 1;
 
 }
 
@@ -898,19 +853,19 @@ Voici quelques exemples :
 
 **print** (\"Voulez vous un café?\");
 
-\$reponse = read();
+$reponse = read();
 
-**while** (\$reponse != \"oui\" && \$reponse != \"non\"){
+**while** ($reponse != \"oui\" && $reponse != \"non\"){
 
 **print** (\"Svp. tapez oui ou non\");
 
-\$reponse = read();
+$reponse = read();
 
 }
 
 // c\'est oui ou non
 
-**if** (\$reponse == \"oui\"){
+**if** ($reponse == \"oui\"){
 
 **print** (\"Tenez votre café\");
 
@@ -924,15 +879,15 @@ Voici quelques exemples :
 
 /\* Exemple de compteur \*/
 
-\$nombreBombons = 20;
+$nombreBombons = 20;
 
-**while** (\$nombreBombons \> 0){
+**while** ($nombreBombons \> 0){
 
-**print** (\"Il vous reste \" + \$nombreBombons);
+**print** (\"Il vous reste \" + $nombreBombons);
 
 **print** (\"Tenez un bombon\");
 
-\$nombreBombons = \$nombreBombons - 1;
+$nombreBombons = $nombreBombons - 1;
 
 }
 
@@ -940,25 +895,25 @@ Voici quelques exemples :
 
 /\* Exemple d\'essais: variable + compteur \*/
 
-\$chiffreDeviner = 3;
+$chiffreDeviner = 3;
 
-\$nombreEssais = 10;
+$nombreEssais = 10;
 
 **print** (\"Tapez un chiffre entre 1 et 5\");
 
-\$reponse = read();
+$reponse = read();
 
-**while** (\$nombreEssais \> 0 && \$chiffreDeviner != \$reponse){
+**while** ($nombreEssais \> 0 && $chiffreDeviner != $reponse){
 
 **print** (\"Essayez encore!\");
 
-\$reponse = read();
+$reponse = read();
 
-\$nombreEssais = \$nombreEssais -1;
+$nombreEssais = $nombreEssais -1;
 
 }
 
-**if** (\$reponse == \$chiffreDeviner){
+**if** ($reponse == $chiffreDeviner){
 
 **print** (\"Gagné!\");
 
@@ -975,21 +930,21 @@ Voici quelques exemples :
 La boucle For est une façon de simplifier le comptage à l\'utilisateur.
 Observez bien cette boucle While, qu\'on a déjà vu:
 
-\$compteur=0;
+$compteur=0;
 
-**while** (\$compteur\< 5){
+**while** ($compteur\< 5){
 
-**echo** \$compteur;
+**echo** $compteur;
 
-\$compteur = \$compteur + 1;
+$compteur = $compteur + 1;
 
 }
 
 Elle fait exactement la même chose que cette boucle **For:**
 
-> **for** (\$compteur=0;\$compteur\<5;\$compteur++){
+> **for** ($compteur=0;$compteur\<5;$compteur++){
 >
-> **echo** \$compteur;
+> **echo** $compteur;
 >
 > }
 
@@ -1007,7 +962,7 @@ même:
 
 Quand le programme arrive par la première fois à la ligne **For**, il
 **assigne au compteur la valeur Initial, vérifie la condition (ex:
-\$compteur\< \$valeurFinale)** et **lance une première fois la suite
+$compteur\< $valeurFinale)** et **lance une première fois la suite
 d\'instructions.**
 
 Une fois exécutée la suite d\'instructions, il **incrémente le
@@ -1025,13 +980,13 @@ Faisons quelques exemples:
 
 **Boucles successifs:**
 
-> **for** (\$compteur1=1;\$compteur1\<15;\$compteur1=\$compteur1+1){
+> **for** ($compteur1=1;$compteur1\<15;$compteur1=$compteur1+1){
 
 **echo** \"Il est passé par ici\";
 
 > }
 >
-> **for** (\$compteur2=1;\$compteur2\<5;\$compteur2=\$compteur2+1){
+> **for** ($compteur2=1;$compteur2\<5;$compteur2=$compteur2+1){
 
 **echo** \"Il repassera par là\";
 
@@ -1043,11 +998,11 @@ repassera par là\".
 
 **Boucles imbriqués:**
 
-**for** (\$compteur1=1;\$compteur1\<15;\$compteur1=\$compteur1+1){
+**for** ($compteur1=1;$compteur1\<15;$compteur1=$compteur1+1){
 
 **echo** \"Il est passé par ici\";
 
-**for** (\$compteur2=1;\$compteur2\<5;\$compteur2=\$compteur2+1){
+**for** ($compteur2=1;$compteur2\<5;$compteur2=$compteur2+1){
 
 **echo** \"Il repassera par là\";
 
@@ -1096,21 +1051,21 @@ Les tableaux (arrays)
 > Les **tableaux (arrays)** nous permettent de rassembler les variables
 > indépendantes dans une seule variable, référencée par un seul nom.
 >
-> Dans notre cas, on va créer un tableau nommé **\$listePrix** de 10
+> Dans notre cas, on va créer un tableau nommé **$listePrix** de 10
 > positions qui contiendra un prix dans chaque position.
 >
 > Pour créer l\'array on va utiliser la ligne suivante:
 >
-> **\$listePrix = \[\];**
+> **$listePrix = \[\];**
 >
 > ou
 >
-> **\$listePrix = \[\];**
+> **$listePrix = \[\];**
 >
 > **Note: dans plein de langages de programmation on peut spécifier la
 > taille initiale d\'un array dans la forme:**
 >
-> **\$listePrix = int\[10\]; // array de 10 entiers**
+> **$listePrix = int\[10\]; // array de 10 entiers**
 >
 > **Mais en php les arrays sont dynamiques et on n\'indique pas leur
 > taille lors de sa création**
@@ -1121,24 +1076,24 @@ Les tableaux (arrays)
 > cas), on utilise le nom de la variable suivie d\'un index **(clé)**
 > entre crochets. Voici quelques exemples:
 
-\$listePrix\[0\] = 23; // modifier la 1ere valeur, accessible par la clé
+$listePrix\[0\] = 23; // modifier la 1ere valeur, accessible par la clé
 0
 
-\$listePrix\[1\] = 45; // modifier la 2ème valeur (clé 1)
+$listePrix\[1\] = 45; // modifier la 2ème valeur (clé 1)
 
 // avec 45
 
-**echo** \$listePrix\[1\]; // afficher la 2^ème^ valeur
+**echo** $listePrix\[1\]; // afficher la 2^ème^ valeur
 
-\$listePrix\[1\]=read();
+$listePrix\[1\]=read();
 
 // stocker le contenu saisi
 
 // par l\'utilisateur dans la position 2
 
-**echo** \$listePrix\[1\]; // afficher la deuxième valeur
+**echo** $listePrix\[1\]; // afficher la deuxième valeur
 
-\$listePrix\[9\] = \$listePrix\[0\]-20; // reduire le prix de la valeur
+$listePrix\[9\] = $listePrix\[0\]-20; // reduire le prix de la valeur
 
 > // dans la position 9
 >
@@ -1152,21 +1107,21 @@ Les tableaux (arrays)
 
 > Ex1: afficher le troisième prix
 >
-> echo \$listePrix \[2\]
+> echo $listePrix \[2\]
 
 2)  **Modifier le contenu d\'un élément du tableau**
 
 > Encore des exemples:
 >
-> \$listePrix\[5\] = 50;
+> $listePrix\[5\] = 50;
 >
-> \$listePrix\[5\] = \$listePrix\[3\];
+> $listePrix\[5\] = $listePrix\[3\];
 >
-> \$listePrix\[9\] = 2\* \$listePrix\[2\];
+> $listePrix\[9\] = 2\* $listePrix\[2\];
 >
-> \$val= read();
+> $val= read();
 >
-> \$listePrix\[2\]=\$val;
+> $listePrix\[2\]=$val;
 
 **Important!**
 
@@ -1186,35 +1141,35 @@ Les tableaux (arrays)
 > On apprécie vraiment les avantages des tableaux quand on les utilise
 > avec de boucles:
 >
-> **Ex: afficher les éléments du tableau \$listePrix** (déjà rempli)
+> **Ex: afficher les éléments du tableau $listePrix** (déjà rempli)
 >
-> **for** (\$compteur=0;\$compteur\<10;\$compteur=\$compteur+1){
+> **for** ($compteur=0;$compteur\<10;$compteur=$compteur+1){
 >
-> **echo** \$listePrix \[\$compteur\];
+> **echo** $listePrix \[$compteur\];
 >
 > }
 >
 > Ex: lire 5 noms du clavier et les stocker dans un tableau
 >
-> \$listeNoms = **\[\]**;
+> $listeNoms = **\[\]**;
 >
-> **for** (\$compteur=0;\$compteur\<5;\$compteur=\$compteur+1){
+> **for** ($compteur=0;$compteur\<5;$compteur=$compteur+1){
 >
-> \$val= read();
+> $val= read();
 >
-> \$listeNoms\[\$compteur\]=\$val;
+> $listeNoms\[$compteur\]=$val;
 >
 > }
 >
 > Pour simplifier la notation, normalement on utilise les noms **i**,
 > **j**, **k** ou même **n** pour les variables compteur:
 >
-> \$listeNoms = **\[\]**;
+> $listeNoms = **\[\]**;
 >
-> **for** (\$i=0;\$i\<5;\$i=\$i+1){
+> **for** ($i=0;$i\<5;$i=$i+1){
 >
-> \$val= read();
+> $val= read();
 >
-> \$listeNoms\[\$i\]=\$val;
+> $listeNoms\[$i\]=$val;
 >
 > }
