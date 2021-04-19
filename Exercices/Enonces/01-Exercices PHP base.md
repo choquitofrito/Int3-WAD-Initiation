@@ -5,7 +5,7 @@
 Variables, ifs, boucles, tableaux (arrays)
 
 - [Exercices PHP de base](#exercices-php-de-base)
-  - [Exercices 1: variables et E/S](#exercices-1-variables-et-es)
+  - [Exercices Variables, Entree et Sortie](#exercices-variables-entree-et-sortie)
   - [Exercices IF](#exercices-if)
   - [Exercices Boucles](#exercices-boucles)
   - [Exercices Arrays (Tableaux)](#exercices-arrays-tableaux)
@@ -14,7 +14,7 @@ Variables, ifs, boucles, tableaux (arrays)
 
 <br>
 
-## Exercices 1: variables et E/S
+## Exercices Variables, Entree et Sortie
 
 
 1.  Affichez \"Bonjour\" dans l\'écran avec print et echo
