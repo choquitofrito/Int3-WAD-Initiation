@@ -8,7 +8,7 @@ Variables, ifs, boucles, tableaux (arrays)
   - [Exercices 1: variables et E/S](#exercices-1-variables-et-es)
   - [Exercices IF](#exercices-if)
   - [Exercices Boucles](#exercices-boucles)
-  - [Exercices Arrays](#exercices-arrays)
+  - [Exercices Arrays (Tableaux)](#exercices-arrays-tableaux)
   - [Exercices: Arrays Associatifs](#exercices-arrays-associatifs)
     - [Exercice extra arrays: Prix Avions](#exercice-extra-arrays-prix-avions)
 
@@ -187,7 +187,7 @@ jeune»
 <br>
 
 
-## Exercices Arrays
+## Exercices Arrays (Tableaux)
 
 1)  Créez un array contenant les valeurs 10,20 et 50
 
