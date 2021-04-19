@@ -34,6 +34,9 @@ if ($somme == 10) {
     print("\nLa somme ne vaut pas 10!");
 }
 
+// AND et OR en PHP
+// and (&&), or (||)
+
 // for i in range(1..20):
 // for ($i = 1; $i < 20; $i = $i + 1) {
 //     print ("\n" . $i);
