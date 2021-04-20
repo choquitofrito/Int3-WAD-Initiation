@@ -86,7 +86,7 @@ Le script doit demander à l'utilisateur l'année et le nombre d'absences, et af
 
 <br>
 
-1.  Nous voulons calculer le prix d\'une commande dans un magasin
+5.  Nous voulons calculer le prix d\'une commande dans un magasin
     d\'informatique. Le prix total est sujet à des remises.
 
 -   Affichez une liste de trois produits et leur prix correspondant
