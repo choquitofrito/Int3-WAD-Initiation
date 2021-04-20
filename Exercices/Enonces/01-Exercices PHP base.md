@@ -69,7 +69,8 @@ calculez et affichez le prix total de sa commande.
     avec ces deux chiffres (addition, multiplication, soustraction et
     division). Affichez le calcul correspondant.
 
-4.  Pour qu\'un élève puisse réussir une matière il doit assister à un
+4.  Nous faisons un système informatique pour une école.
+    Pour qu\'un élève puisse réussir une matière il doit assister à un
     minimum de cours :
 
     1.  80% des cours s\'il est en 1ere année
@@ -78,13 +79,14 @@ calculez et affichez le prix total de sa commande.
 
     3.  60% des cours s\'il est en 3eme année
 
-Créez une variable contenant le nombre total de cours de cette
-matière. Demandez à l'utilisateur le nombre d\'absences de l\'élève et
-affichez s\'il a réussi (ou pas) son année
+Considérez qu'il y a 50 cours chaque année.
+Le script doit demander à l'utilisateur l'année et le nombre d'absences, et afficher si l'élève a reussi ou pas.
+
+
 
 <br>
 
-5.  Nous voulons calculer le prix d\'une commande dans un magasin
+1.  Nous voulons calculer le prix d\'une commande dans un magasin
     d\'informatique. Le prix total est sujet à des remises.
 
 -   Affichez une liste de trois produits et leur prix correspondant
