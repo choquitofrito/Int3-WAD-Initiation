@@ -85,3 +85,21 @@ while ($j < 20){
     $j++;
 }
 
+
+
+// exemple d'opérateur ternaire
+$age = 2;
+$entrer = null;
+
+if ($age > 18) {
+    $entrer = "ok";
+}
+else {
+    $entrer = "pas possible";
+}
+echo "\nTest avec if: " . $entrer;
+
+// opérateur ternaire
+$age > 18 ? $entrer = "ok": $entrer = "pas possible";
+echo "\nTest avec ternaire: " . $entrer;
+
