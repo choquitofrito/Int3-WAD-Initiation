@@ -103,3 +103,10 @@ echo "\nTest avec if: " . $entrer;
 $age > 18 ? $entrer = "ok": $entrer = "pas possible";
 echo "\nTest avec ternaire: " . $entrer;
 
+echo "\nTest avec ternaire sans variable intermediaire: ";
+print ( $age > 20 ? "\nok" : "\npas possible");
+
+print ($etat = $age > 18 ? "majeur" : "mineur");
+
+
+
