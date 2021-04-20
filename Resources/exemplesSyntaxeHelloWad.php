@@ -37,6 +37,26 @@ if ($somme == 10) {
 // AND et OR en PHP
 // and (&&), or (||)
 
+$a = 5; // integer (number)
+$b = "5"; // string
+
+// on entre ici
+if ($a == $b) {
+    print ("Pareils!"); // en PHP et en JS   
+}
+
+// on n'entre pas ici car les types sont différents
+// "strictement égal" -> comparaison des types des variables
+if ($a === $b) {
+    print ("Pareils!"); // en PHP et en JS   
+}
+
+
+
+
+
+
+
 // for i in range(1..20):
 // for ($i = 1; $i < 20; $i = $i + 1) {
 //     print ("\n" . $i);
