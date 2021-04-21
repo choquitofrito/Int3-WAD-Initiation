@@ -20,7 +20,7 @@ Créez un fichier **info.php** dans c:/xampp/htdocs contenant ce code:
  
  ```php
  <?php
-  phpinfo()
+  phpinfo();
  
  ```
  
