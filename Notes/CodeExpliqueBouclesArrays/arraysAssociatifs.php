@@ -10,6 +10,8 @@ $personne = [
 foreach ($personne as $cle => $val) {
     print("\n" . $cle . ":" . $val);
 }
+var_dump (array_values($personne));
+
 
 $fakeArraySimple = [
     '0' => 'Rome',
