@@ -8,3 +8,17 @@ function read()
         fclose ($fr);                   // close the file handle
         return $input;                  // return the text entered
 }
+
+
+print ("\nCombien de valeurs? :");
+$nombreValeurs = read();
+
+$multiplication = 1;
+
+for ($i = 0; $i < $nombreValeurs; $i++){
+    print ("\nNouvelle valeur?: ");
+    $val = read();
+    $multiplication = $multiplication * $val;      
+}
+
+print ("\nLe résultat: " . $multiplication);

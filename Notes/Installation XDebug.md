@@ -78,3 +78,9 @@ phpinfo()
 var_dump (['Pepi','Luci','Sandrine'])
 phpinfo()
 ```
+
+
+MAC: 
+
+
+zend_extension="/usr/lib/php/extensions/no-debug-non-zts-20160303/xdebug.so"
