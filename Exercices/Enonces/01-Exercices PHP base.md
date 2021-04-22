@@ -285,7 +285,7 @@ Tableau résultat :
 
 2)  Remplacez le réalisateur du premier film par \"Ed Wood\"
 
-3)  Créez un contenant les noms de pays et leur capital. Créez une boucle foreach pour afficher
+3)  Créez un tableau contenant des pays. Pour chaque pays on doit stocker son nom et sa capitale. Créez une boucle foreach pour afficher
     son contenu dans la forme \"La capital de xxxx est xxxx\"
 
 4)  Rajoutez deux pays et leur capital après la déclaration mais avant
