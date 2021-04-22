@@ -83,7 +83,6 @@ Considérez qu'il y a 50 cours chaque année.
 Le script doit demander à l'utilisateur l'année et le nombre d'absences, et afficher si l'élève a reussi ou pas.
 
 
-
 <br>
 
 5.  Nous voulons calculer le prix d\'une commande dans un magasin
@@ -289,26 +288,26 @@ Tableau résultat :
 3)  Créez un contenant les noms de pays et leur capital. Créez une boucle foreach pour afficher
     son contenu dans la forme \"La capital de xxxx est xxxx\"
 
-4)  Rajoutez deux villes et leur capital après la déclaration mais avant
+4)  Rajoutez deux pays et leur capital après la déclaration mais avant
     la boucle d\'affichage
 
 5)  Modifiez la boucle pour qu\'elle affiche uniquement les pays.
-    Modifiez la boucle pour qu\'elle affiche uniquement les villes.
+    Modifiez la boucle pour qu\'elle affiche uniquement les capitales.
     Revenez à la boucle originale.
 
 6)  Affichez le contenu du array avec print\_r pour mieux comprendre
     l\'organisation des indices
 
 7)  Créez trois arrays contenant le nom, date de naissance et le numéro
-    de téléphone de 3 personnes. Créez un array \"agenda\" contenant ces
-    trois arrays. Affichez le contenu complet de l\'agenda.
+    de téléphone de 3 personnes. Créez un array \"repertoire\" contenant ces
+    trois arrays. Affichez le contenu complet du repertoire.
 
 8)  À partir de l\'exercice précédent
 
--   Affichez l\'agenda dans un tableau HTML, choisissez vous-même un
+-   Affichez le\'repertoire dans un tableau HTML, choisissez vous-même un
     format qui vous plaise
 
--   Rajoutez à l\'agenda le contact de votre meilleur ami
+-   Rajoutez au repertoire le contact de votre meilleur ami
 
 9)  Créez un array contenant de noms de sites web (ex: Startpage,
     Wikipedia), leur lien d\'internet (ex: www.startpage.com) et une
