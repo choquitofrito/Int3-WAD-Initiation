@@ -282,13 +282,11 @@ Tableau résultat :
 ## Exercices: Arrays Associatifs
 
 1)  Créez un array associatif contenant de couples film-réalisateur.
-    Affichez le contenu sans utiliser de boucles et en utilisant de
-    boucles
+    Affichez le contenu en utilisant une boucle foreach
 
 2)  Remplacez le réalisateur du premier film par \"Ed Wood\"
 
-3)  Créez un array associatif de pays et capitales et remplissez son
-    contenu dans la déclaration. Créez une boucle foreach pour afficher
+3)  Créez un array associatif de pays et capitales. Créez une boucle foreach pour afficher
     son contenu dans la forme \"La capital de xxxx est xxxx\"
 
 4)  Rajoutez deux villes et leur capital après la déclaration mais avant
