@@ -1,5 +1,5 @@
-Exercices formulaires (I)
-=========================
+Exercices formulaires 
+=====================
 
 1.  Créez un site contenant un formulaire où l\'utilisateur saisira son
     prénom, nom et âge. Le site doit afficher \"Bienvenu XXXX XXXX, vous
