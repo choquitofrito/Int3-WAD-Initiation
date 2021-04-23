@@ -22,7 +22,7 @@ Exercices formulaires
     toutes les valeurs entières qui existent entre les deux dans un
     tableau HTML
 
-5.  Créez un jeu de lotto en PHP. Stockez les valeurs gagnantes dans un
+5.  (Opt.) Créez un jeu de lotto en PHP. Stockez les valeurs gagnantes dans un
     array.
 
 6.  Créez un formulaire qui permette de saisir un prix et le rajoute une
