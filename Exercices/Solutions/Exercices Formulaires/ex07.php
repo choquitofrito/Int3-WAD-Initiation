@@ -22,7 +22,15 @@
             
             foreach ($liensImages as $nom => $unLien) {
                 // ça a l'air compliqué mais ce ne l'est pas. Il faut juste décortiquer et faire partie par partie....
-                print("<option value='" . $unLien . "'>" . $nom . "</option>");
+                // <option value='chat.jpg'>Chat</option>
+                print ("<option value='");
+                print ($unLien);
+                print ("'>");
+                print ($nom);
+                print ("</option>");
+
+                // une fois vous êtes ok avec les différentes parties...
+                // print("<option value='" . $unLien . "'>" . $nom . "</option>");
             }
             ?>
         </select>
