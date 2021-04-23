@@ -12,7 +12,7 @@
 
     <!-- on va générer le select en php à partir d'un array! -->
     <form method="POST" action="./ex07Traitement.php">
-        <select name="select_chat">
+        <select name="select_animal">
             <?php
             $liensImages = [
                 'Lemur'=> 'lemur.jpg', 
@@ -20,10 +20,9 @@
                 'Lynx' => 'lynx.jpg', 
                 'Chien' => 'chien.jpg'];
             
-            foreach ($liensImages as $nom => $lienImage) {
-
+            foreach ($liensImages as $nom => $unLien) {
                 // ça a l'air compliqué mais ce ne l'est pas. Il faut juste décortiquer et faire partie par partie....
-                print("<option value='" . $lienImage . "'>" . $nom . "</option>");
+                print("<option value='" . $unLien . "'>" . $nom . "</option>");
             }
             ?>
         </select>
