@@ -19,7 +19,6 @@
         print ("<h5>Bienvenue ".$_POST['nom'].
             ", vous êtes néé le ". $_POST['dateNaissance']. 
             ", vous aimez bien ". $_POST['hobby']. "</h5>");
-  
     ?>
 </body>
 </html>
