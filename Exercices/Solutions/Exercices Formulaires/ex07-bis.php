@@ -14,20 +14,14 @@
     <form method="POST" action="./ex07Traitement.php">
         <select name="select_chat">
             <?php
-            $liensImages = [
-                'Lemur'=> 'lemur.jpg', 
-                'Élephant' => 'elephant.jpg', 
-                'Lynx' => 'lynx.jpg', 
-                'Chien' => 'chien.jpg'];
-            
-            foreach ($liensImages as $nom => $lienImage) {
-
+            $liensImages = ['chat01.jpg', 'unLynx.jpg', 'chatfurax.jpg', 'kittyLynx.jpg'];
+            foreach ($liensImages as $indice => $lienImage) {
                 // ça a l'air compliqué mais ce ne l'est pas. Il faut juste décortiquer et faire partie par partie....
-                print("<option value='" . $lienImage . "'>" . $nom . "</option>");
+                print("<option value='" . $lienImage . "'>Choix chat position " . $indice . "</option>");
             }
             ?>
         </select>
-        <button type="submit">Montre moi mon animal!</button>
+        <button type="submit">Montre moi mon chat!</button>
     </form>
 
 </body>

@@ -10,7 +10,7 @@
 
 <body>
     <?php
-        print ("L'animal choisi est: <br>");
+        print ("Le chat choisi est: <br>");
         // les images se trouvent dans le dossier /img, il faut créer le chemin /img/chatXX
         print ("<img style='width:25%' src='./img/". $_POST['select_chat'] . "'>");
 
