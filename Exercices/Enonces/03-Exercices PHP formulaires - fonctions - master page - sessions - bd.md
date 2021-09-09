@@ -1,5 +1,33 @@
-Exercices formulaires 
-=====================
+
+- [Exercices sur les formulaires (I)](#exercices-sur-les-formulaires-i)
+- [Exercices sur les formulaires (II)](#exercices-sur-les-formulaires-ii)
+  - [Exercice 1 : Génération des éléments d\'un formulaire HTML en PHP](#exercice-1--génération-des-éléments-dun-formulaire-html-en-php)
+  - [Exercice 2 : Génération des éléments d\'un formulaire HTML en PHP](#exercice-2--génération-des-éléments-dun-formulaire-html-en-php)
+  - [Exercice 3](#exercice-3)
+  - [Exercice 4](#exercice-4)
+  - [Exercice 5](#exercice-5)
+  - [Exercice 6 : cinéma](#exercice-6--cinéma)
+  - [Exercice 7: frais d\'essence](#exercice-7-frais-dessence)
+  - [Exercice 8: listes déroulantes](#exercice-8-listes-déroulantes)
+  - [Exercice 9](#exercice-9)
+  - [Exercice 10](#exercice-10)
+  - [Exercice 11](#exercice-11)
+  - [Exercice 12](#exercice-12)
+- [Exercices: Fonctions de base personnalisées](#exercices-fonctions-de-base-personnalisées)
+- [Exercices Strings + fonctions de Strings + Formulaires](#exercices-strings--fonctions-de-strings--formulaires)
+- [Exercices: Arrays + fonctions Array](#exercices-arrays--fonctions-array)
+- [Exercices sur les sessions](#exercices-sur-les-sessions)
+    - [Navigation](#navigation)
+    - [Contenu du site](#contenu-du-site)
+  - [Master Page](#master-page)
+    - [Header et Footer](#header-et-footer)
+- [Exercice sur les BDs](#exercice-sur-les-bds)
+
+<br>
+
+
+# Exercices sur les formulaires (I)
+
 
 1.  Créez un site contenant un formulaire où l\'utilisateur saisira son
     prénom, nom et âge. Le site doit afficher \"Bienvenu XXXX XXXX, vous
@@ -86,25 +114,21 @@ l\'Enrhubatron!
     -   Les deux doivent contenir uniquement des lettres et des numéros
         et avoir entre 8 et 30 caractères
 
-> Si les valeurs sont correctes, le script les affiche en majuscule.
-> Utilisez les fonctions **ctype, strlen** et **strtoupper** pour vous
-> faciliter la tâche
+Si les valeurs sont correctes, le script les affiche en majuscule.
+Utilisez les fonctions **ctype, strlen** et **strtoupper** pour vous
+faciliter la tâche
 
-Exercices formulaires (II)
-==========================
+<br><br>
 
-Exercice 1
-----------
+# Exercices sur les formulaires (II)
 
-(Génération des éléments d\'un formulaire HTML en PHP)
+## Exercice 1 : Génération des éléments d\'un formulaire HTML en PHP
 
-> Nous voulons faire un site qui affiche de photos de loups (ou de ce que vous aimiez bien :D). Nous
-> avons une petite bibliothèque de 10 images pour le moment, mais on
-> compte rajouter de nouvelles.
+<br>
+Nous voulons faire un site qui affiche de photos de loups (ou de ce que vous aimiez bien :D). Nous
+avons une petite bibliothèque de 10 images pour le moment, mais on compte rajouter de nouvelles.
 
-Créez un formulaire où on peut juste saisir le nombre de photos qu\'on
-veut afficher. Quand on clique un bouton, le site nous affichera le
-nombre de photos qu\'on a choisi.
+Créez un formulaire où on peut juste saisir le nombre de photos qu'on veut afficher. Quand on clique un bouton, le site nous affichera le nombre de photos qu'on a choisi.
 
 Astuce: Stockez les photos dans un même dossier (/img/chats) sous le nom
 img1.jpg, img2.jpg... etc.
@@ -113,11 +137,11 @@ Important: Gênerez le HTML qui affiche les images en utilisant du PHP,
 car ça rendra très facile de changer le nombre d\'images sans modifier
 une seule ligne de code.
 
-Exercice 2
-----------
+<br>
 
-(Génération des éléments d\'un formulaire HTML en PHP)
+## Exercice 2 : Génération des éléments d\'un formulaire HTML en PHP
 
+<br>
 Pour une application d\'achat de billets d\'avions on a besoin d\'un
 formulaire où on indique le nombre de passagers qui prendront le vol.
 Une fois qu\'on a choisi le nombre de passagers, notre site affichera un
@@ -129,22 +153,27 @@ les données vers une autre page php. Dans cette dernière page, affichez
 le contenu reçu du formulaire (\$\_POST) pour vous assurer que les
 données ont été bien envoyées.
 
-Exercice 3
-----------
+<br>
 
+## Exercice 3
+
+<br>
 Créez un formulaire qui demande l\'âge à l\'utilisateur. Si
 l\'utilisateur a moins de 18 ans vous le redirigerez vers :
 
-> Si l\'utilisateur a plus de 18 ans redirigez-le vers :
->
-> <https://www.youtube.com/watch?v=5Cb3ik6zP2I>
->
-> Utilisez la fonction :
->
-> header (\"location: <http://www.lesite.com>\");
+Si l\'utilisateur a plus de 18 ans redirigez-le vers :
 
-Exercice 4
-----------
+https://www.youtube.com/watch?v=5Cb3ik6zP2I
+>
+Utilisez la fonction :
+>
+header (\"location: <http://www.lesite.com>\");
+
+<br>
+
+## Exercice 4
+
+<br>
 
 Un utilisateur saisit le nom d\'un animal et on affiche plusieurs images
 de cet animal qui se trouvent dans le serveur
@@ -153,18 +182,21 @@ Astuce: les images se trouvent dans le dossier **img** du serveur et
 portent le nom de l'animal plus un index. Ex: chat1.jpg, chat2.jpg,
 chat3.jpg, chien1.jpg, chien2.jpg, chien3.jpg
 
-Exercice 5
-----------
+<br>
 
-Modifiez l\'exercice précédent pour que les noms de fichier contenant
-les images soient stockés dans un array en php.
+## Exercice 5
 
-L\'utilisateur saisi le nom d\'un animal et on doit chercher toutes les
-images qui contiennent ce nom (ex: chatmarrant.jpg, tristechat.jpg) et
-les afficher
+<br>
 
-Exercice 7: cinéma
-------------------
+Modifiez l\'exercice précédent pour que les noms de fichier contenant les images soient stockés dans un array en php.
+
+L\'utilisateur saisi le nom d\'un animal et on doit chercher toutes les images qui contiennent ce nom (ex: chatmarrant.jpg, tristechat.jpg) et les afficher
+
+<br>
+
+## Exercice 6 : cinéma
+
+<br>
 
 Un cinéma a établi plusieurs tarifs pour ses clients en fonction de
 l\'âge et de son statut (étudiant ou pas étudiant). Ils offrent un site
@@ -173,8 +205,11 @@ entrées. Si le client a moins de 12 ans, le prix sera de 4 euros. Le
 prix normal est de 8 euros sauf pour les étudiants, qui ont une
 réduction du 20%.
 
-Exercice 8: frais d\'essence
-----------------------------
+<br>
+
+## Exercice 7: frais d\'essence
+
+<br>
 
 Créez un formulaire qui permette à l\'utilisateur de calculer le prix
 d\'un trajet en voiture d\'un certain nombre de km. L\'utilisateur peux
@@ -182,44 +217,50 @@ choisir entre une voiture diesel où essence. Considérez que le prix/km
 moyen d\'une voiture diesel est de 0.25euros/km et que le prix
 d\'essence est de 0.30 euros/km.
 
-Exercice 9: listes déroulantes
-------------------------------
+<br>
 
-1.  Créez un formulaire qui nous permette de choisir un pays d\'une
-    liste déroulante. Quand on clique sur un bouton il nous affichera un
-    drapeau du pays ainsi que le nom de sa capitale.
+## Exercice 8: listes déroulantes
 
-> Étant donné qu\'on ne dispose pas de bases de données, utilisez des
-> array associatifs dans le script qui reçoit les données
+<br>
+
+1.  Créez un formulaire qui nous permette de choisir un pays d\'une liste déroulante. Quand on clique sur un bouton il nous affichera un drapeau du pays ainsi que le nom de sa capitale.
+
+Étant donné qu\'on ne dispose pas de bases de données, utilisez des array associatifs dans le script qui reçoit les données
 
 2.  Créez un formulaire qui nous permette de choisir un pays d\'une
     liste déroulante.
 
-> Quand on clique sur un bouton il nous redirigera vers le site
-> Wikipédia contenant l\'information de ce pays (utilisez la fonction
-> \"header\")
+Quand on clique sur un bouton il nous redirigera vers le site
+Wikipédia contenant l\'information de ce pays (utilisez la fonction
+\"header\")
 
 3.  Modifiez le formulaire précédant pour pouvoir choisir la langue en
     plus du pays.
 
-Exercice 9
-----------
+<br>
+
+## Exercice 9
+
+<br>
 
 Nous avons classifié le temps de différents pays dans les catégories
 Chaud, Froid, Gelé.
 
-> Chaud : Maroc, Mexique, Espagne
+Chaud : Maroc, Mexique, Espagne
 >
-> Froid : Belgique, Angleterre, Holland
+Froid : Belgique, Angleterre, Holland
 >
-> Gelé : Norvège, Islande, Finlande
+Gelé : Norvège, Islande, Finlande
 
-L'utilisateur va choisir un pays d'une liste dans un formulaire et on va
-lui indiquer s'il fait chaud, froid ou gelé. Vous pouvez inclure une
-image illustrant le temps du pays.
+L'utilisateur va choisir un pays d'une liste dans un formulaire et on va lui indiquer s'il fait chaud, froid ou gelé. Vous pouvez inclure une image illustrant le temps du pays.
 
-Exercice 10
------------
+<br>
+
+
+## Exercice 10
+
+
+<br>
 
 Créez un formulaire de login pour votre site. L'utilisateur doit saisir
 un login et un mot de pass.
@@ -231,38 +272,40 @@ un login et un mot de pass.
 Réalisez la vérification en PHP. Vous pouvez rajouter un control dans le
 propre HTML en utilisant l'attribut « pattern » des inputs.
 
-Exercice 11
------------
+<br>
+
+## Exercice 11
+
+<br>
 
 Créez le jeu pierre-papier-ciseaux en PHP. L'utilisateur joue contre
 l'ordinateur.
 
-Exercice 12
------------
+
+<br>
+
+## Exercice 12
+
+<br>
 
 Nous allons créer un site capable de \"deviner\" nos gouts de TV.
 L\'utilisateur du site doit saisir un mot clé sur une thématique qui lui
 intéresse et il sera redirigé automatiquement vers le site d\'une série
 qui pourra lui plaire (utilisez \"header\")
 
-> Dark
->
-> Les Soprano
->
-> House
->
-> Breaking Bad
->
-> The wire
->
-> True Detective
->
-> Dexter
->
-> Outlander
+    Dark
+    Élite
+    Into the night
+    Breaking Bad
+    The wire
+    True Detective
+    Dexter
+    Peaky blinder
 
-Exercices: Fonctions de base personnalisées
-===========================================
+
+<br>
+
+# Exercices: Fonctions de base personnalisées
 
 1.  Créez une fonction qui nous dise bonjour
 
@@ -363,8 +406,12 @@ array
     chaque ville sera en majuscule (chercher des infos sur la fonction
     uc\_first)
 
-Exercices Strings + fonctions de Strings + Formulaires
-======================================================
+
+<br>
+
+# Exercices Strings + fonctions de Strings + Formulaires
+
+<br>
 
 1.  Créez une fonction qui reçoit un array de strings (ex: noms de
     personnes) et affiche chaque string ainsi que son nombre de
@@ -377,12 +424,13 @@ Exercices Strings + fonctions de Strings + Formulaires
     Pour simuler la BD, créez un array contenant quelques villes de
     départ et leurs destinations :
 
-\$vols = **array** (\"Bruxelles\"=\>**array** (\"Paris\", \"Londres\",
-\"Bucarest\"),
-
-\"Rome\"=\>**array** (\"Paris\",\"Varsovie\",\"Milan\"),
-
-\"Pekin\"=\>**array** (\"New York\",\"Istambul\",\"Seoul\"));
+```php
+$vols = array (
+"Bruxelles"=>array("Paris", "Londres","Bucarest"),
+"Rome"=>array ("Paris","Varsovie","Milan"),
+"Pekin"=>array ("New York","Istambul","Seoul")
+);
+``` 
 
 3.  Modifiez l'exercice précédent pour que l'utilisateur puisse saisir
     des espaces avant ou après la ville sans affecter le résultat
@@ -403,7 +451,7 @@ Exercices Strings + fonctions de Strings + Formulaires
     une fonction qui renvoie un tableau contenant des adresses de la
     forme *prenom.nom\@monsite.be*
 
-> Ex: herbie.hancock\@monsite.be
+Ex: herbie.hancock\@monsite.be
 
 Affichez le tableau contenant les adresses dans le code du script
 principal
@@ -453,8 +501,11 @@ principal
     array associatif contenant les strings de l\'array et la taille de
     chaque string
 
-Exercices: Arrays + fonctions Array
-===================================
+<br>
+
+# Exercices: Arrays + fonctions Array
+
+<br>
 
 1.  Afficher un tableau HTML contenant trois lignes de 10 valeurs: la
     première contient de chiffres pairs (commencez par 0), la deuxième
@@ -464,18 +515,18 @@ Exercices: Arrays + fonctions Array
 
 2.  Vous avez cet array :
 
-\$disque1= array(
-
-'titre'=\> 'Hard Groove',
-
-'groupe'=\>'Roy Hargrove',
-
-'style'=\> 'Jazz-Funk')
+```php
+$disque1= [
+'titre'=>'Hard Groove',
+'groupe'=>'Roy Hargrove',
+'style'=> 'Jazz-Funk']
+```
 
 Utilisez la fonction **implode** pour créer une requête SQL a la forme :
 
-INSERT INTO disques (titre, groupe, style) VALUES ('Hard Groove', 'Roy
-Hargrove', 'Jazz-Funk')
+```sql
+INSERT INTO disques (titre, groupe, style) VALUES ('Hard Groove', 'Roy Hargrove', 'Jazz-Funk')
+``` 
 
 3.  Créez un array d\'un nombre aléatoire d\'entiers (min. 10 valeurs et
     max. 30 valeurs).
@@ -546,32 +597,35 @@ Créez plusieurs \"morceaux\" de cette manière
 
 21. Utilisez la fonction array\_merge pour fusionner deux arrays
 
-Exercices sur les sessions
-==========================
+<br>
+
+# Exercices sur les sessions
+
+<br>
 
 1)  Programmez le jeu pierre, papier et ciseaux. Utilisez la session
     pour stocker les ponctuations des joueurs (utilisateur vs. Machine)
 
-> Modifiez le jeu précédant : si un utilisateur gagne plus de 5 fois, on
-> le redirige vers un script qui affiche l\'écran de la victoire
-> (fonction header)
+Modifiez le jeu précédant : si un utilisateur gagne plus de 5 fois, on
+le redirige vers un script qui affiche l\'écran de la victoire
+(fonction header)
 
 2)  Créez une page contenant une barre de navigation avec deux liens :
     login et contenu.
 
-> L'utilisateur doit être connecté pour visualiser le « contenu » du
-> site (ex : une page contenant des affiches de films)
+L'utilisateur doit être connecté pour visualiser le « contenu » du
+site (ex : une page contenant des affiches de films)
 >
-> Pour se connecter, l'utilisateur clique sur login et il sera redirigé
-> vers une page pour saisir son login et son password.
+Pour se connecter, l'utilisateur clique sur login et il sera redirigé
+vers une page pour saisir son login et son password.
 >
-> Si le login est « WEB » et le password est « MASTER » il sera redirigé
-> vers la page du contenu. Sinon, il sera redirigé vers la page de
-> login.
+Si le login est « WEB » et le password est « MASTER » il sera redirigé
+vers la page du contenu. Sinon, il sera redirigé vers la page de
+login.
 >
-> Rajoutez maintenant un lien « logout » à la barre de navigation. Ce
-> lien est uniquement visible si l'utilisateur a fait login
-> correctement.
+Rajoutez maintenant un lien « logout » à la barre de navigation. Ce
+lien est uniquement visible si l'utilisateur a fait login
+correctement.
 
 3)  Créez un formulaire simple contenant une liste déroulante remplie de
     noms de produits. Chaque fois que l\'utilisateur choisit un produit
@@ -584,8 +638,8 @@ Exercices sur les sessions
     d\'un seul produit en forme de string on va stocker un array dans la
     session contenant tous les produits.
 
-> Le contenu de cet array est mis à jour à chaque fois qu\'on choisit un
-> produit dans le formulaire.
+Le contenu de cet array est mis à jour à chaque fois qu\'on choisit un
+produit dans le formulaire.
 
 5)  Créez un site qui affiche une liste de produits et leur prix. Un
     bouton à coté de chaque produit permet à l\'utilisateur de le
@@ -600,13 +654,16 @@ Exercices sur les sessions
     d\'afficher une liste de produits choisis ainsi que le prix total de
     la commande
 
-Exercice sur la master page
-===========================
+<br>
 
-> **Objectif:** Créer une **master page** **index.php** contenant le
-> squelette d'une page (en-têtes, barre de navigation et pieds). On
-> pourra charger le contenu d'autres pages dans la section centrale de
-> la master page.
+Exercice sur la master page
+
+<br>
+
+**Objectif:** Créer une **master page** **index.php** contenant le
+squelette d'une page (en-têtes, barre de navigation et pieds). On
+pourra charger le contenu d'autres pages dans la section centrale de
+la master page.
 
 ### Navigation
 
@@ -619,12 +676,12 @@ Exercice sur la master page
 
 2.  Dans notre cas, on va avoir deux scripts possibles:
 
-> **index.php?page=Capitales**
+**index.php?page=Capitales**
 >
-> **index.php?page=Populations**
+**index.php?page=Populations**
 >
-> ![](media/image1.png){width="1.5895516185476815in"
-> height="0.7463998250218723in"}
+![](media/image1.png){width="1.5895516185476815in"
+height="0.7463998250218723in"}
 
 3.  La page index.php chargera un script paysCapitales.php quand le
     parametre page est \"Capitales\" ou l\'autre selon la valeur de ce
@@ -639,27 +696,31 @@ paysCapitale.php ou paysPopulation.php.
     peut introduire le nom d\'un pays. Ce formulaire envoie le nom à un
     autre script **viewCapitale.php** qui affiche la capitale de ce pays
 
-> (utilisez un array associatif contenant de couples pays=\>capital dans
-> le deuxième script)
+(utilisez un array associatif contenant de couples pays=\>capital dans
+le deuxième script)
 
 2.  Créez un script **paysPopulation.php** contenant un formulaire où on
     peut introduire aussi le nom d\'un pays. Ce formulaire envoie le nom
     saisi à un autre script **viewPopulation.php** qui affiche la
     **population** de ce pays
 
-> (utilisez un array associatif contenant de couples pays=\>population
-> dans le deuxième script)
+(utilisez un array associatif contenant de couples pays=\>population
+dans le deuxième script)
 
-### Master Page
+<br>
 
-> **Vous allez créer un master page index.php. Cette page charge
-> (\'include\') un script ou l\'autre selon la valeur d\'un paramètre
-> \"page\" qu\'elle reçoit dans la URL.** Dans notre cas, ces deux
-> scripts sont paysCapitales.php et paysPopulations.php.
+## Master Page
+
+<br>
+
+**Vous allez créer un master page index.php. Cette page charge
+(\'include\') un script ou l\'autre selon la valeur d\'un paramètre
+\"page\" qu\'elle reçoit dans la URL.** Dans notre cas, ces deux
+scripts sont paysCapitales.php et paysPopulations.php.
 >
-> Pour créer la masterpage **index.php**:
+Pour créer la masterpage **index.php**:
 
-1.  Créez les étiquettes de base \<html\>, \<body\> et \<head\>
+1.  Créez les étiquettes de base \<html\>, \<body\et \<head\>
 
 2.  Faites un **include** de paysPopulation.php ou paysCapitale.php
     **selon la valeur du paramètre \"page\" reçu dans l\'URL
@@ -673,21 +734,24 @@ paysCapitale.php ou paysPopulation.php.
     -   Si **page** vaut \"Populations\", faites un **include** de la
         page **paysCapitales.php**
 
-> Note: Vous pouvez effacer maintenant les étiquettes \<html\>, \<body\>
-> etc... du reste de scripts car elles se trouvent déjà dans le fichier
-> index.php.
+Note: Vous pouvez effacer maintenant les étiquettes \<html\>, \<body\>
+etc... du reste de scripts car elles se trouvent déjà dans le fichier
+index.php.
 
 ### Header et Footer
 
-> Vous pouvez créer des scripts contenant les en-têtes et les pieds
-> communs à plusieurs pages du site pour ne pas devoir répéter le code à
-> chaque fois. Ex:
+Vous pouvez créer des scripts contenant les en-têtes et les pieds
+communs à plusieurs pages du site pour ne pas devoir répéter le code à
+chaque fois. Ex:
 
 3.  Créez le script footer.php qui affiche la date et l\'heure actuelle.
     Ce script sera inclus dans index.php
 
-Exercice sur les BDs
-====================
+<br>
+
+# Exercice sur les BDs
+
+<br>
 
 1.  Créez un site contenant une page d'inscription et une autre de
     login. L'utilisateur remplira un formulaire contenant son nom, login

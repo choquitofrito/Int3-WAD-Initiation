@@ -17,6 +17,8 @@ Variables, ifs, boucles, tableaux (arrays)
 ## Exercices Variables, Entree et Sortie
 
 
+
+
 1.  Affichez \"Bonjour\" dans l\'écran avec print et echo
 
 2.  Affichez \"La console est rudimentaire mais elle fonctionne assez
