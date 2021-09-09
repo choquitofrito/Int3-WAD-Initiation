@@ -16,6 +16,8 @@ Variables, ifs, boucles, tableaux (arrays)
 
 ## Exercices Variables, Entree et Sortie
 
+<br>
+
 
 
 
@@ -55,7 +57,7 @@ calculez et affichez le prix total de sa commande.
 
 
 ## Exercices IF
-
+<br>
 
 1.  Créez un code capable de calculer la surface d'une chambre. Demandez
     à l'utilisateur la largeur et la longueur. Si les valeurs sont
@@ -110,7 +112,7 @@ Le script doit demander à l'utilisateur l'année et le nombre d'absences, et af
 <br>
 
 ## Exercices Boucles
-
+<br>
 
 1.  Faites un logiciel qui demande l'âge à l'utilisateur. Le logiciel
     continue à demander jusqu'à ce qu'il introduise une valeur entre 0
@@ -191,6 +193,7 @@ jeune»
 
 
 ## Exercices Arrays (Tableaux)
+<br>
 
 1)  Créez un array contenant les valeurs 10,20 et 50
 
@@ -281,6 +284,8 @@ Tableau résultat :
 <br>
 
 ## Exercices: Arrays Associatifs
+
+<br>
 
 1)  Créez un array associatif contenant de couples film-réalisateur.
     Affichez le contenu en utilisant une boucle foreach

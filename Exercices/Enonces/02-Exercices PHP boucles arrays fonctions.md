@@ -3,7 +3,9 @@
 - [Exercices de fonctions d\'Arrays natives](#exercices-de-fonctions-darrays-natives)
 
 
-## Exercices de boucles, arrays, fonctions
+<br>
+
+# Exercices de boucles, arrays, fonctions
 
 <br>
 
@@ -140,7 +142,7 @@ faire, regardez la documentation des fonctions **strtoupper** et
 
 <br>
 
-## Exercices de création de fonctions (+arrays)
+# Exercices de création de fonctions (+arrays)
 
 1.  Développez une fonction qui crée un array de 25 entiers aléatoires
     (utilisez mt\_rand) et l\'affiche
@@ -170,7 +172,8 @@ faire, regardez la documentation des fonctions **strtoupper** et
 
 <br>
 
-## Exercices de fonctions d\'Arrays natives
+# Exercices de fonctions d\'Arrays natives
+<br>
 
 1.  Affichez les chiffres pairs entre 0 et 100. Affichez les chiffres
     impairs entre 0 et 100
