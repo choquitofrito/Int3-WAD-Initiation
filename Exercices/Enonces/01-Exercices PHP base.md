@@ -92,10 +92,10 @@ Le script doit demander à l'utilisateur l'année et le nombre d'absences, et af
 5.  Nous voulons calculer le prix d\'une commande dans un magasin
     d\'informatique. Le prix total est sujet à des remises.
 
--   Affichez une liste de trois produits et leur prix correspondant
+-   Affichez une liste de trois produits et leur prix correspondant. Créez une variable pour chaque nom de produit et une variable pour chaque prix, ça vous fera 6 variables en tout (Si vous gérez bien les arrays vous pouvez les utiliser pour faire l'exercice).
 
 -   Demandez à l'utilisateur le nombre d'unités qu'il veut acheter de
-    chaque produit
+    chaque produit (fonction "read")
 
 -   Calculez le total de la commande sachant que :
 

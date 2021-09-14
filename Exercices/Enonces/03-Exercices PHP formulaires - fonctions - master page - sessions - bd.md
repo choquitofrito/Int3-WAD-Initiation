@@ -33,8 +33,8 @@
     prénom, nom et âge. Le site doit afficher \"Bienvenu XXXX XXXX, vous
     avez XXXX ans!\"
 
-2.  Créez une page contenant un formulaire où on saisit un nom et un
-    prénom. Un autre script traitera les données envoyées et affichera
+2.  Créez une page (html ou php) contenant un formulaire où on saisit un nom et un
+    prénom. Une autre page (php) traitera les données envoyées et affichera
     un message de salutation. Si les valeurs rentrées correspondent à
     votre nom et prénom, le script affichera le message \"Que la force
     soi avec toi.\" et un lien vers le site officiel de Star Wars
@@ -50,7 +50,7 @@
     toutes les valeurs entières qui existent entre les deux dans un
     tableau HTML
 
-5.  (Opt.) Créez un jeu de lotto en PHP. Stockez les valeurs gagnantes dans un
+5.  (Optionnel) Créez un jeu de lotto en PHP. Stockez les valeurs gagnantes dans un
     array.
 
 6.  Créez un formulaire qui permette de saisir un prix et le rajoute une
