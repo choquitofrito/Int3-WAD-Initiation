@@ -72,6 +72,8 @@ function read()
 // }
 // print ("\nVotre réponse est: " . $reponse);
 
+
+
 // Ex 2. Compter avec de boucles
 // Afficher les valeurs de 0 a 5
 $i = 0;

@@ -1,7 +1,7 @@
 <?php
 
 // une fonction sans parametres
-function bonjour(){
+function bonjour():void{
 	echo "bonjour!";
 }
 
@@ -11,9 +11,10 @@ bonjour();
 
 
 // une fonction qui reçoit un parametre
-function bonjourPerso($nom){
+function bonjourPerso(string $nom):void{
 	echo "bonjour ".$nom."!";
 }
+
 
 
 // et son appel:
@@ -22,7 +23,7 @@ bonjourPerso("Ismael");
 
 // une fonction qui reçoit deux parametres et fait une operation avec eux
 // (ex: afficher l'aire d'un rectangle). Pas de return.
-function calculeAire($largeur, $hauteur){
+function calculeAire(int $largeur, int $hauteur):float{
 	$aire= $largeur*$hauteur;
 	echo "L'aire est: ".$aire;
 }
@@ -36,7 +37,7 @@ calculeAire (20,10);
 // qu'on peut utiliser dans le code principal
 // ex: calculer l'aire d'un rectangle et le renvoyer (return)
 // au code principal
-function calculeAire($largeur, $hauteur){
+function calculeAire(int $largeur, int $hauteur){
 	$aire= $largeur*$hauteur;
 	return $aire;
 }
@@ -54,7 +55,7 @@ $aires= [$aire1, $aire2,$aire3];
 
 
 // une fonction qui crée un nouvel array et le renvoie (pas d'affichage)
-function fois2 ($arr){
+function fois2 (array $arr):array {
 	$nouvelArray = [];
 	foreach ($arr as $val){
 		$nouvelArray[] = $val * 2;
@@ -69,7 +70,7 @@ $arrayFois2 = fois2($unArray);
 
 
 // voici une fonction qui crée de sauts à la ligne
-function br($nombreBr){
+function br(int $nombreBr):void{
     for ($i=0;$i<$nombreBr;$i++){
         echo "<br />";
     }
@@ -78,7 +79,7 @@ function br($nombreBr){
 // d'une seule ligne. Le nombre 
 // de colonnes est reçu en parametre
 // et chaque cellule contient une valeur
-function monTableau1($nombreColonnes){
+function monTableau1(int $nombreColonnes):void{
 	echo "<table>";
 	echo "<tr>";
 	for ($i=1;$i<=$nombreColonnes;$i++){
@@ -92,7 +93,7 @@ function monTableau1($nombreColonnes){
 
 // afficher la table de multiplication 
 // dans un tableau HTML. Valeur en parmetre.
-function tableMult($val,$max){
+function tableMult(int $val,int $max):void{
 	echo "<table border='1'>";
 	echo "<tr>";
 	for ($i=1;$i<=$max;$i++){
@@ -110,7 +111,7 @@ function tableMult($val,$max){
 
 // fonction qui affiche le contenu d'un array 
 // reçu en parametre avec echo
-function afficheArray($tableau){
+function afficheArray(array $tableau):void{
 	foreach ($tableau as $val){
 		echo "<br>".$val;
 	}
@@ -118,7 +119,7 @@ function afficheArray($tableau){
 
 // fonction qui affiche le contenu d'un array
 // (associatif) reçu en parametre avec echo
-function afficherTableauAssociatif ($tableau){
+function afficherTableauAssociatif (array $tableau):void{
 	foreach ($tableau as $key=>$val){
 		echo "La specialité de ".$key;
 		echo " est ".$val."<br />";

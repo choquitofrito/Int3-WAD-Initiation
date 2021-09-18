@@ -6,14 +6,14 @@
 // 1. Par valeur: la variable à l'interieur de la fonction
 // est juste une copie de la variable originale
 ////////////////
-function changerValeur($val){
+function changerValeur(int $val):void {
 	$val= 0;
 }
 
 $valeur=50;
 // $valeur est la variable originale
 changerValeur($valeur);
-echo $valeur."<BR/>"; // affichera 50. 
+echo $valeur."<br/>"; // affichera 50. 
 
 // étant $val juste une copie de $valeur. Sa modification n'entraine pas 
 // la modification de $valeur à l'extérieur de la fonction
@@ -21,7 +21,7 @@ echo $valeur."<BR/>"; // affichera 50.
 
 // 2. Par référence
 ///////////////////
-function changerValeurRef(&$val){
+function changerValeurRef(int &$val):void {
 	$val= 0;
 }
 
@@ -43,7 +43,7 @@ echo $valeur."<BR/>"; // affichera 0.
 // ex: fonction qui divise un prix par deux
 $prix = 100;
 
-function reduction (&$unPrix){
+function reduction (int &$unPrix):void{
 	 $unPrix = $unPrix / 2;
 }
 
@@ -52,7 +52,7 @@ echo $prix;
 
 // autre exemple : changer le contenu d'un array (ref) 
 $noms = ["Cerise","Camille","Imen"];
-function majusculise (&$arr){
+function majusculise (array &$arr):void{
 	for ($i = 0; $i < count ($arr); $i++){
 		$arr[$i] = strtoupper($arr[$i]);
 	}
@@ -61,7 +61,7 @@ majusculise ($noms);
 var_dump ($noms);
 
 // ex: fonction qui échange le contenu de deux variables. 
-function echange (&$val1,&$val2){
+function echange (int &$val1,int &$val2):void{
 		$temp=$val1;
 		$val1=$val2;
 		$val2=$temp;
@@ -130,7 +130,7 @@ echo "<br />";
 
 // exemple de passage d'array par référence:
 $tab2= array (10,20,30);
-function mettreZero (&$unArray){
+function mettreZero (array &$unArray):void{
 	// on doit mettre aussi la référence dans le foreach! avec un for on n'aurait pas besoin.
 	foreach ($unArray as &$val){
 		$val=0;
