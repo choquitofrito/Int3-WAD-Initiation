@@ -1,4 +1,8 @@
 <?php
+declare(strict_types=1);
+
+
+// Dans ce fichier on montre plein d'exemples des fonctions et leur utilisation
 
 // une fonction sans parametres
 function bonjour():void{
@@ -23,7 +27,7 @@ bonjourPerso("Ismael");
 
 // une fonction qui reçoit deux parametres et fait une operation avec eux
 // (ex: afficher l'aire d'un rectangle). Pas de return.
-function calculeAire(int $largeur, int $hauteur):float{
+function calculeAire(int $largeur, int $hauteur){
 	$aire= $largeur*$hauteur;
 	echo "L'aire est: ".$aire;
 }
@@ -37,19 +41,19 @@ calculeAire (20,10);
 // qu'on peut utiliser dans le code principal
 // ex: calculer l'aire d'un rectangle et le renvoyer (return)
 // au code principal
-function calculeAire(int $largeur, int $hauteur){
+function calculeAire2(int $largeur, int $hauteur){
 	$aire= $largeur*$hauteur;
 	return $aire;
 }
 
 // et son appel:
 // 1. Stocker la valeur renvoyée dans une variable
-$aire1= calculeAire (5,10);
+$aire1= calculeAire2 (5,10);
 // 2. L'utiliser selon mes besoins (ex: afficher)
-$echo "L'aire est: ".$aire1;
+echo "L'aire est: ".$aire1;
 // ex: la mettre dans un array
-$aire2= calculAire (10,20);
-$aire3= calculAire (5,5);
+$aire2= calculeAire2 (10,20);
+$aire3= calculeAire2 (5,5);
 
 $aires= [$aire1, $aire2,$aire3];
 

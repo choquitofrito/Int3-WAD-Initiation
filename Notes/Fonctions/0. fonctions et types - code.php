@@ -4,6 +4,8 @@
 declare(strict_types=1);
 
 
+
+
 // Si la config de PHP n'affiche pas des erreurs on doit 
 // modifier le php.ini ou rajouter ces lignes.
 // Cette situation arrive dans la config de XAMPP par défaut de linux
@@ -28,6 +30,12 @@ error_reporting(E_ALL);
 
 
     <?php
+
+    function calculeAire(int $largeur, int $hauteur): float
+    {
+        $aire = $largeur * $hauteur;
+        echo "L'aire est: " . $aire;
+    }
 
     function afficheIMC($taille, $poids)
     {
@@ -59,49 +67,52 @@ error_reporting(E_ALL);
     {
         echo "<br>Bonjour, " . $nom;
     }
-    
+
     disBonjour("Hanna"); // Bonjour, Hanna
     // disBonjour(); // erreur, car on attends un paramètre, Too few arguments 
     disBonjour(null); // Bonjour, 
     // pas d'erreur, null est un paramètre
     // disBonjour(3.2); // erreur, 3.2 n'est pas un string 
-    
-    
+
+
     // paramètre optionnel : il sera null si on ne l'envoie pas 
-    function disBonjourOpt (string $nom = null){
-        if ($nom == null){
+    function disBonjourOpt(string $nom = null)
+    {
+        if ($nom == null) {
             $nom = "Madame/Monsieur";
         }
-        echo "<br>Bonjour, " . $nom;   
+        echo "<br>Bonjour, " . $nom;
     }
     disBonjourOpt("Clifford Brown"); // Bonjour, Clifford Brown
     disBonjourOpt(); // Bonjour Madame/Monsieur car paramètre inexistant
 
-    
+
     // UNION types
 
 
     // attention: intelephense montre une erreur qui n'existe pas, il faut attendre une mise à jour
-    function afficheSurfaceChambre (int|float $val1, int|float $val2){
+    function afficheSurfaceChambre(int|float $val1, int|float $val2)
+    {
         echo "<br>La surface est : " . ($val1 * $val2);
     }
 
-    afficheSurfaceChambre (4,5.0); // ok!
-    afficheSurfaceChambre (4.0,5.0); // ok!
+    afficheSurfaceChambre(4, 5.0); // ok!
+    afficheSurfaceChambre(4.0, 5.0); // ok!
     // afficheSurfaceChambre (4,"Tripel Karmeliet"); // bref...
 
 
 
     // Specification des types dans la valeur de retour
-    function obtenirDivision (int $val1, int $val2) : float {
+    function obtenirDivision(int $val1, int $val2): float
+    {
         $res = $val1 / $val2;
         return $res;
     }
 
-    $laDivision = obtenirDivision (5,7);
+    $laDivision = obtenirDivision(5, 7);
     echo "<br>Voici la division, obtenu grâce à la fonction : " . $laDivision;
 
-    
+
     /**
      * obtenirDivisionCheck calcule la division de deux entiers. Renvoie un float 
      * ou null si le dénominateur est 0
@@ -110,21 +121,21 @@ error_reporting(E_ALL);
      * @param  mixed $val2
      * @return float
      */
-    function obtenirDivisionCheck (int $val1, int $val2) : float | null {
+    function obtenirDivisionCheck(int $val1, int $val2): float | null
+    {
         if ($val2 == 0) {
             $res = null;
-        }
-        else {
+        } else {
             $res = $val1 / $val2;
         }
         return $res;
     }
-    
 
-    echo "<br>Voici la division, obtenu grâce à la fonction : " . obtenirDivisionCheck (4,3);
+
+    echo "<br>Voici la division, obtenu grâce à la fonction : " . obtenirDivisionCheck(4, 3);
     // echo de null n'afficher rien
-    echo "<br>Voici la division, obtenu grâce à la fonction : " . obtenirDivisionCheck (4,0);
-    
+    echo "<br>Voici la division, obtenu grâce à la fonction : " . obtenirDivisionCheck(4, 0);
+
     // echo "<br>Voici la division, obtenu grâce à la fonction : " . obtenirDivisionCheck (4.0,0); // ne marchera pas, la fonction doit recevoir deux ints
 
 

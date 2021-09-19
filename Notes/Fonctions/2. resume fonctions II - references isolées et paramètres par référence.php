@@ -1,5 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
+
+// Dans ce fichier on montre plein d'exemples des fonctions et leur utilisation
+// en plus de la différence entre les paramètres "par valeur" et "par référence"
+
 // Les paramètres des fonctions peuvent être envoyés "par valeur" ou "par référence":
 /////////////////////////////////////////////////////////////////////////////////////
 
