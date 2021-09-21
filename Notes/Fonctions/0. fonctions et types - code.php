@@ -47,7 +47,6 @@ error_reporting(E_ALL);
     // du n'importe quoi!
     // afficheIMC("Poulet","Chocolat");
 
-
     // on spécifie les types
     function afficheIMCTypes(int $taille, int $poids)
     {

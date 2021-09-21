@@ -140,6 +140,11 @@ majuscules ou minuscules selon la valeur du paramètre $case. Pour ce
 faire, regardez la documentation des fonctions **strtoupper** et
 **strtolower**
 
+36. Nous avons besoin d'un système qui puisse choisir aléatoirement le nom d'un élève.
+Les noms se trouvent dans un array, et à chaque fois qu'on recharge la page on obtient un nouveau nom.
+Tous les noms doivent être choisis avant d'en répéter un choix.
+
+
 <br>
 
 # Exercices de création de fonctions (+arrays)

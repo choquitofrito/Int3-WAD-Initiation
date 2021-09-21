@@ -5,7 +5,7 @@ declare(strict_types=1);
 // Dans ce fichier on montre plein d'exemples des fonctions et leur utilisation
 
 // une fonction sans parametres
-function bonjour():void{
+function bonjour() : void{
 	echo "bonjour!";
 }
 
@@ -20,14 +20,16 @@ function bonjourPerso(string $nom):void{
 }
 
 
-
 // et son appel:
 bonjourPerso("Ismael");
+$unNom = "Lola";
+bonjourPerso($unNom);
+
 
 
 // une fonction qui reçoit deux parametres et fait une operation avec eux
 // (ex: afficher l'aire d'un rectangle). Pas de return.
-function calculeAire(int $largeur, int $hauteur){
+function calculeAire(int $largeur, int $hauteur) : void {
 	$aire= $largeur*$hauteur;
 	echo "L'aire est: ".$aire;
 }
@@ -41,21 +43,22 @@ calculeAire (20,10);
 // qu'on peut utiliser dans le code principal
 // ex: calculer l'aire d'un rectangle et le renvoyer (return)
 // au code principal
-function calculeAire2(int $largeur, int $hauteur){
+function calculeAire2(int $largeur, int $hauteur): int {
 	$aire= $largeur*$hauteur;
 	return $aire;
 }
-
 // et son appel:
 // 1. Stocker la valeur renvoyée dans une variable
 $aire1= calculeAire2 (5,10);
 // 2. L'utiliser selon mes besoins (ex: afficher)
 echo "L'aire est: ".$aire1;
+
 // ex: la mettre dans un array
 $aire2= calculeAire2 (10,20);
 $aire3= calculeAire2 (5,5);
 
 $aires= [$aire1, $aire2,$aire3];
+$aires2 = [calculeAire2 (10,20),calculeAire2 (50,20),calculeAire2 (10,40)];
 
 
 // une fonction qui crée un nouvel array et le renvoie (pas d'affichage)
