@@ -203,7 +203,7 @@ l'âge et de son statut (étudiant ou pas étudiant). Ils offrent un site
 web qui permet aux clients potentiels de calculer le prix de ses
 entrées. Si le client a moins de 12 ans, le prix sera de 4 euros. Le
 prix normal est de 8 euros sauf pour les étudiants, qui ont une
-réduction du 20%.
+réduction du 20%. Trouvez la manière de créer une formulaire qui puisse vous convenir (regardez de sites existants).
 
 <br>
 
