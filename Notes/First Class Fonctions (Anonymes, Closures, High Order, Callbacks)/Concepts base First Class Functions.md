@@ -128,3 +128,13 @@ $multMax5 = $genTables(10); // dans cet appel, la fonction utilise la valeur de 
 $multMax5 (2); // pour le chiffre 3, 5 valeurs
 $multMax5 (4); // pour le chiffre 3, 5 valeurs
 ```
+
+<br>
+
+
+# 5. First Class Functions
+
+Ce ne sont pas de fonctions en soi, c'est juste une façon de dire que les fonctions dans un langage seront traitées tels que "citoyens de première classe". Ceci veut dire que : 
+- une fonction pourra être stockée dans une variable
+- une fonction pourra être envoyée en paramètre à une autre fonction/méthode
+- une fonction pourra être renvoyé dans un return

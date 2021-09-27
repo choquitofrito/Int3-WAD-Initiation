@@ -5,6 +5,8 @@
 		}
 	],
 	"settings": {
-		"cSpell.language": ",fr"
+		"cSpell.enableFiletypes": [
+			"!markdown"
+		]
 	}
 }
