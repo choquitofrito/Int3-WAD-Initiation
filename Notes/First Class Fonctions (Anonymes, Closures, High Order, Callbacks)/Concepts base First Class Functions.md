@@ -1,3 +1,12 @@
+# First Class Functions
+
+- [First Class Functions](#first-class-functions)
+- [1. Fonction Anonyme](#1-fonction-anonyme)
+- [2. High Order Function](#2-high-order-function)
+- [3. Callback](#3-callback)
+- [4. Closure](#4-closure)
+- [5. First Class Functions](#5-first-class-functions)
+
 # 1. Fonction Anonyme
 
 Fonction qui ne porte pas de nom. Elle peut être stockée dans une variable, envoyée en paramètre ou renvoyé dans un return
