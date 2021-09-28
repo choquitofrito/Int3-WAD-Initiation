@@ -58,6 +58,22 @@ $unArray = array_map (function ($val) {
 print_r($unArray);
 
 ``` 
+On aurait pu créer la fonction d'abord, puis la mettre dans une variable et puis faire appel à array_map:
+```php
+
+$unArray = ["nom", "prénom", "adresse"];
+$capitalize = function ($val) {
+    // met la valeur reçue en majuscules et le renvoi
+    return (ucfirst($val));
+};
+
+// lisez la doc d'array_map!
+$unArray = array_map ($capitalize, $unArray);
+
+print_r($unArray);
+``` 
+
+
 
 Ex. 3: renvoyée dans un return
 
@@ -116,6 +132,7 @@ Les fonctions d'ordre supérieur sont massivement utilisées dans la programmati
 # 3. Callback 
 
 Fonction qu'on passe à une autre fonction pour qu'elle soit executée (de façon synchrone ou asynchrone)
+On les a déjà utilisées systematiquement dans ce document.
 
 <br>
 
