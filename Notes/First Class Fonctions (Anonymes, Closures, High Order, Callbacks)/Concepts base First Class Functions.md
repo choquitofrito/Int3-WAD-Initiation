@@ -1,3 +1,11 @@
+- [First Class Functions](#first-class-functions)
+- [1. Fonction Anonyme](#1-fonction-anonyme)
+- [2. High Order Function](#2-high-order-function)
+- [3. Callback](#3-callback)
+- [4. Closure](#4-closure)
+
+<br>
+
 # First Class Functions
 
 On dit que dans un langage les fonctions sont **First Class Fonctions** si le langage les traite tels que "citoyens de première classe". Cela veut dire que les **fonctions** seront traitées de la même manière que le reste de types de variable (ex: float, string, Object).
