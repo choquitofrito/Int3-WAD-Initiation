@@ -1,11 +1,17 @@
 # First Class Functions
 
-- [First Class Functions](#first-class-functions)
-- [1. Fonction Anonyme](#1-fonction-anonyme)
-- [2. High Order Function](#2-high-order-function)
-- [3. Callback](#3-callback)
-- [4. Closure](#4-closure)
-- [5. First Class Functions](#5-first-class-functions)
+On dit que dans un langage les fonctions sont **First Class Fonctions** si le langage les traite tels que "citoyens de première classe". Cela veut dire que les **fonctions** seront traitées de la même manière que le reste de types de variable (ex: float, string, Object).
+
+La concrétisation de ce traimement implique qu'un fonction pourra être :
+- **stockée** dans une variable
+- **envoyée en paramètre** à une autre fonction/méthode
+- **renvoyée** dans un return
+
+**First Class Function** est alors juste un traitement qu'on donne aux fonctions.
+Il y a plusieurs concepts très importants liés à ce traitement, on va les étudier ici.
+
+
+<br>
 
 # 1. Fonction Anonyme
 
@@ -141,9 +147,4 @@ $multMax5 (4); // pour le chiffre 3, 5 valeurs
 <br>
 
 
-# 5. First Class Functions
 
-Ce ne sont pas de fonctions en soi, c'est juste une façon de dire que les fonctions dans un langage seront traitées tels que "citoyens de première classe". Ceci veut dire que : 
-- une fonction pourra être stockée dans une variable
-- une fonction pourra être envoyée en paramètre à une autre fonction/méthode
-- une fonction pourra être renvoyé dans un return
