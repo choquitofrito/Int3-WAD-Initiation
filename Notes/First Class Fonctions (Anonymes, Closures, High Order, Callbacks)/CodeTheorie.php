@@ -263,32 +263,64 @@
     $genHeader = function (string $texte, string $type) {
         echo "<" . $type . ">" . $texte . "</" . $type . ">";
     };
-    
+
     $genHeader("mon texte", "h1");
     $genHeader("autre texte", "h3");
     $genHeader("voici!", "h4");
     $genHeader("mon texte", "h2");
-    
-    
+
+
     // Closures
     // Créer une fonction qui renvoie une autre fonction. C'est cette dernière qui crée le header.
-    function genFonctionHeader(string $typeHeader) : callable
+    function genFonctionHeader(string $typeHeader): callable
     {
-        echo "<br>Je génére une fonction pour créer des headers: ". $typeHeader;
-        
+        echo "<br>Je génére une fonction pour créer des headers: " . $typeHeader;
+
         $fn = function ($texte) use ($typeHeader) {
-            echo "<" . $typeHeader . ">" . $texte . "</" . $typeHeader . ">";      
+            echo "<" . $typeHeader . ">" . $texte . "</" . $typeHeader . ">";
         };
         return $fn;
     };
 
     $fh1 = genFonctionHeader("h1"); // on veut une fonction qui génére des h1
-    
+
     $fh1("mon texte h1");
     $fh1("autre mon texte h1");
-    
+
     $fh1 = genFonctionHeader("h3"); // on veut une fonction qui génére des h1
     $fh1("voici un h3");
+
+    echo "<br><br><br>";
+
+    // fonction dice sans closures
+    function dice(int $max): int
+    {  // un dé qui renvoie une valeur ayant une max (les faces du dé)
+        return (mt_rand(1, $max));
+    }
+
+    $v1 = dice (6);
+    echo "<br>Mon dé a généré la valeur: ".$v1;
+    $v2 = dice (12);
+    echo "<br>Mon dé a généré la valeur: ".$v2;
+    
+    // fonction generatrices de dés. On choisi le type de dé et la fonction créera toujours une valeur qui corresponde à ce dé
+    
+    // juste pour changer, cette fonction n'est pas anonyme. Attention quand on fait la l'appel! genDice au lieu de $genDice
+    function genDice (int $maxFaces) : callable {
+        $fn = function () use ($maxFaces) : int {
+            return (mt_rand (1, $maxFaces));
+        };
+        return $fn;
+    };
+
+    $unDe = genDice(5);
+    echo "<br>Mon dé a généré la valeur:" . $unDe();
+
+    $d10 = genDice (10);
+    $arr10 = [ $d10(), $d10(), $d10()];
+    echo " <br>";
+    var_dump ($arr10);
+
 
 
     ?>

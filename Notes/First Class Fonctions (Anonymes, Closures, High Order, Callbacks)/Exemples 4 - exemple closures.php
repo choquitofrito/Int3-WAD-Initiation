@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 ?>
 <!DOCTYPE html>
@@ -13,10 +14,10 @@ declare(strict_types=1);
 </head>
 
 <body>
-<?php
+    <?php
 
     // Fonction qui génére du HTML - h1, h2, ....
-    $genHeader = function (string $texte, string $taille):void {
+    $genHeader = function (string $texte, string $taille): void {
         echo "<" . $taille . ">" . $texte . "<" . $taille . ">";
     };
 
@@ -27,15 +28,15 @@ declare(strict_types=1);
 
     // on pourrait aller plus loin et générer des fonctions spécifiques pour chaque header
     // en utilisant une closure
-    function generateurFonctionHeader($taille): callable
+    $generateurFonctionHeader = function ($taille): callable
     {
         $fn = function (string $texte) use ($taille) {
             echo "<" . $taille . ">" . $texte . "<" . $taille . ">";
         };
         return $fn;
-    }
+    };
 
-    $h1 = generateurFonctionHeader("h1");
+    $h1 = $generateurFonctionHeader("h1");
 
     $h1("du vin");
     // on ne doit plus indiquer la taille, car elle a été definie 
@@ -47,9 +48,41 @@ declare(strict_types=1);
     // plus on gagnera dans les appels sucessives comme celle-ci 
     $h1("de l'eau");
 
-    $h4 = generateurFonctionHeader("h4");
+    $h4 = $generateurFonctionHeader("h4");
     $h4("du riz");
     $h4("fromage");
+
+    // Autre exemple: un dé 
+
+    // fonction dice sans closures, traditionelle
+    function dice(int $max): int
+    {  // un dé qui renvoie une valeur ayant une max (les faces du dé)
+        return (mt_rand(1, $max));
+    }
+
+    $v1 = dice(6);
+    echo "<br>Mon dé a généré la valeur: " . $v1;
+    $v2 = dice(12);
+    echo "<br>Mon dé a généré la valeur: " . $v2;
+
+    // fonction generatrices de dés. On choisi le type de dé et la fonction créera toujours une valeur qui corresponde à ce dé
+
+    // juste pour changer, cette fonction n'est pas anonyme. Attention quand on fait la l'appel! genDice au lieu de $genDice
+    function genDice(int $maxFaces): callable
+    {
+        $fn = function () use ($maxFaces): int {
+            return (mt_rand(1, $maxFaces));
+        };
+        return $fn;
+    };
+
+    $unDe = genDice(5);
+    echo "<br>Mon dé a généré la valeur:" . $unDe();
+
+    $d10 = genDice(10);
+    $arr10 = [$d10(), $d10(), $d10()];
+    echo " <br>";
+    var_dump($arr10);
 
 
 
@@ -63,8 +96,8 @@ declare(strict_types=1);
 
 
     // générer h1, h2, ....
-    const genHeader = function ( texte,  taille) {
-        document.write ( "<" + taille + ">" + texte + "<" + taille + ">")
+    const genHeader = function(texte, taille) {
+        document.write("<" + taille + ">" + texte + "<" + taille + ">")
     };
 
     genHeader("du vin!", "h1");
@@ -74,10 +107,9 @@ declare(strict_types=1);
 
     // on pourrait aller plus loin et générer des fonctions spécifiques pour chaque header
     // en utilisant une closure
-    const generateurFonctionHeader = function (taille)
-    {
-        fn = function ( texte)  {
-            document.write ( "<" + taille + ">" + texte + "<" + taille + ">")
+    const generateurFonctionHeader = function(taille) {
+        fn = function(texte) {
+            document.write("<" + taille + ">" + texte + "<" + taille + ">")
         }
         return fn;
     }
@@ -97,10 +129,6 @@ declare(strict_types=1);
     const h4 = generateurFonctionHeader("h4");
     h4("du riz");
     h4("fromage");
-
-
-
-
 </script>
 
 
