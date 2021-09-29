@@ -114,8 +114,6 @@ declare(strict_types=1);
 
 <script>
     // on va faire l'équivalent en JS!
-
-
     // générer h1, h2, ....
     const genHeader = function(texte, taille) {
         document.write("<" + taille + ">" + texte + "<" + taille + ">")
@@ -129,7 +127,7 @@ declare(strict_types=1);
     // on pourrait aller plus loin et générer des fonctions spécifiques pour chaque header
     // en utilisant une closure
     const generateurFonctionHeader = function(taille) {
-        fn = function(texte) {
+        let fn = function(texte) {
             document.write("<" + taille + ">" + texte + "<" + taille + ">")
         }
         return fn;
