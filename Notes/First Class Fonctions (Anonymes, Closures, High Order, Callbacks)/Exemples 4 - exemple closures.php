@@ -85,7 +85,18 @@ declare(strict_types=1);
     var_dump($arr10);
 
 
+    // fonction qui crée des brs, elle reçoit le nombre de brs à générer
+    br(10);
+    br(3);
+    br(8);
+    
 
+
+    // adaptation à closures. On aura de fonctions pour générer un certain nombre de brs
+    
+    br3();
+    
+    br5(); 
 
     ?>
 </body>

@@ -182,7 +182,7 @@ $genHeader ("fromage", "h4");
 // en utilisant une closure
 function generateurFonctionHeader ($taille):callable {
     
-
+    // la closure est celle-ci, pas la fonction externe
     $fn = function (string $texte) use ($taille) {
             echo "<".$taille .">". $texte . "<". $taille .">";
         
