@@ -73,9 +73,35 @@ $unArray = array_map ($capitalize, $unArray);
 print_r($unArray);
 ``` 
 
+Ex. 3.1: renvoyée dans un return. La fonction renvoyée ne renvoie rien
+
+```php
+    function generateurAffiche (){
+        return (function ($msg):void {
+            echo "<br>Je suis la nouvelle fonction et j'affiche ". $msg;
+        });
+    }
+    echo "<br><br><br>";
+    $fn = generateurAffiche(); // me renvoie une fonction
+    $fn ("Alice");
+    $fn ("Julie");
+``` 
+Ex. 3.2: renvoyée dans un return. La fonction renvoie quelque chose
+```php
+    function generateurCalcul (){
+        return (function ($v1 , $v2): int{
+            return $v1 + $v2;
+        });
+    }
+    echo "<br><br><br>";
+    $fn = generateurCalcul();
+    $somme = $fn (100,200);
+    echo "<br>La somme est : ". $somme;
+
+```
 
 
-Ex. 3: renvoyée dans un return
+Ex. 3 bis: renvoyée dans un return 
 
 ```php
 function generateurCalculateurSurfaces(string $nomFigure): callable
@@ -85,7 +111,7 @@ function generateurCalculateurSurfaces(string $nomFigure): callable
 
 
     switch ($nomFigure) {
-        case "rectangle":
+        case "carre":
             return (function (float $cote): float {
                 return $cote * $cote;
             });
@@ -100,11 +126,11 @@ function generateurCalculateurSurfaces(string $nomFigure): callable
     }
 }
 
-$calculatriceRectangles = generateurCalculateurSurfaces("rectangle");
-echo "<br>Surface de ma chambre (rectangle): ";
-echo $calculatriceRectangles(3.5);
-echo "<br>Surface d'une autre chambre (rectangle): ";
-echo $calculatriceRectangles(12.3);
+$calculatriceCarres = generateurCalculateurSurfaces("carre");
+echo "<br>Surface de ma chambre (carre): ";
+echo $calculatriceCarres(3.5);
+echo "<br>Surface d'une autre chambre (carre): ";
+echo $calculatriceCarres(12.3);
 
 $calculatriceCercles = generateurCalculateurSurfaces("cercle");
 echo "<br>Surface d'un disque de vinyl: ";

@@ -158,6 +158,9 @@
     $maFonc("Lola");
 
     echo "<br><br>";
+
+
+    
     // Exemples: Exo. 7
 
     // fonctions de base
@@ -228,6 +231,27 @@
     $res1 = array_map($arrCalc[0], $arr1, $arr2);
     var_dump($res1);
 
+    // Exemples fonctions renvoyées dans return 
+
+    function generateurAffiche (){
+        return (function ($msg):void {
+            echo "<br>Je suis la nouvelle fonction et j'affiche ". $msg;
+        });
+    }
+    echo "<br><br><br>";
+    $fn = generateurAffiche(); // me renvoie une fonction
+    $fn ("Alice");
+    $fn ("Julie");
+
+    function generateurCalcul (){
+        return (function ($v1 , $v2): int{
+            return $v1 + $v2;
+        });
+    }
+    echo "<br><br><br>";
+    $fn = generateurCalcul();
+    $somme = $fn (100,200);
+    echo "<br>La somme est : ". $somme;
 
     ?>
 </body>
