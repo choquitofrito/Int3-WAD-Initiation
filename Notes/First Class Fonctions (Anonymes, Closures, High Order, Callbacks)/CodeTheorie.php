@@ -160,7 +160,7 @@
     echo "<br><br>";
 
 
-    
+
     // Exemples: Exo. 7
 
     // fonctions de base
@@ -233,25 +233,63 @@
 
     // Exemples fonctions renvoyées dans return 
 
-    function generateurAffiche (){
-        return (function ($msg):void {
-            echo "<br>Je suis la nouvelle fonction et j'affiche ". $msg;
+    function generateurAffiche()
+    {
+        return (function ($msg): void {
+            echo "<br>Je suis la nouvelle fonction et j'affiche " . $msg;
         });
     }
     echo "<br><br><br>";
     $fn = generateurAffiche(); // me renvoie une fonction
-    $fn ("Alice");
-    $fn ("Julie");
+    $fn("Alice");
+    $fn("Julie");
 
-    function generateurCalcul (){
-        return (function ($v1 , $v2): int{
+    function generateurCalcul()
+    {
+        return (function ($v1, $v2): int {
             return $v1 + $v2;
         });
     }
     echo "<br><br><br>";
     $fn = generateurCalcul();
-    $somme = $fn (100,200);
-    echo "<br>La somme est : ". $somme;
+    $somme = $fn(100, 200);
+    echo "<br>La somme est : " . $somme;
+
+    echo "<br><br><br>";
+
+    // Exemples CLOSURES
+
+    // fonction qui génére des headers (h1, h2, h3...)
+    $genHeader = function (string $texte, string $type) {
+        echo "<" . $type . ">" . $texte . "</" . $type . ">";
+    };
+    
+    $genHeader("mon texte", "h1");
+    $genHeader("autre texte", "h3");
+    $genHeader("voici!", "h4");
+    $genHeader("mon texte", "h2");
+    
+    
+    // Closures
+    // Créer une fonction qui renvoie une autre fonction. C'est cette dernière qui crée le header.
+    function genFonctionHeader(string $typeHeader) : callable
+    {
+        echo "<br>Je génére une fonction pour créer des headers: ". $typeHeader;
+        
+        $fn = function ($texte) use ($typeHeader) {
+            echo "<" . $typeHeader . ">" . $texte . "</" . $typeHeader . ">";      
+        };
+        return $fn;
+    };
+
+    $fh1 = genFonctionHeader("h1"); // on veut une fonction qui génére des h1
+    
+    $fh1("mon texte h1");
+    $fh1("autre mon texte h1");
+    
+    $fh1 = genFonctionHeader("h3"); // on veut une fonction qui génére des h1
+    $fh1("voici un h3");
+
 
     ?>
 </body>
