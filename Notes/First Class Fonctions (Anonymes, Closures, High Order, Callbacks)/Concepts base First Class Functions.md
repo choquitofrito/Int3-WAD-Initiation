@@ -164,7 +164,7 @@ On les a déjà utilisées systematiquement dans ce document.
 
 # 4. Closure
 
-Fonction anonyme qui utilise une variable en dehors de sa portée, elle "capture" l'état de l'environnement où elle se trouve
+Fonction anonyme qui utilise une variable qui a été créé en dehors de sa portée, elle "capture" l'état de l'environnement où elle se trouve
 
 ```php
 

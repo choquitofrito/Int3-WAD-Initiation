@@ -28,8 +28,7 @@ declare(strict_types=1);
 
     // on pourrait aller plus loin et générer des fonctions spécifiques pour chaque header
     // en utilisant une closure
-    $generateurFonctionHeader = function ($taille): callable
-    {
+    $generateurFonctionHeader = function ($taille): callable {
         $fn = function (string $texte) use ($taille) {
             echo "<" . $taille . ">" . $texte . "<" . $taille . ">";
         };
@@ -86,17 +85,28 @@ declare(strict_types=1);
 
 
     // fonction qui crée des brs, elle reçoit le nombre de brs à générer
-    br(10);
-    br(3);
-    br(8);
-    
+    function genBr(int $nbr): void
+    {
+        for ($i = 0; $i <= $nbr; $i++) {
+            echo "<br>";
+        }
+    };
 
-
-    // adaptation à closures. On aura de fonctions pour générer un certain nombre de brs
-    
-    br3();
-    
-    br5(); 
+    echo "blablabla";
+    genBr(5);
+    echo "bliblibli";
+    function generatorFncBr(int $nbr): callable
+    {
+        return function () use ($nbr): void {
+            for ($i = 0; $i <= $nbr; $i++) {
+                echo "<br>";
+            }
+        };
+    };
+    $br5 = generatorFncBr(5);
+    echo "kikoo";
+    $br5();
+    echo "bye";
 
     ?>
 </body>
