@@ -28,17 +28,26 @@ Ouvrez cette page (**localhost/info.php** dans la barre d'adresses du navigateur
 
 Le **fichier de XDebug** à télécharger sera celui dont la **version de PHP correspond à la version de PHP qui nous montre phpinfo** (en haut de la page). 
 
-On doit choisir entre (TS ou non-TS). Cherchez dans la page de phpinfo la ligne "thread safety": si la valeur est 'enabled', choisissez la version **TS** de XDebug. Si disabled, la version où on ne spécifie pas TS (non-TS).
-
 La version sera toujours **64-bits** sauf si vous avez installé XAMPP dans une cafetière italienne ou un tamagotchi.
 
+Vous pouvez profitez de l'assistant de XDebug pour accéder directement au fichier à télécharger:
 
 
+1. Ouvrez votre **info.php** dans le navigateur
+2. Copiez le contenu de la page dans sa totalité (CTRL-A + CTRL-C)
+3. Ouvrez un autre onglet : https://xdebug.org/wizard
+3. Collez le contenu de la page dans le text area
+4. Appuyez sur le bouton "Analyse..."
 
+L'assistant vous montrera directement le lien du téléchargement. Faites Save As.
 
- En Windows il s'agit d'un fichier dll. Le plus simple est de renommer le fichier à **php\_xdebug.dll**. Puis, placez-le dans **xampp/php/ext** pour qu'il soit accèssible par Apache
+En Windows il s'agit d'un fichier dll. Le plus simple est de renommer le fichier à **php\_xdebug.dll**. Puis, placez-le dans **xampp/php/ext** pour qu'il soit accèssible par Apache
 
 <br>
+
+
+
+
 
 **3.** **Editez le fichier php.ini (xampp/php)**
 
