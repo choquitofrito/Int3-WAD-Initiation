@@ -47,10 +47,6 @@ La version sera toujours **64-bits** sauf si vous avez installé XAMPP dans une 
 ```apache
 [XDebug]
 zend_extension = "C:\xampp\php\ext\php_xdebug.dll"
-xdebug.mode = debug
-xdebug.start_with_request = yes
-xdebug.client_port = 9000
-xdebug.remote_host = "127.0.0.1"
 ```
  **Note** : cette section peut exister déjà. Si c'est le cas, mettez-la à
  jour. Rajustez les chemins selon vos besoins
