@@ -209,11 +209,11 @@ Affichez son contenu sans utiliser de boucles
 
 5)  Remplacez la première ville du tableau par \'Quito\'
 
-6)  Créez un tableau qui contient les valeurs du 1 à 20. Affichez son
+6)  Créez un tableau qui contient les valeurs du 1 à 200. Affichez son
     contenu (boucles)
 
 7)  Créez une boucle qui multiplie par deux chaque valeur du tableau
-    précédant
+    précédant. Le tableau doit être modifié.
 
 8)  Créez un tableau contenant les notes de 5 élèves et une boucle qui
     affiche son contenu. Les notes inférieures à 10 seront affichées en
