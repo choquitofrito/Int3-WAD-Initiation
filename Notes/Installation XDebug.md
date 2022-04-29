@@ -13,7 +13,7 @@
 **2.** **Téléchargez XDebug** de xDebug.org (https://xdebug.org/download#releases)
    
 
-Vous devez cherchez le fichier de XDebug qui correspond à votre version de PHP. Ce n'est pas un 'logiciel', c'est juste une librairie DLL. Pour savoir quoi télécharger, vous devez connaitre votre version de PHP ainsi que d'autres infos importantes.
+Vous devez cherchez le fichier de XDebug qui correspond à votre version de PHP. Ce n'est pas un 'logiciel', c'est juste une librairie DLL. Pour savoir quoi télécharger, vous devez connaitre votre version de PHP ainsi que d'autres infos importantes concernant votre installation de PHP.
 
 Créez un fichier **info.php** dans c:/xampp/htdocs contenant ce code:
  
@@ -26,27 +26,14 @@ Créez un fichier **info.php** dans c:/xampp/htdocs contenant ce code:
  
 Ouvrez cette page (**localhost/info.php** dans la barre d'adresses du navigateur) et vous verrez plein d'info sur votre installation de PHP.
 
-Le **fichier de XDebug** à télécharger sera celui dont la **version de PHP correspond à la version de PHP qui nous montre phpinfo** (en haut de la page). 
+Copiez la totalité du contenu affiché (CTRL-A puis CTRL-C).
 
-La version sera toujours **64-bits** sauf si vous avez installé XAMPP dans une cafetière italienne ou un tamagotchi.
-
-Vous pouvez profitez de l'assistant de XDebug pour accéder directement au fichier à télécharger:
-
-
-1. Ouvrez votre **info.php** dans le navigateur
-2. Copiez le contenu de la page dans sa totalité (CTRL-A + CTRL-C)
-3. Ouvrez un autre onglet : https://xdebug.org/wizard
-3. Collez le contenu de la page dans le text area
-4. Appuyez sur le bouton "Analyse..."
-
+Allez sur  https://xdebug.org/wizard et collez le contenu dans la fenetre. Ce wizard analysera votre configuration et vous proposera la version correcte de XDebug à telécharger.
 L'assistant vous montrera directement le lien du téléchargement. Faites Save As.
 
 En Windows il s'agit d'un fichier dll. Le plus simple est de renommer le fichier à **php\_xdebug.dll**. Puis, placez-le dans **xampp/php/ext** pour qu'il soit accèssible par Apache
 
 <br>
-
-
-
 
 
 **3.** **Editez le fichier php.ini (xampp/php)**
