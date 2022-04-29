@@ -266,8 +266,8 @@ Tableau résultat :
 
 <br>
 
-11) Ecrivez un algorithme qui permette la saisie d'un nombre quelconque
-    de valeurs et les stocke dans un tableau. Toutes les valeurs doivent
+11) Ecrivez un algorithme qui permette la saisie d'un nombre
+    de valeurs choisit par l'utilisateur et les stocke dans un tableau. Toutes les valeurs doivent
     être ensuite augmentées de 1, et le nouveau tableau sera affiché à
     l'écran.
 
