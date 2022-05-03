@@ -127,6 +127,7 @@ error_reporting(E_ALL);
     }
 
 
+
     echo "<br>Voici la division, obtenu grâce à la fonction : " . obtenirDivisionCheck(4, 3);
     // echo de null n'afficher rien
     echo "<br>Voici la division, obtenu grâce à la fonction : " . obtenirDivisionCheck(4, 0);
