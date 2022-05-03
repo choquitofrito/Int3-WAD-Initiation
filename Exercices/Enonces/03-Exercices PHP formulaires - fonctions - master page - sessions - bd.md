@@ -362,7 +362,7 @@ Calculer le total du panier avec une fonction.
 
 17. Créez une fonction qui reçoit un array de noms et renvoie un nouvel
     array contenant tous les noms en majuscule (paramètre par
-    référence). Affichez ce nouvel array dans le script principal
+    valeur). Affichez ce nouvel array dans le script principal
 
 18. Créez une fonction qui reçoit un array de noms et modifie son
     contenu en mettant tous les noms en majuscule (paramètre par
