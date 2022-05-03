@@ -3,13 +3,9 @@
 // decommenter pour forcer la vérification des types
 declare(strict_types=1);
 
-
-
-
 // Si la config de PHP n'affiche pas des erreurs on doit 
 // modifier le php.ini ou rajouter ces lignes.
 // Cette situation arrive dans la config de XAMPP par défaut de linux
-
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
@@ -46,7 +42,7 @@ error_reporting(E_ALL);
 
     afficheIMC(174, 70);
 
-    // du n'importe quoi!
+    // du n'importe quoi! et on n'obtient pas d'erreur
     // afficheIMC("Poulet","Chocolat");
 
     // on spécifie les types
@@ -90,8 +86,8 @@ error_reporting(E_ALL);
 
     // UNION types
 
-
-    // attention: intelephense montre une erreur qui n'existe pas, il faut attendre une mise à jour
+    // on ne fixe pas le paramètre à un seul type, mais à plusieurs (c'est un OR)
+    // ex: Les paramètres de cette fonction peuvent être int ou float
     function afficheSurfaceChambre(int|float $val1, int|float $val2)
     {
         echo "<br>La surface est : " . ($val1 * $val2);
@@ -100,8 +96,6 @@ error_reporting(E_ALL);
     afficheSurfaceChambre(4, 5.0); // ok!
     afficheSurfaceChambre(4.0, 5.0); // ok!
     // afficheSurfaceChambre (4,"Tripel Karmeliet"); // bref...
-
-
 
     // Specification des types dans la valeur de retour
     function obtenirDivision(int $val1, int $val2): float
