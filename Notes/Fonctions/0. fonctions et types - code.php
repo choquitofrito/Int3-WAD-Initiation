@@ -31,6 +31,8 @@ error_reporting(E_ALL);
 
     <?php
 
+    
+
     function calculeAire(int $largeur, int $hauteur): void
     {
         $aire = $largeur * $hauteur;
