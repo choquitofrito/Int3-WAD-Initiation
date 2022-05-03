@@ -388,7 +388,7 @@ array
     les noms des cartes dans un array. Trouvez la manière la plus
     efficace de le faire.
 
-23. Utilisez la fonction array_shift pour prendre une carte au hasard
+23. Utilisez la fonction array_rand pour vous aider à prendre une carte au hasard
 
 24. Créez une fonction qui reçoit un array associatif et renvoie un
     nouvel array contenant uniquement ses valeurs
