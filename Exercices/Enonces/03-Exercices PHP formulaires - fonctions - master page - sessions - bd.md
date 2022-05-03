@@ -322,8 +322,6 @@ qui pourra lui plaire (utilisez "header")
 
 6.  Créez une fonction qui reçoit un array et affiche ses éléments
 
-(extra : affichez les éléments dans un tableau HTML)
-
 7.  Créez une fonction qui reçoit un prix en paramètre et affiche le
     prix TVAc
 
