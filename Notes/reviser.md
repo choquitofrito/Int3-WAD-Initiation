@@ -17,3 +17,6 @@ https://github.com/choquitofrito/Int3-WAD-Initiation/tree/main/Notes/Formulaires
 
 - Fonctions
 
+https://github.com/choquitofrito/Int3-WAD-Initiation/blob/main/Notes/Fonctions/Fonctions%20-%20passage%20de%20valeurs%20par%20r%C3%A9f%C3%A9rence.docx
+
+Regardez aussi les fichiers dont le nom commence par 0,1,2,3
