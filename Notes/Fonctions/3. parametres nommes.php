@@ -1,9 +1,12 @@
 <?php
 
+
+declare(strict_types = 1);
+
 // À partir de PHP8 on peut faire appel aux fonctions en utilisant des paramètres nommés,
 // ce qui nous permet de choisir un ordre ou de ne pas envoyer certains
 // voyons quelques exemples
-function calculerPrix ($prixBase, $tva = 0, $reductionFidelite = 0, $reductionFetes = 0){
+function calculerPrix (int $prixBase, int $tva = 0, int $reductionFidelite = 0, int $reductionFetes = 0){
     $prixFinal = $prixBase * (1 + $tva / 100);
     $prixFinal = $prixFinal * (1 - $reductionFidelite / 100) ;    
     $prixFinal = $prixFinal * (1 - $reductionFetes / 100) ;    

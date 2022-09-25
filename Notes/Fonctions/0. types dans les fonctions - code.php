@@ -4,7 +4,7 @@
 declare(strict_types=1);
 
 // Si la config de PHP n'affiche pas des erreurs on doit 
-// modifier le php.ini ou rajouter ces lignes.
+// modifier le php.ini ou rajouter ces trois lignes.
 // Cette situation arrive dans la config de XAMPP par défaut de linux
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
@@ -27,7 +27,7 @@ error_reporting(E_ALL);
 
     <?php
 
-    
+
 
     function calculeAire(int $largeur, int $hauteur): void
     {
