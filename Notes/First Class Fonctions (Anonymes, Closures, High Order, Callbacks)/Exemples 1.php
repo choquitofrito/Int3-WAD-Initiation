@@ -41,7 +41,7 @@ $tableMult(5);
 
 // L'évolution normale de ce genre de fonctions est de se retrouver
 // dans une autre fonction:
-// fonction qui génére de fonctions qui affichent de tableau
+// fonction qui génére de fonctions qui affichent des tableaux
 // de multiplication. Voir l'utilisation pour mieux comprendre
 $genTables = function ($maxVals): callable{ 
     return (function ($chiffre) use ($maxVals): void {
