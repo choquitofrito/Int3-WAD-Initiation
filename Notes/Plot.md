@@ -54,10 +54,15 @@ En plus de la nav, le site doit contenir un header et un footer qui se trouvera 
 
 ## 3. Session (base)
 <br>
+Session dans la masterpage
 
-
-## 4. Connexion à une BD
+## 4. Connexion à une BD (sans modèle)
 <br>
+Création d'une BD simple (un seul tableau Utilisateur : id, nom, adresse, password, image).
+Accès au tableau avec CRUD.
+
+Formulaire d'inscription : hashing
+Accès à la BD depuis la page de login
 
 ## 5. Authentication
 <br>
