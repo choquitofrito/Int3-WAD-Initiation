@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="./main.js"></script>
+    </head>
+    <body>
+    
+        <input type="text" id="texteMaster" />
+        
+        <div id="copyMaster">
+            
+        </div>
+        
+        <script>
+            
+            $(document).ready (function (){
+               $("#texteMaster").keyup(function (evenement){
+                   //$("#copyMaster").text($("#texteMaster").val());
+                   $("#copyMaster").text(String.fromCharCode(evenement.which));
+               });
+            });
+            
+            
+            
+        </script>
+    </body>
+</html>

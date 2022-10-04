@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        
+    </head>
+    <body>
+    
+        
+        <select id="mySelect">
+            
+        </select>
+        <script>
+            var objetPersonne={
+                    nom: "Jane",
+                    prenom: "Patrick",
+                    age: 45,
+                    affiche:function (nombreFois){
+                        for (i=0;i<nombreFois;i++){
+                            console.log (this.nom+i);
+                        }
+                    }                        
+                    
+            };
+            console.log (objetPersonne['nom']);
+            objetPersonne.affiche(10);
+            
+            
+            $(document).ready (function (){
+               var arrayOptions= [{ text: 'oranges',value: 5},{text: 'citrons', value: 10},{text: 'poires',value: 6}];
+               
+                $.each (arrayOptions, function (index,elem)
+                {
+                    $('#mySelect').append (new Option(elem.text, elem.value));
+                });
+               
+               
+            });
+            
+            
+            
+        </script>
+    </body>
+</html>
+
