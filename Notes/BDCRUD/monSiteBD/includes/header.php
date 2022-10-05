@@ -5,8 +5,7 @@ session_start();
     <nav>
         <a href="./index.php?p=accueil">Accueil</a>
         <a href="./index.php?p=listeFilms">Liste de films</a>
-        <a href="./index.php?p=page2">Page2</a>
-        <a href="./index.php?p=page3">Page3 (formulaire)</a>
+        <a href="./index.php?p=insertFormulaire">Insérer un film</a>
         <h5>
             <?php
                 if (isset($_SESSION['loginConnecte'])){

@@ -9,6 +9,8 @@ try {
         // jamais en production car ça montre des infos
         // sensibles
         echo $e->getMessage();
+        
+        die();
 }
 // 2. Créer une requête SQL
 $sql = "SELECT * FROM film";
@@ -17,10 +19,11 @@ $sql = "SELECT * FROM film";
 $stmt = $cnx->prepare($sql);
 $stmt->execute();
 
+
 // 4. Obtenir les données dans un array 
 $arrayRes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-var_dump ($arrayRes);
+//var_dump ($arrayRes);
 
 // 5. Afficher los données selon nos besoins
 foreach ($arrayRes as $film) {
