@@ -28,5 +28,7 @@ $stmt->bindValue (":dateSortie", $_POST['dateSortie']);
 $stmt->bindValue (":image", "");
 
 $stmt->execute();
-var_dump ($stmt->errorInfo());
+// var_dump ($stmt->errorInfo());
+
+header ("location: ./index.php?p=listeFilms");
 

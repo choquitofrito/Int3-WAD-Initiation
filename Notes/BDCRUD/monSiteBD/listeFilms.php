@@ -31,4 +31,11 @@ foreach ($arrayRes as $film) {
         foreach ($film as $cle => $val) {
                 echo $cle . " : " . $val . "<br>";
         }
+        echo "<a href ='./effacerFilm.php?id=" . $film['id']. "'>Effacer</a>";
+
 }
+
+
+
+
+
