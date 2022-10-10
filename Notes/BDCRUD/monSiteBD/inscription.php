@@ -8,11 +8,11 @@
 </head>
 <body>
     <form action="./inscriptionTraitement.php" method="POST">
-        Nom:<input type="text" name="nom">
-        Login:<input type="email" name="login">
-        Password:<input type="password" name="password">
-        Re-tapez le password:<input type="password" name="repassword">
-        <input type="submit">
+        Nom:<input class="form-control" type="text" name="nom">
+        Login:<input class="form-control" type="email" name="login">
+        Password:<input class="form-control" type="password" name="password">
+        Re-tapez le password:<input class="form-control" type="password" name="repassword">
+        <input type="submit" value="Envoyer">
     </form>
- /body>
+</body>
 </html>
