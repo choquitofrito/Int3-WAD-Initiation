@@ -29,7 +29,12 @@ $sql = "INSERT INTO utilisateur (id, nom, login, password) VALUES " .
 $stmt = $cnx->prepare ($sql);
 $stmt->bindValue (":nom", $nom);
 $stmt->bindValue (":login", $login);
+
+
+$password = password_hash($password, PASSWORD_DEFAULT, ['cost' => 12]);
+
 $stmt->bindValue (":password", $password);
+
 $stmt->execute ();
 
 // Si tout ok , on va vers l'accueil après 
