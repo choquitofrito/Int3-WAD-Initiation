@@ -31,8 +31,8 @@ foreach ($arrayRes as $film) {
         foreach ($film as $cle => $val) {
                 echo $cle . " : " . $val . "<br>";
         }
-        echo "<a href ='./effacerFilm.php?id=" . $film['id']. "'>Effacer</a>";
-
+        echo "<a href ='./effacerFilm.php?id=" . $film['id']. "'>Effacer</a>&nbsp";
+        echo "<a href ='./index.php?p=updateFilm&id=" . $film['id']. "'>Modifier</a>";
 }
 
 
