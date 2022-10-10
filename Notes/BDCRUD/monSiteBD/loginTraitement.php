@@ -32,8 +32,6 @@ $res = $stmt->fetch(PDO::FETCH_ASSOC);
 $loginBD = $res['login'];
 $passwordBD = $res['password'];
 
-
-
 // 3. Comparer le password reçu du formulaire avec le password de l'user obtenu de la BD
 if (password_verify ($password,$passwordBD) === true) {
     // 4. Si ok, aller vers l'accueil

@@ -5,7 +5,16 @@ include "./connexion/db.php";
 
 // Obtenir les données du formulaire
 $nom = $_POST['nom'];
-$login = $_POST['login'];
+
+$login = filter_input (INPUT_POST, $_POST['login'], FILTER_VALIDATE_EMAIL);
+
+if (!$login){
+    // header()....
+    // die();
+}
+
+
+
 $password = $_POST['password'];
 $repassword = $_POST['repassword'];
 
@@ -22,6 +31,10 @@ try {
     echo $e->getMessage();
     die();
 }
+
+// il faut chercher le login dans la BD, on ne veut pas de doublons!
+
+
 
 // Lancer l'insertion de l'utilisateur dans le tableau "user"
 $sql = "INSERT INTO utilisateur (id, nom, login, password) VALUES " .
