@@ -1,6 +1,7 @@
 <?php
 
 // var_dump ($_POST);
+// die();
 
 
 include "./connexion/db.php";
@@ -26,4 +27,5 @@ $stmt->bindValue(":id", $_POST['id']);
 
 $stmt->execute();
 
-// header ("location: ./index.php?p=listeFilms");
+// var_dump ($stmt->errorInfo());
+header ("location: ./index.php?p=listeFilms");
