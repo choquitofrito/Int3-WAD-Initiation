@@ -8,10 +8,12 @@
 </head>
 <body>
     <h5>Recherche d'un film</h5>
-    <form id="formulaireHTML" action="" method="POST">
+    <form id="formulaireHTML" action="./traitementRechercheEtendu.php" method="POST"> 
         <input id="txtTitre" type="text" name="titre">
         <input type="submit" value="Chercher">
     </form>
+    <div id="resultat"></div>
+
     <script src="./main.js"></script>
 </body>
 </html>

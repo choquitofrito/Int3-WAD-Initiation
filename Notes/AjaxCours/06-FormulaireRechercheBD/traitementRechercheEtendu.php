@@ -1,3 +1,14 @@
+<!-- Si on veut utiliser la master page il faudra enlever tout ce qui n'est pas necessaire (entetes HTML)  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
 <?php
 
 
@@ -32,3 +43,9 @@ if (count($res) > 0) {
 } else {
     echo "<h5>On n'a pas trouve de films</h5>";
 }
+
+?>
+
+
+</body>
+</html>

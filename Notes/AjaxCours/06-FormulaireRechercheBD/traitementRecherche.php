@@ -1,5 +1,13 @@
 <?php
 
+$titre = $_POST['titre'];
+
+// créer un array pour renvoye au client
+// cet array contient le résultat et les possibles erreurs
+// Tous les deux sous la forme d'array
+// $arr est la reponse
+$arr = ['donnees' => [],
+        'erreurs' => [] ]; // erreurs va être (notre choix) une liste de string
 
 include "./connexion/db.php";
 
@@ -8,10 +16,11 @@ try {
 } catch (Exception $e) {
     // jamais en production car ça montre des infos
     // sensibles
-
-    // echo $e->getMessage();
+    $arr['erreurs'][] = "Érreur de connexion"; // il y a mieux (HTTP headers)
     die();
 }
+
+
 
 $titre = "%" . $_POST['titre'] . "%";
 $sql = "SELECT * FROM film WHERE titre LIKE :titre ";
@@ -21,14 +30,6 @@ $stmt->bindValue(":titre", $titre);
 $stmt->execute();
 
 $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$arr['donnees'] = $res; 
 
-if (count($res) > 0) {
-    foreach ($res as $film) {
-        echo "<br>";
-        foreach ($film as $cle => $val) {
-            echo $cle . " : " . $val . "<br>";
-        }
-    }
-} else {
-    echo "<h5>On n'a pas trouve de films</h5>";
-}
+echo json_encode ($arr);
