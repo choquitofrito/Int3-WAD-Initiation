@@ -58,8 +58,22 @@ const afficheResultat = function (arrayFilms) {
     let ul = document.createElement("ul");
     arrayFilms.forEach((elem) => {
         let li = document.createElement("li");
+        
+        // contenu du li
         li.innerText = elem.titre + ", " + elem.dateSortie;
+        // id du li (vient de la BD). Ici on n'a pas vraiment besoin mais c'est important de connaitre l'existence des "data"
+        li.dataset.id = elem.id;
+        
+
+
+        // clickable!
+        li.addEventListener ("click", (e) => {
+            window.location.href = "./afficherFilmComplet.php?id=" + li.dataset.id; 
+        });
+
         ul.appendChild(li);
     });
     document.getElementById("resultat").appendChild(ul);
 }
+
+
