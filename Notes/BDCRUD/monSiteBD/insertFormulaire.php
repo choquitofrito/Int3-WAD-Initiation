@@ -1,4 +1,4 @@
-<form class="row-2" method="POST" enctype="multipart/form-data" action="./index.php?p=insertTraitement">
+<form  method="POST" enctype="multipart/form-data" action="./index.php?p=insertTraitement">
     Titre<input type="text" maxlength="100" name="titre">
     Duree<input type="number" name="duree">
     Description<textarea name="description"></textarea>
