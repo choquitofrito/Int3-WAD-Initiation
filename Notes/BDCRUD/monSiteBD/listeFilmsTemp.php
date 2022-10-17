@@ -33,7 +33,7 @@ foreach ($arrayRes as $film) {
         }
         echo "<a href ='./effacerFilm.php?id=" . $film['id'] . "'>Effacer</a>&nbsp";
         echo "<a href ='./index.php?p=updateFilm&id=" . $film['id'] . "'>Modifier</a>";
-        echo '<jsuites-rating value="4" tooltip="Ugly, Bad, Average, Good, Outstanding"></jsuites-rating>';
+        echo '<jsuites-rating data-id=' . $film['id'] . ' value="4" tooltip="Ugly, Bad, Average, Good, Outstanding"></jsuites-rating>';
 }
 
 ?>
@@ -47,6 +47,7 @@ foreach ($arrayRes as $film) {
         filmsRatingsValues.forEach((elem) => {
                 elem.addEventListener("onchange", (event) => {
                         console.log(event.target.value);
+                        console.log (event.target.dataset.id);
                 });
 
         });
