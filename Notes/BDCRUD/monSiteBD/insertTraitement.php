@@ -1,6 +1,5 @@
 <?php
 
-
 // debug!
 var_dump ($_POST);
 var_dump ($_FILES);
@@ -16,6 +15,7 @@ if (!move_uploaded_file($_FILES['image']['tmp_name'], $uploadDossier."/".$nomFic
     throw new Exception ("Problème d'upload");
 }
 
+die();
 
 // 1. Créer une connexion à la BD
 include "./connexion/db.php";
