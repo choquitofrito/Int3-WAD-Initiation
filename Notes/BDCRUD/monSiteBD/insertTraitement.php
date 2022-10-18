@@ -5,17 +5,18 @@ var_dump ($_POST);
 var_dump ($_FILES);
 
 // Choisir un dossier pour le fichier
-$uploadDossier = "./img/";
+$uploadDossier = "./img";
 // On essaie de générer un nom de fichier unique
 $idUnique = uniqid().date ("Y-m-d-H-i-s");
 // Créer le nom du fichier
 $nomFichier= $idUnique.basename ($_FILES['image']['name']);
+
 // Déplacer le fichier du dossier tmp du serveur vers un dossier réel
-if (!move_uploaded_file($_FILES['image']['tmp_name'], $uploadDossier."/".$nomFichier)){
+if (! move_uploaded_file($_FILES['image']['tmp_name'], $uploadDossier."/".$nomFichier)){
     throw new Exception ("Problème d'upload");
 }
 
-die();
+
 
 // 1. Créer une connexion à la BD
 include "./connexion/db.php";
@@ -30,7 +31,6 @@ try {
     die();
 }
 
-var_dump($_POST);
 $sql = "INSERT INTO film (id, titre, duree, description, dateSortie, image) ";
 $sql .= " VALUES (NULL , :titre, :duree, :description, :dateSortie, :image)";
 
