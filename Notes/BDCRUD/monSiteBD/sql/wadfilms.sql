@@ -30,9 +30,10 @@ USE `wadfilms`;
 --
 
 CREATE TABLE `favori` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `idFilm` int(11) NOT NULL,
-  `idUtilisateur` int(11) NOT NULL
+  `idUtilisateur` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -40,8 +41,8 @@ CREATE TABLE `favori` (
 --
 
 INSERT INTO `favori` (`id`, `idFilm`, `idUtilisateur`) VALUES
-(2, 8, 3),
-(3, 9, 3);
+(NULL, 8, 3),
+(NULL, 9, 3);
 
 -- --------------------------------------------------------
 
@@ -94,7 +95,6 @@ INSERT INTO `utilisateur` (`id`, `nom`, `login`, `password`) VALUES
 -- Indexes for table `favori`
 --
 ALTER TABLE `favori`
-  ADD PRIMARY KEY (`id`),
   ADD KEY `idFilm` (`idFilm`),
   ADD KEY `idUtilisateur` (`idUtilisateur`);
 
