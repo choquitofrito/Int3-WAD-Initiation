@@ -3,9 +3,6 @@ session_start();
 $loginUtilisateur = $_SESSION['loginConnecte'];
 $idFilm = $_GET['id'];
 
-// var_dump($idFilm);
-
-
 $arr = ['donnees' => [],
         'erreurs' => [] ]; // erreurs va être (notre choix) une liste de string
 
@@ -20,9 +17,6 @@ try {
     die();
 }
 
-
-
-// $titre = "%" . $_POST['titre'] . "%";
 $sql = "SELECT * FROM favori" .
         " INNER JOIN utilisateur ON utilisateur.id = favori.idUtilisateur" .      
         " WHERE favori.idFilm=:idFilm AND utilisateur.login=:login";
@@ -32,9 +26,8 @@ $stmt->bindValue(":login", $loginUtilisateur);
 $stmt->bindValue(":idFilm", $idFilm);
 $stmt->execute();
 
-// var_dump($stmt->errorInfo());
 $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
-// var_dump($res);
+
 $arr['donnees'] = $res; 
 
 echo json_encode ($arr);

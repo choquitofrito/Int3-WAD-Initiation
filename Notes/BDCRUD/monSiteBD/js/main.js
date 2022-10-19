@@ -18,13 +18,11 @@ document.addEventListener(
             if (xhr[i].readyState === XMLHttpRequest.DONE) {
               const status = xhr[i].status;
               if (status === 0 || (status >= 200 && status < 400)) {
-                console.log(xhr[i].responseText);
                 let reponse = JSON.parse(xhr[i].responseText);
                 if (reponse.erreurs.length > 0) {
                   return;
                 } else {
                   let arrayLikes = reponse.donnees;
-                  console.log("arrayLikes", arrayLikes);
                   if (arrayLikes.length > 0) {
                     likeButtons[i].classList.add("rempli");
                   }
@@ -64,17 +62,12 @@ document.addEventListener(
         xhr.onreadystatechange = () => {
           if (xhr.readyState === XMLHttpRequest.DONE) {
             const status = xhr.status;
-            console.log('xhr.status', xhr.status);
             if (status === 0 || (status >= 200 && status < 400)) {
-              console.log('xhr.responseText', xhr.responseText);
               let reponse = JSON.parse(xhr.responseText);
-              console.log(reponse);
               if (reponse.erreurs.length > 0) {
-                console.log('console.log', reponse.erreurs);
                 return;
               } else {
                 let arrayLikes = reponse.donnees;
-                console.log('console.log(arrayLikes.length);', arrayLikes.length);
                 if (arrayLikes.length == 0) {
                    //  ajouter le like
                    deleteLike = false;
