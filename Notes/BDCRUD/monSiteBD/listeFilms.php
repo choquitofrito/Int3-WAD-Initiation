@@ -9,11 +9,24 @@ try {
         // jamais en production car ça montre des infos
         // sensibles
         echo $e->getMessage();
-        
+
         die();
 }
 // 2. Créer une requête SQL
-$sql = "SELECT * FROM film";
+// $sql = "SELECT * FROM film";
+
+
+// Pas optimale, elle obtient trop de colonnes. Mais possible
+// SELECT *, favori.idFilm as idFilmFavori FROM film LEFT JOIN favori ON film.id = favori.idFilm
+
+// Pas optimale, jointures innécessaires
+// $sql = "SELECT  film.id, titre, description, duree, dateSortie, image, favori.idFilm as idFilmFavori " .
+// "FROM film LEFT JOIN favori ON film.id = favori.idFilm INNER JOIN utilisateur ON utilisateur.id = favori.idUtilisateur 
+// WHERE utilisateur.login = :login"; // prendre le login de la session
+
+$sql = "SELECT DISTINCT film.id, titre, description, duree, dateSortie, image, favori.idFilm as idFilmFavori " .
+        "FROM film LEFT JOIN favori ON film.id = favori.idFilm";
+
 
 // 3. Lancer la requête (préparation et lancement)
 $stmt = $cnx->prepare($sql);
@@ -21,7 +34,8 @@ $stmt->execute();
 // 4. Obtenir les données dans un array 
 $arrayRes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-//var_dump ($arrayRes);
+// var_dump($arrayRes);
+// die();
 
 // 5. Afficher los données selon nos besoins
 
@@ -29,21 +43,19 @@ $arrayRes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 foreach ($arrayRes as $film) {
 
         echo '<div class="card" style="width: 10rem;">';
-        echo '<a href="./detailFilm.php?id='. $film['id']  .'"><img class="card-img-top" src="./img/'  . $film['image'] .   '" alt="'. $film['titre'] . '"></a>';
+        echo '<a href="./detailFilm.php?id=' . $film['id']  . '"><img class="card-img-top" src="./img/'  . $film['image'] .   '" alt="' . $film['titre'] . '"></a>';
         echo '<div class="card-body">';
-        echo '<h5 class="card-title">'. $film['titre'] . '</h5>';
+        echo '<h5 class="card-title">' . $film['titre'] . '</h5>';
         echo '</div>';
         echo '</div>';
-        echo "<p class='coeur' data-id ='" .$film['id']. "'>&#10084;</p>";
-        echo "<a href ='./effacerFilm.php?id=" . $film['id']. "'>Effacer</a>&nbsp";
-        echo "<a href ='./index.php?p=updateFilm&id=" . $film['id']. "'>Modifier</a>";
-
+        if (!is_null($film['idFilmFavori'])) {
+                echo "<p class='coeur' data-id ='" . $film['id'] . "'>&#10084;</p>";
+        }
+        else {
+                echo "<p class='coeur' data-id ='" . $film['id'] . "'>&#10085;</p>";
+        }
+        echo "<a href ='./effacerFilm.php?id=" . $film['id'] . "'>Effacer</a>&nbsp";
+        echo "<a href ='./index.php?p=updateFilm&id=" . $film['id'] . "'>Modifier</a>";
 }
 
 echo '<script src="./js/main.js"></script>';
-
-
-
-
-
-
