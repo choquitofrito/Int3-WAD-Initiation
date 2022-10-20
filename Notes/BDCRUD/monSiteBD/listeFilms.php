@@ -1,4 +1,12 @@
 <?php
+echo "<div id='divPanier'>";
+if (isset ($_SESSION['panier'])){
+        var_dump ($_SESSION['panier']);
+}
+echo "</div>";
+
+echo "<button id='vider'>Vider Panier</button>";
+
 
 // 1. Créer une connexion à la BD
 include "./connexion/db.php";
@@ -59,6 +67,9 @@ foreach ($arrayRes as $film) {
         } else {
                 echo "<p class='coeur' data-id ='" . $film['id'] . "'>&#10085;</p>";
         }
+        echo '<p>Quantité<input data-id="'. $film['id'] . '" type="number"><button class="ajouter" data-id="'. $film['id']  .'">Rajouter</button></p>';
+        // echo '<p>Effacer<input data-id="'. $film['id'] . '" type="number"><button class="ajouter" data-id="'. $film['id']  .'">Rajouter</button></p>';
+        
         // accés reservé au ADMIN
         if ($_SESSION['role'] == "ADMIN") {
                 echo "<a href ='./effacerFilm.php?id=" . $film['id'] . "'>Effacer</a>&nbsp";
@@ -66,4 +77,7 @@ foreach ($arrayRes as $film) {
         }
 }
 
+
+
 echo '<script src="./js/main.js"></script>';
+echo '<script src="./js/panier.js"></script>';
