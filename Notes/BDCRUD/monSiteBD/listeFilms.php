@@ -19,20 +19,30 @@ try {
 // Pas optimale, elle obtient trop de colonnes. Mais possible
 // SELECT *, favori.idFilm as idFilmFavori FROM film LEFT JOIN favori ON film.id = favori.idFilm
 
-// Pas optimale, jointures innécessaires
-// $sql = "SELECT  film.id, titre, description, duree, dateSortie, image, favori.idFilm as idFilmFavori " .
-// "FROM film LEFT JOIN favori ON film.id = favori.idFilm INNER JOIN utilisateur ON utilisateur.id = favori.idUtilisateur 
+
+// $sql = "SELECT film.id, titre, description, duree, dateSortie, image, favori.idFilm as idFilmFavori, login FROM film  " . 
+// "LEFT JOIN favori ON film.id = favori.idFilm LEFT JOIN utilisateur ON utilisateur.id=favori.idUtilisateur ";
+
+
+// LEFT JOIN utilisateur ON utilisateur.id = favori.idUtilisateur 
 // WHERE utilisateur.login = :login"; // prendre le login de la session
 
-$sql = "SELECT DISTINCT film.id, titre, description, duree, dateSortie, image, favori.idFilm as idFilmFavori " .
-        "FROM film LEFT JOIN favori ON film.id = favori.idFilm";
+// Fonctionne si on veut afficher les films qui ont été liké par n'importe qui
+// $sql = "SELECT DISTINCT film.id, titre, description, duree, dateSortie, image, favori.idFilm as idFilmFavori " .
+// "FROM film LEFT JOIN favori ON film.id = favori.idFilm";
 
+$sql = "SELECT film.id as id, film.titre,film.image, favori.idFilm AS idFilmFavori FROM film 
+        LEFT JOIN favori ON film.id = favori.idFilm AND favori.idUtilisateur = 
+        (SELECT utilisateur.id FROM utilisateur WHERE login = :login)";
 
 // 3. Lancer la requête (préparation et lancement)
 $stmt = $cnx->prepare($sql);
+$stmt->bindValue(":login", $_SESSION['loginConnecte']);
 $stmt->execute();
 // 4. Obtenir les données dans un array 
 $arrayRes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+var_dump($arrayRes);
+var_dump($_SESSION['loginConnecte']);
 
 // var_dump($arrayRes);
 // die();
@@ -50,8 +60,7 @@ foreach ($arrayRes as $film) {
         echo '</div>';
         if (!is_null($film['idFilmFavori'])) {
                 echo "<p class='coeur' data-id ='" . $film['id'] . "'>&#10084;</p>";
-        }
-        else {
+        } else {
                 echo "<p class='coeur' data-id ='" . $film['id'] . "'>&#10085;</p>";
         }
         echo "<a href ='./effacerFilm.php?id=" . $film['id'] . "'>Effacer</a>&nbsp";
