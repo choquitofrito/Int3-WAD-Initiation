@@ -12,6 +12,7 @@
     <title>Films Site</title>
 </head>
 
+
 <body>
 <?php
     include "./includes/header.php";
