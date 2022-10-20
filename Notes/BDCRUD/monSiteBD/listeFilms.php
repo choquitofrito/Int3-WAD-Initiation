@@ -18,8 +18,6 @@ $sql = "SELECT * FROM film";
 // 3. Lancer la requête (préparation et lancement)
 $stmt = $cnx->prepare($sql);
 $stmt->execute();
-
-
 // 4. Obtenir les données dans un array 
 $arrayRes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -42,7 +40,7 @@ foreach ($arrayRes as $film) {
 
 }
 
-echo '<script src="./main.js"></script>';
+echo '<script src="./js/main.js"></script>';
 
 
 
