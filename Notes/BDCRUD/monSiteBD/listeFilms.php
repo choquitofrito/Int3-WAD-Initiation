@@ -1,7 +1,3 @@
-
-
-
-
 <?php
 
 // 1. Créer une connexion à la BD
@@ -32,15 +28,13 @@ $arrayRes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // 5. Afficher los données selon nos besoins
 
 
-
-
-
 foreach ($arrayRes as $film) {
 
         echo '<div class="card" style="width: 10rem;">';
         echo '<a href="./detailFilm.php?id='. $film['id']  .'"><img class="card-img-top" src="./img/'  . $film['image'] .   '" alt="'. $film['titre'] . '"></a>';
         echo '<div class="card-body">';
         echo '<h5 class="card-title">'. $film['titre'] . '</h5>';
+        echo '<button class="btn btn-light likeButton pas-rempli" id=' . $film['id']. '></button>';
         echo '</div>';
         echo '</div>';
         echo "<a href ='./effacerFilm.php?id=" . $film['id']. "'>Effacer</a>&nbsp";
