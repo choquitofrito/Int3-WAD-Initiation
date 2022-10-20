@@ -16,21 +16,19 @@ try {
 // $sql = "SELECT * FROM film";
 
 
-// Pas optimale, elle obtient trop de colonnes. Mais possible
-// SELECT *, favori.idFilm as idFilmFavori FROM film LEFT JOIN favori ON film.id = favori.idFilm
+// ATTENTION: Une requête dans cet esprit ne fonctionnera pas:
+// SELECT film.id, titre, description, duree, dateSortie, image, favori.idFilm as idFilmFavori, login FROM film  
+// LEFT JOIN favori ON film.id = favori.idFilm LEFT JOIN utilisateur ON utilisateur.id=favori.idUtilisateur 
+// WHERE utilisateur.login = :login
+// On doit mettre la condition pour l'utilisateur dans la condition de la jointure. Autrement les films qui ne se trouvent 
+// pas en favori auront le login a null (bien évidemment, on ne peut pas lier les films et les users)
+// voici la solution à ce genre de problèmes: une sous-requête
 
-
-// $sql = "SELECT film.id, titre, description, duree, dateSortie, image, favori.idFilm as idFilmFavori, login FROM film  " . 
-// "LEFT JOIN favori ON film.id = favori.idFilm LEFT JOIN utilisateur ON utilisateur.id=favori.idUtilisateur ";
-
-
-// LEFT JOIN utilisateur ON utilisateur.id = favori.idUtilisateur 
-// WHERE utilisateur.login = :login"; // prendre le login de la session
-
-// Fonctionne si on veut afficher les films qui ont été liké par n'importe qui
-// $sql = "SELECT DISTINCT film.id, titre, description, duree, dateSortie, image, favori.idFilm as idFilmFavori " .
-// "FROM film LEFT JOIN favori ON film.id = favori.idFilm";
-
+// Explication: Selectionner tous les films (on veut tous afficher, liked et pas liked).
+// joindre les favoris pour savoir qui a été liké (LEFT, pour ne pas perdre les films qui ne se trouvent pas dans les favoris)
+// On aura alors tous les films et tous les favoris
+// MAIS dans la condition de jointure (ON) on cible l'utilisateur connecté. 
+// Quand-même, et car on a fait un LEFT JOIN à partir des films, on a les films qui ne se trouve pas dans favori
 $sql = "SELECT film.id as id, film.titre,film.image, favori.idFilm AS idFilmFavori FROM film 
         LEFT JOIN favori ON film.id = favori.idFilm AND favori.idUtilisateur = 
         (SELECT utilisateur.id FROM utilisateur WHERE login = :login)";
