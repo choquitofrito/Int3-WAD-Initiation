@@ -30,6 +30,7 @@ $stmt->bindValue(":login", $login);
 $stmt->execute();
 $res = $stmt->fetch(PDO::FETCH_ASSOC);
 $loginBD = $res['login'];
+$role = $res['role'];
 $passwordBD = $res['password'];
 
 // 3. Comparer le password reçu du formulaire avec le password de l'user obtenu de la BD
@@ -37,6 +38,8 @@ if (password_verify ($password,$passwordBD) === true) {
     // 4. Si ok, aller vers l'accueil
     // après avoir mis le login dans la session
     $_SESSION ['loginConnecte'] = $login;
+    $_SESSION ['role'] = $role;
+
     header('location: ./index.php');
 
 } else {

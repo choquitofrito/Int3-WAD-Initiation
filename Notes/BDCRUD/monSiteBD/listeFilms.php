@@ -39,8 +39,6 @@ $stmt->bindValue(":login", $_SESSION['loginConnecte']);
 $stmt->execute();
 // 4. Obtenir les données dans un array 
 $arrayRes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-var_dump($arrayRes);
-var_dump($_SESSION['loginConnecte']);
 
 // var_dump($arrayRes);
 // die();
@@ -61,8 +59,11 @@ foreach ($arrayRes as $film) {
         } else {
                 echo "<p class='coeur' data-id ='" . $film['id'] . "'>&#10085;</p>";
         }
-        echo "<a href ='./effacerFilm.php?id=" . $film['id'] . "'>Effacer</a>&nbsp";
-        echo "<a href ='./index.php?p=updateFilm&id=" . $film['id'] . "'>Modifier</a>";
+        // accés reservé au ADMIN
+        if ($_SESSION['role'] == "ADMIN") {
+                echo "<a href ='./effacerFilm.php?id=" . $film['id'] . "'>Effacer</a>&nbsp";
+                echo "<a href ='./index.php?p=updateFilm&id=" . $film['id'] . "'>Modifier</a>";
+        }
 }
 
 echo '<script src="./js/main.js"></script>';
