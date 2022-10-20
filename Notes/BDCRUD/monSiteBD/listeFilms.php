@@ -34,12 +34,16 @@ foreach ($arrayRes as $film) {
         echo '<a href="./detailFilm.php?id='. $film['id']  .'"><img class="card-img-top" src="./img/'  . $film['image'] .   '" alt="'. $film['titre'] . '"></a>';
         echo '<div class="card-body">';
         echo '<h5 class="card-title">'. $film['titre'] . '</h5>';
-        echo '<button class="btn btn-light likeButton pas-rempli" id=' . $film['id']. '></button>';
         echo '</div>';
         echo '</div>';
+        echo "<p class='coeur' data-id ='" .$film['id']. "'>&#10084;</p>";
         echo "<a href ='./effacerFilm.php?id=" . $film['id']. "'>Effacer</a>&nbsp";
         echo "<a href ='./index.php?p=updateFilm&id=" . $film['id']. "'>Modifier</a>";
+
 }
+
+echo '<script src="./main.js"></script>';
+
 
 
 
