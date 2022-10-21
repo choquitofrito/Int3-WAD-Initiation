@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./node_modules/jquery-bar-rating/dist/themes/fontawesome-stars.css">
+
+</head>
+
+<body>
+
+    <select data-idfilm="99" class="stars" id="example">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>    <script src="./jquery-bar-rating-master/jquery.barrating.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#example').barrating({
+                theme: 'fontawesome-stars',
+                onSelect: (value, text, event) => {
+                    console.log (event.target); // le A
+                    console.log (event.target.parentElement); // le nouveau DIV
+                    console.log (event.target.parentElement.previousSibling.dataset.idfilm); // l'ancien select (idfilm dans son dataset)
+                }
+            });
+        });
+
+        
+    </script>
+</body>
+
+</html>
