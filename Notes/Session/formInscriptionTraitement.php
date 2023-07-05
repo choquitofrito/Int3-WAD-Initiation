@@ -10,7 +10,7 @@
 <?php
 // Récuperer les données du form
 $nom = $_POST['nom'];
-$email = $_POST['email'];
+$login = $_POST['login'];
 $password = $_POST['password'];
 
 
@@ -33,12 +33,12 @@ try {
 }
 
 // Créer une requête pour chercher le login du form
-$sql = "INSERT INTO utilisateur (id, nom, email, password) VALUES (null, :nom, :email, :password)";
+$sql = "INSERT INTO utilisateur (id, nom, login, password) VALUES (null, :nom, :login, :password)";
 
 // Vérifier si le password du form correspond à celui de la BD
 $stmt = $cnx->prepare($sql);
 $stmt->bindValue(":nom", $nom);
-$stmt->bindValue(":email", $email);
+$stmt->bindValue(":login", $login);
 
 // dans la BD on insére le hash du password, pas le password tel quel
 $passwordHash = password_hash ($password, PASSWORD_BCRYPT);
@@ -51,7 +51,7 @@ var_dump ($stmt->errorInfo());
 
 // Si inscription ok, stocker login dans la session et aller vers la page d'accueil
 session_start();
-$_SESSION['login'] = $email;
+$_SESSION['login'] = $login;
 header ("./accueil.php");
 
 ?>    

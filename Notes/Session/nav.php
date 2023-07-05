@@ -4,7 +4,7 @@
         <a href="./page2.php">Page 2</a>
         <?php
             session_start();
-            print($_SESSION['login']);
+            print($_SESSION['nom']);
         ?>
         <a href="./logout.php">Logout</a>
     </nav>

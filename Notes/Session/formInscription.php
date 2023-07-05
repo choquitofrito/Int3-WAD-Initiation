@@ -9,7 +9,7 @@
 <h3>Inscription</h3>
 <form action="./formInscriptionTraitement.php" method="POST">
     Nom<input type="text" name="nom"><br>
-    Email<input type="email" name="email"><br>
+    Email<input type="email" name="login"><br>
     Password<input type="password" name="password"><br>
     <input type="submit" value="S'inscrire">
 </form>
