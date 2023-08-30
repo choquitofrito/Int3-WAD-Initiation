@@ -67,8 +67,8 @@ phpinfo()
 
 ```php
 <?php
-var_dump (['Pepi','Luci','Sandrine'])
-phpinfo()
+phpinfo();
+var_dump (['Pepi','Luci','Sandrine']);
 ```
 
 
