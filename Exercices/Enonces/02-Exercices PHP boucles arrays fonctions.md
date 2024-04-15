@@ -1,6 +1,6 @@
 - [Exercices de boucles, arrays, fonctions](#exercices-de-boucles-arrays-fonctions)
 - [Exercices de création de fonctions (+arrays)](#exercices-de-création-de-fonctions-arrays)
-- [Exercices de fonctions d\'Arrays natives](#exercices-de-fonctions-darrays-natives)
+- [Exercices de fonctions d'Arrays natives](#exercices-de-fonctions-darrays-natives)
 
 
 <br>
@@ -19,7 +19,8 @@
 
 5.  Rajoutez les valeurs 150 et 300 à l\'array précédant (ailleurs de la déclaration de l\'array)
 
-6.  Créez une boucle **foreach** pour afficher l\'array $vals. Créez une boucle **for** pour afficher l\'array **$vals**
+6.  Créez une boucle **foreach** pour afficher l'array $vals.
+    Créez une boucle **for** ayant la même fonction
 
 7.  Créez une fonction qui reçoit un nom et affiche \"Bonjour (nom)!\". Testez-la avec plusieurs noms
 
@@ -32,8 +33,7 @@
 
 11. Créez un array associatif $film1 contenant le nom, le genre et le réalisateur d\'un film. Créez $film2 et $film3 contenant les  données d\'autres films
 
-12. Affichez le contenu d\'un des films qu\'on vient de créer en
-    utilisant une boucle foreach
+12. Affichez le contenu d\'un des films qu\'on vient de créer en utilisant une boucle foreach
 
 13. Créez une fonction **afficheAssoc** qui reçoit un array associatif
     et affiche son contenu en utilisant une boucle foreach. Testez la
@@ -94,55 +94,47 @@ for ($i=0;$i\<10;$i++){
     tableau indexé (pas associatif). Appelez cette fonction pour
     afficher le contenu du tableau d\'acteurs
 
-24. Créez un array associatif contenant de couples personne-âge
+24. Créez un array contenant le nom de 4 langues
 
-25. Affichez le contenu avec une boucle foreach
+25. Changez le contenu de la position 3 par \"Danois\"
 
-26. Créez un array contenant le nom de 4 langues
-
-27. Changez le contenu de la position 3 par \"Danois\"
-
-28. Créez une boucle (un for, un foreach et un while) pour afficher le
+26. Créez une boucle (un for, un foreach et un while) pour afficher le
     contenu de l\'array
 
-29. Amélioriez les boucles for et while précédents en utilisant la
+27. Amélioriez les boucles for et while précédents en utilisant la
     fonction **count**
 
-30. Effacez l\'element de la position 4 dans l\'array en utilisant la
+28. Effacez l\'element de la position 4 dans l\'array en utilisant la
     fonction **unset**
 
-31. Utilisez la fonction **array\_search** avec deux paramètres pour
+29. Utilisez la fonction **array\_search** avec deux paramètres pour
     afficher la position d\'un certain élément dans l\'array et
     \"Element pas trouvé\" dans le contraire
 
-32. Créez un array vide $languesCopie. Créez une boucle qui rajoute
+30. Créez un array vide $languesCopie. Créez une boucle qui rajoute
     chaque element de l\'array $langues dans l\'array $languesCopie
 
-33. Créez les fonctions suivantes
+31. Créez les fonctions suivantes
 
     a.  **afficher** qui reçoit un array indexé (pas associatif) et
         affiche ses valeurs
 
-    b.  **afficherHTML** qui reçoit un array indexé (pas associatif) et
+    b.  (Web) **afficherHTML** qui reçoit un array indexé (pas associatif) et
         construit un petit tableau HTML contenant les valeurs de
         l\'array
 
     c.  **afficherCase** qui reçoit deux parametres:
 
 
-34. un array indexé (pas associatif) et affiche ses valeurs
+        - un array indexé (pas associatif) et affiche ses valeurs
+        - un string $case contenant le mot 'majuscules' ou   'minuscules'
 
-35. un string **$case** contenant le mot \"majuscules\" ou
-    \"minuscules\"
+La fonction **afficherCase** doit afficher les valeurs de l\'array en majuscules ou minuscules selon la valeur du paramètre $case. Pour ce faire, regardez la documentation des fonctions **strtoupper** et **strtoupper** (si vous allez utilisez des langues qui contiennent non-ASCII telles que le Chinois, Arab ou Russe vous devez utilisez **mb_strtoupper** et **mb_strtolower**)
 
-La fonction afficherCase doit afficher les valeurs de l\'array en
-majuscules ou minuscules selon la valeur du paramètre $case. Pour ce
-faire, regardez la documentation des fonctions **strtoupper** et
-**strtolower**
-
-36. Nous avons besoin d'un système qui puisse choisir aléatoirement le nom d'un élève.
+32. (Web) Nous avons besoin d'un système qui puisse choisir aléatoirement le nom d'un élève.
 Les noms se trouvent dans un array, et à chaque fois qu'on recharge la page on obtient un nouveau nom.
 Tous les noms doivent être choisis avant d'en répéter un choix.
+Utilisez la fonction mt_rand
 
 
 <br>
@@ -163,17 +155,10 @@ Tous les noms doivent être choisis avant d'en répéter un choix.
     contenu dans le script principal, ainsi que le nombre d\'éléments de
     l\'array
 
-5.  Créez une fonction qui reçoit un array associatif et affiche son
+5.  (Web) Créez une fonction qui reçoit un array associatif et affiche son
     contenu dans un tableau HTML
 
-6.  Créez une fonction qui reçoit un array associatif et renvoie un
-    nouvel array contenant uniquement ses clés
-
-7.  Modifiez l\'exercice précédent pour que la fonction renvoie un array
-    contenant les clés tries par ordre alphabétique
-
-8.  Créez une fonction qui reçoit un array associatif et renvoie un
-    nouvel array contenant uniquement ses valeurs
+6.  Créez une fonction qui reçoit un array associatif et renvoie un nouvel array contenant uniquement ses valeurs.. cherchez vous même la fonction qui vous convient!
 
 <br>
 
@@ -201,45 +186,47 @@ Tous les noms doivent être choisis avant d'en répéter un choix.
 
 Affichez l\'array et le nombre d\'éléments de l\'array.
 
-5.  Utilisez **array\_slice** pour créer un nouveau tableau contenant
+5.  Créez une fonction qui reçoit un array associatif et renvoie un
+    nouvel array contenant uniquement ses clés (utilisez la fonction array_keys)
+
+6.  Modifiez l\'exercice précédent pour que la fonction renvoie un array
+    contenant les clés tries par ordre alphabétique
+
+
+7.  Utilisez **array\_slice** pour créer un nouveau tableau contenant
     les 10 premières valeurs de l\'array précédant (array\_slice
     n\'efface pas des valeurs de l\'array original)
 
-6.  Triez les éléments de l\'array en utilisant la fonction **sort**.
+8.  Triez les éléments de l\'array en utilisant la fonction **sort**.
     Comment est-ce qu\'on pourrait trier les valeurs en ordre descendant
     ? Cherchez la fonction dans la documentation de PHP. Quel type
     d\'array vous avez utilisé, indexé ou associatif ?
 
-7.  Créez un array associatif contenant des pays-capitales. Affichez son
+9.  Créez un array associatif contenant des pays-capitales. Affichez son
     contenu en utilisant foreach
 
-8.  Rajoutez deux nouveau pays à votre array et imprimez son contenu en
+10.  Rajoutez deux nouveau pays à votre array et imprimez son contenu en
     utilisant **print\_r**
 
-9.  Faites la même chose en utilisant array\_push()
+11.  Faites la même chose en utilisant array\_push()
 
-10. Triez l\'array en utilisant **asort**. Pourquoi ce n\'est pas une
+12. Triez l\'array en utilisant **asort**. Pourquoi ce n\'est pas une
     bonne idée d\'utiliser **sort** dans ce cas ?
 
-11. Trouvez la fonction pour trier l\'array par pays au lieu de par
+13. Trouvez la fonction pour trier l\'array par pays au lieu de par
     villes
 
-12. Créez une boucle pour afficher un tableau HTML contenant les pairs
-    ville-pays. Les villes s\'afficheront en gras
-
-13. Utilisez la fonction **array\_slice** pour extraire les trois
+14. Utilisez la fonction **array\_slice** pour extraire les trois
     premiers pays de votre array et les stocker dans un nouvel array
 
-14. Créez un array pour stocker les informations d\'un mp3 (nom, auteur,
+15. Créez un array pour stocker les informations d\'un mp3 (nom, auteur,
     style, durée).
 
 Créez plusieurs \"morceaux\" de cette manière
 
-15. Créez une boucle capable d\'afficher les infos d\'un morceau dans un
-    tableau HTML
+15. (Web) Créez une boucle capable d\'afficher les infos d\'un morceau dans un tableau HTML
 
-16. Créez un array bidimensionnel $disque contenant les morceaux que
-    vous venez de créer
+16. Créez un array bidimensionnel $disque contenant les morceaux que vous venez de créer
 
 17. Rajoutez un nouveau morceau au disque
 

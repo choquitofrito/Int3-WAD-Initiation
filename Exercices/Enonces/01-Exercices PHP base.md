@@ -5,7 +5,7 @@
 Variables, ifs, boucles, tableaux (arrays)
 
 - [Exercices PHP de base](#exercices-php-de-base)
-  - [Exercices Variables, Entree et Sortie](#exercices-variables-entree-et-sortie)
+  - [1. Exercices Variables, Entree et Sortie](#1-exercices-variables-entree-et-sortie)
   - [Exercices IF](#exercices-if)
   - [Exercices Boucles](#exercices-boucles)
   - [Exercices Arrays (Tableaux)](#exercices-arrays-tableaux)
@@ -14,12 +14,14 @@ Variables, ifs, boucles, tableaux (arrays)
 
 <br>
 
-## Exercices Variables, Entree et Sortie
+
+
+## 1. Exercices Variables, Entree et Sortie
 
 <br>
 
 
-
+Créez un nouveau fichier pour chaque exercice!
 
 1.  Affichez \"Bonjour\" dans l\'écran avec print et echo
 
@@ -37,21 +39,21 @@ Variables, ifs, boucles, tableaux (arrays)
 
 5.  Le Vendôme est un cinéma cher (contrairement au Styx, qui
     d\'ailleurs n\'existe plus) et de fois ils offrent une réduction du
-    10% sur les entrées. Affichez le prix d'un ticket normal et le prix
-    qu'on payerait si on avait la réduction.
+    10% sur les entrées. Affichez le prix d'un ticket normal et le prix qu'on payerait si on avait la réduction.
 
 6.  Créez un programme qui demande son nom à l'utilisateur et affiche un
-    message du style « Bienvenu xxxxxxxx ». Utilisez la fonction "read()" qui se trouve dans le dossier "Resources" (copiez la au début de votre code)
+    message du style « Bienvenu xxxxxxxx ». Utilisez la fonction "readline(message à afficher)". Cette fonction affice le message à afficher à l'utilisateur, puis permet à l'utilisateur de taper un string sur le clavier. La saisie terminera quand l'utilisateur appuie sur Enter.
+
+Ex:
+
+```php
+$nom = readline ("Tapez le nom de votre chat:"); // le logiciel s'arrete ici et attends la saisie et qu'on appuie sur Enter. Quand on appuie sur Enter, le contenu saisi sera stocké dans la variable $nom
+echo ($nom); // afficher ce que l'utilisateur a saisi
+```
 
 7.  Créez un logiciel qui demande deux chiffres à l'utilisateur et qui
     affiche l'addition, la soustraction, la multiplication et la
     division.
-
-8.  Créez de variables pour stocker les noms et les prix de trois
-    produits. Affichez un résumé e liste contenant les produits et leur prix.
-
-Demandez à l'utilisateur la quantité souhaitée de chaque produit et
-calculez et affichez le prix total de sa commande.
 
 <br>
 
@@ -89,46 +91,38 @@ Le script doit demander à l'utilisateur l'année et le nombre d'absences, et af
 
 <br>
 
-5.  Nous voulons calculer le prix d\'une commande dans un magasin
-    d\'informatique. Le prix total est sujet à des remises.
+5.  Nous voulons calculer le prix d\'une commande dans un magasin de téléphonie. On vend juste trois produits :
 
--   Affichez une liste de trois produits et leur prix correspondant. Créez une variable pour chaque nom de produit et une variable pour chaque prix, ça vous fera 6 variables en tout (Si vous gérez bien les arrays vous pouvez les utiliser pour faire l'exercice).
+```
+Samsung Galaxy S24 - 1000 euros
+IPhone 15 - 1500 euros
+Huawei P60 Pro - 800 euros
+```
 
--   Demandez à l'utilisateur le nombre d'unités qu'il veut acheter de
-    chaque produit (fonction "read")
+-   Demandez à l'utilisateur le nombre d'unités qu'il veut acheter de chaque produit (fonction "readline" ;) )
 
 -   Calculez le total de la commande sachant que :
 
-    -   Si on commande plus de 5 unités d\'un certain produit on a une
-        remise du 10% sur le prix de ce produit
+    -   Si on commande plus de 5 unités d\'un certain produit on a une remise du 10% sur le prix de ce produit
 
-    -   Les produits peuvent être retirés au magasin ou livrés. La
-        livraison coute 2% du prix total de la commande, mais elle est
+    -   Les produits peuvent être retirés au magasin ou livrés. La livraison coute 2% du prix total de la commande, mais elle est
         gratuite si notre commande dépasse 100 euros
 
-    -   Une carte de fidélité accorde 20% de réduction sur le prix total
-        de la commande
+    -   Une carte de fidélité accorde 20% de réduction sur le prix total de la commande
 
 <br>
 
 ## Exercices Boucles
 <br>
 
-1.  Faites un logiciel qui demande l'âge à l'utilisateur. Le logiciel
-    continue à demander jusqu'à ce qu'il introduise une valeur entre 0
-    et 130.
 
-Si l'utilisateur est une personne majeure on lui donne la bienvenue.
-Dans le cas contraire, on affiche le message « Vous êtes encore très
-jeune»
+1.  Faites une boucle while pour afficher les valeurs entre 0 et 10. Utilisez **while** et **for** (deux versions différentes)
 
-2.  Faites une boucle while pour afficher les valeurs entre 0 et 10
+2.  Faites une boucle while et une boucle for pour afficher les valeurs entre 50 et 70
 
-3.  Modifiez l'exercice 1) pour que l'utilisateur puisse se tromper 3
-    fois
+2.  Faites un logiciel qui demande son âge à l'utilisateur. Le logiciel continue à demander jusqu'à ce qu'il introduise une valeur entre 0 et 130. Utilisez une boucle **while**. Si l'utilisateur est une personne majeure on lui donne la bienvenue. Dans le cas contraire, on affiche le message « Vous êtes encore très jeune»
 
-4.  Faites une boucle while et une boucle for pour afficher les valeurs
-    entre 50 et 70
+4.  Modifiez l'exercice précedant pour que l'utilisateur puisse se tromper 3 fois ... mais pas plus!
 
 5.  Faites une boucle pour afficher les valeurs impaires entre 50 et 100
 
@@ -187,7 +181,7 @@ jeune»
 
 
 
-   Exercice à faire en Web): Modifiez la boucle précédant pour qu\'elle affiche les heures paires en bleu et les heures impaires en rouge
+   Exercice à faire en Web : Modifiez la boucle précédant pour qu\'elle affiche les heures paires en bleu et les heures impaires en rouge
 
 <br>
 
@@ -195,34 +189,25 @@ jeune»
 ## Exercices Arrays (Tableaux)
 <br>
 
-1)  Créez un array contenant les valeurs 10,20 et 50
+1)  Créez un array de prix contenant les montants 10,20 et 50 euros.
 
 Affichez son contenu sans utiliser de boucles
 
-2)  Rajoutez les valeurs 8 et 70 au tableau précédant. Affichez les
-    éléments 2éme et 5éme du tableau.
+2)  Rajoutez les montants 8 et 70 au tableau précédant. Affichez les éléments 2éme et 5éme du tableau.
 
-3)  Créez un tableau contenant les noms de 5 villes. Affichez le contenu
-    du tableau (faites une version sans boucles et une avec une boucle)
+3)  Créez un tableau contenant les noms de 5 villes. Affichez le contenu du tableau en utilisant une boucle
 
-4)  Rajoutez deux villes au tableau précédant et affichez-le
+4)  Rajoutez deux villes au tableau précédant et affichez le tableau
 
 5)  Remplacez la première ville du tableau par \'Quito\'
 
-6)  Créez un tableau qui contient les valeurs du 1 à 200. Affichez son
-    contenu (boucles)
+6)  Créez un tableau qui contient les valeurs du 1 à 200. Affichez son contenu (boucles)
 
-7)  Créez une boucle qui multiplie par deux chaque valeur du tableau
-    précédant. Le tableau doit être modifié.
+7)  Créez une boucle qui multiplie par deux chaque valeur du tableau précédant. Le tableau doit être modifié, ce n'est pas juste un affichage
 
-8)  Créez un tableau contenant les notes de 5 élèves et une boucle qui
-    affiche son contenu. Les notes inférieures à 10 seront affichées en
-    rouge. En plus, la boucle calcule et affiche la moyenne des notes.
-    Faites-le avec for et while.
+8)  (Web) Créez un tableau contenant les notes de 5 élèves et une boucle qui affiche son contenu. Les notes inférieures à 10 seront affichées en rouge. En plus, la boucle calcule et affiche la moyenne des notes. Faites-le avec for et while.
 
-9)  Ecrivez un algorithme constituant un tableau, à partir de deux
-    tableaux de même longueur existants. Le nouveau tableau sera la
-    somme des éléments des deux tableaux de départ.
+9)  Ecrivez un algorithme constituant un tableau, à partir de deux tableaux de même longueur existants. Le nouveau tableau sera la somme des éléments des deux tableaux de départ.
 
 Tableau 1 :
 
@@ -267,19 +252,15 @@ Tableau résultat :
 <br>
 
 11) Ecrivez un algorithme qui permette la saisie d'un nombre
-    de valeurs choisit par l'utilisateur et les stocke dans un tableau. Toutes les valeurs doivent
-    être ensuite augmentées de 1, et le nouveau tableau sera affiché à
-    l'écran.
+    de montants d'argent choisit par l'utilisateur et les stocke dans un tableau. Toutes les valeurs doivent être ensuite augmentées de la TVA, et le nouveau tableau sera affiché à l'écran.
 
-12) Ecrivez un algorithme permettant, toujours sur le même principe, à
-    l'utilisateur de saisir un nombre déterminé de valeurs. Le
-    programme, une fois la saisie terminée, renvoie la plus grande
-    valeur en précisant quelle position elle occupe dans le tableau. On
-    prendra soin d'effectuer la saisie dans un premier temps, et la
-    recherche de la plus grande valeur du tableau dans un second temps.
 
-13) Créez un array contenant 10 prix. Appliquez une TVA de 12% à chaque
-    élément du tableau
+12) Créez un array contenant 10 prix. Appliquez une TVA de 12% à chaque élément du tableau
+
+13) Ecrivez un algorithme permettant, toujours sur le même principe, à
+    l'utilisateur de saisir un nombre déterminé de prix. Le
+    programme, une fois la saisie terminée, renvoie le prix le plus élevé en précisant quelle position elle occupe dans le tableau. On prendra soin d'effectuer la saisie dans un premier temps, et la recherche de la plus grande valeur du tableau dans un second temps.
+
 
 <br>
 
@@ -287,8 +268,7 @@ Tableau résultat :
 
 <br>
 
-1)  Créez un array associatif contenant de couples film-réalisateur.
-    Affichez le contenu en utilisant une boucle foreach
+1)  Créez un array associatif contenant de couples film-réalisateur. Affichez le contenu en utilisant une boucle foreach
 
 2)  Remplacez le réalisateur du premier film par \"Ed Wood\"
 
@@ -309,14 +289,14 @@ Tableau résultat :
     de téléphone de 3 personnes. Créez un array \"repertoire\" contenant ces
     trois arrays. Affichez le contenu complet du repertoire.
 
-8)  À partir de l\'exercice précédent
+8)  (Web) À partir de l\'exercice précédent
 
 -   Affichez le\'repertoire dans un tableau HTML, choisissez vous-même un
     format qui vous plaise
 
 -   Rajoutez au repertoire le contact de votre meilleur ami
 
-9)  Créez un array contenant de noms de sites web (ex: Startpage,
+9)  (Web) Créez un array contenant de noms de sites web (ex: Startpage,
     Wikipedia), leur lien d\'internet (ex: www.startpage.com) et une
     description de chacun (ex: moteur de recherche).
 
