@@ -106,7 +106,7 @@ Huawei P60 Pro - 800 euros
     -   Si on commande plus de 5 unités d\'un certain produit on a une remise du 10% sur le prix de ce produit
 
     -   Les produits peuvent être retirés au magasin ou livrés. La livraison coute 2% du prix total de la commande, mais elle est
-        gratuite si notre commande dépasse 100 euros
+        gratuite si notre commande dépasse 3000 euros
 
     -   Une carte de fidélité accorde 20% de réduction sur le prix total de la commande
 
