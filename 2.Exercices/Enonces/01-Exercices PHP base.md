@@ -5,7 +5,7 @@
 Variables, ifs, boucles, tableaux (arrays)
 
 - [Exercices PHP de base](#exercices-php-de-base)
-  - [1. Exercices Variables, Entree et Sortie](#1-exercices-variables-entree-et-sortie)
+  - [Exercices Variables, Entree et Sortie](#exercices-variables-entree-et-sortie)
   - [Exercices IF](#exercices-if)
   - [Exercices Boucles](#exercices-boucles)
   - [Exercices Arrays (Tableaux)](#exercices-arrays-tableaux)
@@ -16,7 +16,7 @@ Variables, ifs, boucles, tableaux (arrays)
 
 
 
-## 1. Exercices Variables, Entree et Sortie
+## Exercices Variables, Entree et Sortie
 
 <br>
 
