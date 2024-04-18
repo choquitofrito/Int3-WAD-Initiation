@@ -282,7 +282,7 @@ Tableau résultat :
     Modifiez la boucle pour qu\'elle affiche uniquement les capitales.
     Revenez à la boucle originale.
 
-6)  Affichez le contenu du array avec print\_r pour mieux comprendre
+6)  Affichez le contenu du array avec var_dump pour mieux comprendre
     l\'organisation des indices
 
 7)  Créez trois arrays contenant le nom, date de naissance et le numéro
