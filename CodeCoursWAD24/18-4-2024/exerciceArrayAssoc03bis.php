@@ -27,6 +27,10 @@
     foreach ($arrayPays as $pays){
         print ("<br>La capitale de " . $pays['nom'] . " est " . $pays['capitale']);
     }
+
+
+
+    
     ?>
 </body>
 
