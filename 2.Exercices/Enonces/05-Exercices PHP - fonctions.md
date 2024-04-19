@@ -30,7 +30,7 @@ On veut utiliser cette fonction dans plusieurs jeux différents. Créez une nouv
 
 13. Créez une fonction qui génère un array contenant un nombre aléatoire de prix (max 20) dont la valeur est aussi aléatoire (entre 100 et 800 euros)
 
-14. Créer une nouvelle version de la fonction de 12) qui, au lieu d'afficher les valeurs dans la fonction même, stocke les valeurs dans un array qui est renvoyé (return).
+14. Créer une fonction qui génére un tableau de chiffres aléatoires entre 0 et 100 et le renvoie
 
 15. Créez une fonction qui reçoit un array associatif et affiche son contenu dans un tableau HTML. Le texte sera affiché dans la couleur qu'on envoie en paramètre à la fonction
 
