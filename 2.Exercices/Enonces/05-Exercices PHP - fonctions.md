@@ -36,24 +36,24 @@ On veut utiliser cette fonction dans plusieurs jeux différents. Créez une nouv
 
 16. Créez une fonction qui reçoit un array de noms et renvoie un nouvel array contenant tous les noms en majuscule (paramètre par valeur). Affichez ce nouvel array dans le script principal
 
-Créez une fonction qui reçoit un array de noms et modifie son contenu en mettant tous les noms en majuscule (paramètre par référence). Affichez l'array original modifié dans le script principal
+17. Créez une fonction qui reçoit un array de noms et modifie son contenu en mettant tous les noms en majuscule (paramètre par référence). Affichez l'array original modifié dans le script principal
 
-Créez une fonction qui reçoit un array associatif contenant de couples "VilleDepart-VilleDestination" et renvoie un nouvel array trié par ses indexes (les villes de départ)
+18. Créez une fonction qui reçoit un array associatif contenant de couples "VilleDepart-VilleDestination" et renvoie un nouvel array trié par ses indexes (les villes de départ)
 
-Créez une fonction qui reçoit un array associatif et renvoie un nouvel array trié par ses valeurs (les villes de destination)
+19. Créez une fonction qui reçoit un array associatif et renvoie un nouvel array trié par ses valeurs (les villes de destination)
 
-Nous voulons générer de noms complets de personnages pour un jeu de vidéo. Créez une fonction capable de générer un array de noms complets à partir d'un array de noms et un autre de prénoms.
+20. Nous voulons générer de noms complets de personnages pour un jeu de vidéo. Créez une fonction capable de générer un array de noms complets à partir d'un array de noms et un autre de prénoms.
 
 Note: Pour éviter de générer à chaque fois les mêmes couples, utilisez la fonction shuffle, capable de mélanger au hasard les éléments d'un array
 
-Nous voulons programmer un jeu de cartes en PHP et on doit stocker les noms des cartes dans un array. Trouvez la manière la plus efficace de le faire.
+21. Nous voulons programmer un jeu de cartes en PHP et on doit stocker les noms des cartes dans un array. Trouvez la manière la plus efficace de le faire.
 
-Utilisez la fonction array_rand pour vous aider à prendre une carte au hasard
+22. Utilisez la fonction array_rand pour vous aider à prendre une carte au hasard
 
-Créez une fonction qui reçoit un array associatif et renvoie un nouvel array contenant uniquement ses valeurs
+23. Créez une fonction qui reçoit un array associatif et renvoie un nouvel array contenant uniquement ses valeurs
 
-Créez une fonction qui reçoit un array associatif et renvoie un nouvel array contenant uniquement ses clés (indexes)
+24. Créez une fonction qui reçoit un array associatif et renvoie un nouvel array contenant uniquement ses clés (indexes)
 
-Vous avez reçu un array contenant de noms de villes en minuscules. Créez une fonction qui vous affiche les éléments de l'array en majuscules dans une liste HTML
+25. Vous avez reçu un array contenant de noms de villes en minuscules. Créez une fonction qui vous affiche les éléments de l'array en majuscules dans une liste HTML
 
-Répétez l'exercice précédent, mais cette fois la première lettre de chaque ville sera en majuscule (chercher des infos sur la fonction uc_first)
+26. Répétez l'exercice précédent, mais cette fois la première lettre de chaque ville sera en majuscule (chercher des infos sur la fonction uc_first)
