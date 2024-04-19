@@ -19,7 +19,7 @@
 
     <style>
         p {
-            color: blue;
+            color: <?php print ("#337700") ?>;
         }
 
 
