@@ -16,6 +16,8 @@
 
 8. Créez une nouvelle version de la fonction précédente pour qu'elle renvoie la valeur TVAc calculée (cette fonction n'affiche rien).
 
+**Exercice Lotto**
+
 Nous voulons créer un jeu de lotto. Développez une fonction valeursLotto() qui affiche 6 valeurs entières aléatoires (utilisez la fonction déjà existante mt_rand)
 
 On veut utiliser cette fonction dans plusieurs jeux différents. Créez une nouvelle version de la fonction précédente capable de recevoir le nombre de valeurs à générer
