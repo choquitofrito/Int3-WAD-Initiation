@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
     <form action="./ex7FormTraitementBis.php" method="POST">
         <select name="animal">
             <option value="0">Chat</option>
