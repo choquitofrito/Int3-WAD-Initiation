@@ -16,14 +16,13 @@ $password = $_POST['password'];
 
 // Chercher le login/pass dans la BD
 try {
-    $cnx = new PDO(DBDRIVER . ':host=' . DBHOST . ';port=' . DBPORT . ';dbname=' . DBNAME . ';charset=' . DBCHARSET, DBUSER, DBPASS);
+    $cnx = new PDO(DSN, DBUSER, DBPASS);
 } catch (Exception $e) {
     // jamais en production car ça montre des infos
     // sensibles
     echo $e->getMessage();
     die();
 }
-
 $sql = "SELECT * FROM utilisateur WHERE login=:login";
 $stmt = $cnx->prepare($sql);
 $stmt->bindValue(":login", $login);

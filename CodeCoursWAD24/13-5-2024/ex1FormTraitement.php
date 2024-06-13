@@ -10,6 +10,8 @@
     <?php
         $nom = $_POST['nom'];
         print ($nom);
+
+
     ?>
 </body>
 </html>

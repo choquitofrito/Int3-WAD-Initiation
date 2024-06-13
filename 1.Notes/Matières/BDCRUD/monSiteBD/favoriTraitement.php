@@ -2,15 +2,14 @@
 session_start();
 
 include "./connexion/db.php";
-
 try {
-    $cnx = new PDO(DBDRIVER . ':host=' . DBHOST . ';port=' . DBPORT . ';dbname=' . DBNAME . ';charset=' . DBCHARSET, DBUSER, DBPASS);
+    $cnx = new PDO(DSN, DBUSER, DBPASS);
 } catch (Exception $e) {
-    // jamais en production car ça montre des infos sensibles
-    // echo $e->getMessage();
+    // jamais en production car ça montre des infos
+    // sensibles
+    echo $e->getMessage();
     die();
 }
-
 
 $idFilm = $_POST['id'];
 $login = $_SESSION['loginConnecte'];

@@ -20,17 +20,14 @@ if (! move_uploaded_file($_FILES['image']['tmp_name'], $uploadDossier."/".$nomFi
 
 // 1. Créer une connexion à la BD
 include "./connexion/db.php";
-
 try {
-    $cnx = new PDO(DBDRIVER . ':host=' . DBHOST . ';port=' . DBPORT . ';dbname=' . DBNAME . ';charset=' . DBCHARSET, DBUSER, DBPASS);
+    $cnx = new PDO(DSN, DBUSER, DBPASS);
 } catch (Exception $e) {
     // jamais en production car ça montre des infos
     // sensibles
     echo $e->getMessage();
-
     die();
 }
-
 $sql = "INSERT INTO film (id, titre, duree, description, dateSortie, image) ";
 $sql .= " VALUES (NULL , :titre, :duree, :description, :dateSortie, :image)";
 
