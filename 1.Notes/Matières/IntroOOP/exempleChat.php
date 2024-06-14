@@ -10,10 +10,10 @@
 <body>
     <?php
     include ("./Chat.php");
-    $c1 = new Chat("Felix", "angora");
+    $c1 = new Chat("Felix", "angora", "./images/felix.png");
     $c1->affiche();
 
-    $c2 = new Chat("Azrael", "pasdidee");
+    $c2 = new Chat("Azrael", "pasdidee", "./images/azrael.jpg");
     $c2->affiche();
 
     ?>
