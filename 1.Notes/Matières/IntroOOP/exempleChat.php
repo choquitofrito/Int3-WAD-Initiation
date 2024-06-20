@@ -11,10 +11,16 @@
     <?php
     include ("./Chat.php");
     $c1 = new Chat("Felix", "angora", "./images/felix.png");
-    $c1->affiche();
+    // $c1->affiche();
 
     $c2 = new Chat("Azrael", "pasdidee", "./images/azrael.jpg");
-    $c2->affiche();
+    // $c2->affiche();
+
+    $tableauChats = [ $c1, $c2];
+    foreach ($tableauChats as $unChat){
+        $unChat->affiche();
+    }
+
 
     ?>
 
