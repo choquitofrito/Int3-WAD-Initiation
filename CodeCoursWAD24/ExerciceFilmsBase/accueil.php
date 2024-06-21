@@ -52,6 +52,15 @@
     // 6. Afficher les données de la manière choisie
     var_dump ($arrayFilms);
     
+    print ("<ul>");
+    foreach ($arrayFilms as $film){
+        print ("<hr>");
+        print ("<li>Titre: " . $film['titre'] . "</li>");
+        print ("<li>Description: " . $film['description'] . "</li>");
+        print ("<li>Durée: " . $film['duree'] . "</li>");
+
+    }
+    print ("</ul>");
 
     ?>
 </body>
