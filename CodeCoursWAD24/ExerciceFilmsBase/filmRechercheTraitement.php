@@ -2,24 +2,26 @@
 <html lang="en">
 
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <title>Document</title>
 </head>
 
 <body>
     <?php
-        include "./nav.php";
+    include "./nav.php";
     ?>
-
-    <h1>Bienvenue!</h1>
-    <!-- Afficher la liste de films  -->
-
     <?php
-    // 1. Connecter à la BD
-    include "./db/config.php";
+    // var_dump ($_POST);
 
+    // 1. Obtenir le terme de la recherche (du form)
+    $termeRecherche = $_POST['termeRecherche'];
+
+    // 2. Connecter à la BD
+    include "./db/config.php";
     try {
         // essayer de connecter
         $cnx = new PDO(DSN, USERNAME, PASSWORD);
@@ -35,34 +37,32 @@
         die();
     }
 
-    // 2. Créer la requête
-    $sql = "SELECT * FROM film ORDER BY id DESC LIMIT 3";
+    // 3. Créer une requête
+    $sql = "SELECT * FROM film WHERE titre LIKE :termeRecherche";
 
+    // 4. Préparer
+    $stmt = $cnx->prepare($sql);
 
-    // 3. Préparer la requête
-    $stmt = $cnx->prepare ($sql);
+    // 5. Donner des valeurs aux paramètres (placeholders)
+    $stmt->bindValue(":termeRecherche", "%" . $termeRecherche . "%", PDO::PARAM_STR);
 
-    // 4. Lancer la requête
+    // 6. Executer la requête
     $stmt->execute();
 
-
-    // 5. Obtenir le résultat (les films dans ce cas)
-    // et les mettre dans un array
+    // 7. Obtenir les données
     $arrayFilms = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // var_dump($arrayFilms);
 
-    // 6. Afficher les données de la manière choisie
-    // var_dump ($arrayFilms);
-    
-    print ("<ul>");
-    foreach ($arrayFilms as $film){
-        print ("<hr>");
-        print ("<li>Titre: " . $film['titre'] . "</li>");
-        print ("<li>Description: " . $film['description'] . "</li>");
-        print ("<li>Durée: " . $film['duree'] . "</li>");
-
-        print ("<img src='./uploads/" . $film['image'] . "'>");
+    // 8. Afficher les données
+    print("<ul>");
+    foreach ($arrayFilms as $film) {
+        print("<hr>");
+        print("<li>Titre: " . $film['titre'] . "</li>");
+        print("<li>Description: " . $film['description'] . "</li>");
+        print("<li>Durée: " . $film['duree'] . "</li>");
     }
-    print ("</ul>");
+    print("</ul>");
+
 
     ?>
 </body>
