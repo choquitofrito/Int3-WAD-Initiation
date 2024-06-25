@@ -11,6 +11,7 @@
 
 <body>
     <?php
+    include "./checkSession.php";
     include "./nav.php";
     ?>
     <form action="./filmRechercheTraitement.php" method="POST">

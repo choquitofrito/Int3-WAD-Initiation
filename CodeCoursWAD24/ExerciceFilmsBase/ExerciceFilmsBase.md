@@ -1,6 +1,7 @@
 # Exercice :
 
-Nous allons créer un site web qui permet à l'utilisateur de gérer ses films.  
+Nous allons créer un site web qui permet à l'utilisateur de gérer ses films (admin)
+Les utilisateurs peuvent noter les films existants  
 Le site web permet à l'utilisateur d'ajouter, de rechercher et de supprimer ses films.  
 (Comme fonctionnalité supplémentaire, il est possible d'ajouter la possibilité de modifier les films enregistrés).
 
@@ -24,5 +25,23 @@ Plan form d'inscription:
 - Créer un formulaire d'inscription (nom , email, password, avatar?)
 - Modifier la BD pour rajouter les utilisateurs
 - Créer une page de traitement qui prend les données du form et les stocke dans la BD
+- EXERCICE: rajouter l'image de l'utilisateur
+
+## Annexe 2: Cotation des films
+
+Les utilisateurs peuvent noter les films existants
+
+## Objectifs
+
+Plan:
+
+
+
+
+
+
+
+
+
 
 

@@ -10,10 +10,18 @@
 
 <body>
     <?php
+        include "./checkSession.php";
+
         include "./nav.php";
+
+
     ?>
 
-    <h1>Bienvenue!</h1>
+    <h1>Bienvenue
+        <?php
+            print ($_SESSION['nomUtilisateur']);
+        ?>
+    </h1>
     <!-- Afficher la liste de films  -->
 
     <?php

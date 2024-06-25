@@ -11,27 +11,28 @@
 
 <body>
     <?php
+    include "./checkSession.php";
     include "./nav.php";
     ?>
     Voici la page d'insertion
 
     <?php
     var_dump($_POST);
-    var_dump ($_FILES);
+    var_dump($_FILES);
 
     // upload du fichier
 
     // 1. Créer un nom unique pour le fichier
     $dossier = "./uploads";
-    $nomFichier = uniqid() . date("h-i-s") . 
-                    $_FILES['image']['name'];
+    $nomFichier = uniqid() . date("h-i-s") .
+        $_FILES['image']['name'];
 
     // nom complet du fichier, précedé du nom du dossier
     $cheminComplet = $dossier . "/" . $nomFichier;
 
     // 2. Deplacer le fichier temporaire et lui donner
     // le nom choisi
-    move_uploaded_file($_FILES['image']['tmp_name'],$cheminComplet);
+    move_uploaded_file($_FILES['image']['tmp_name'], $cheminComplet);
 
     // fin upload fichier
 
@@ -39,7 +40,7 @@
     $titre = $_POST['titre'];
     $description = $_POST['description'];
     $duree = $_POST['duree'];
-    
+
     // 2. Connecter à la BD (PDO)
     include "./db/config.php";
 
@@ -72,7 +73,7 @@
     // 5. Lancer la requête
     $stmt->execute();
 
-    
+
 
     ?>
 </body>

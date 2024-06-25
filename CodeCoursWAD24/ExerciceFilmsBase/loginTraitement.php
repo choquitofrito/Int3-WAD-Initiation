@@ -7,6 +7,9 @@
 </head>
 <body>
     <?php
+    // démarrer la session
+    session_start();
+
     // 1. Récuperer les données du form (email et pass)
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -47,7 +50,10 @@
 
     var_dump ($arrayUtilisateurs);
     $passwordHashBD = $arrayUtilisateurs[0]['password'];
-    
+    // obtenir le nom de l'utilisateur
+    $nomUtilisateur = $arrayUtilisateurs[0]['nom'];
+
+
     if (password_verify($password, $passwordHashBD) == false){
         // le password n'est pas bon!
         print ("Utilisateur ou mot de pass incorrectes");
@@ -55,6 +61,13 @@
     }
     else {
         // le password est ok!
+        // On va écrire le nom de l'utilisateur 
+        // dans la session ($_SESSION)
+        // N'oubliez pas de demarrer la session! (tout en haut)
+        $_SESSION['nomUtilisateur'] = $nomUtilisateur;
+        // var_dump ($_SESSION);
+        // die();
+
         header ("location: ./accueil.php");
     }
 
