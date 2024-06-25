@@ -11,5 +11,18 @@ Le site web permet à l'utilisateur d'ajouter, de rechercher et de supprimer ses
 - Savoir lancer de requêtes SQL préparées sur la BD en PHP (PDO) 
 
 
+## Annexe 1: Formulaire d'inscription et login
+
+Nous allons créer un formulaire d'inscription pour le site et un formulaire de login
+
+## Objectifs
+
+- Savoir créer un formulaire d'inscription qui hashe le password dans la BD
+- Savoir utiliser les fonctions de hash pour vérifier le pair login/pass d'un utilisateur
+
+Plan form d'inscription:
+- Créer un formulaire d'inscription (nom , email, password, avatar?)
+- Modifier la BD pour rajouter les utilisateurs
+- Créer une page de traitement qui prend les données du form et les stocke dans la BD
 
 
