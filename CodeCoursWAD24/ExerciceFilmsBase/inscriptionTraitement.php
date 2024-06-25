@@ -77,6 +77,7 @@
 
     // 3.2. Lancer (execute) la requête
     $stmt->execute();
+    header ("location: ./login.php");
 
     // 3.3. Vérifier si l'inscription à été faite correctement
 
