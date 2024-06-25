@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
 
@@ -67,8 +68,10 @@
         print ("<li>Titre: " . $film['titre'] . "</li>");
         print ("<li>Description: " . $film['description'] . "</li>");
         print ("<li>Durée: " . $film['duree'] . "</li>");
+        print ("<img class='affiche' src='./uploads/" . $film['image'] . "'>");
 
-        print ("<img src='./uploads/" . $film['image'] . "'>");
+        // form pour noter le film
+        print ("<input type='number' class='note'>");
     }
     print ("</ul>");
 

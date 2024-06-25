@@ -34,7 +34,8 @@ Les utilisateurs peuvent noter les films existants
 ## Objectifs
 
 Plan:
-
+- Rajouter un form pour chaque film (input pour la note et submit). 
+L'utilisateur pourra saisir une valeur 
 
 
 
