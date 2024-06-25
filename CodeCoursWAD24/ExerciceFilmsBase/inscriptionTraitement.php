@@ -36,34 +36,49 @@
 
     // EXERCICE: 
     // vérifier d'abord si l'utilisateur existe dans la BD
-    // $sql = "SELECT * FROM utilisateur WHERE email = :email";
-    // - préparer la requête et l'executer
-    // - obtenir l'array avec fetchAll
+
+    // 2.1. Créer la requête pour chercher un utilisateur ayant l'email 
+    // reçu du formulaire
+    $sql = "SELECT * FROM utilisateur WHERE email=:email";
+
+    // 2.2. Préparer la requête 
+    $stmt = $cnx->prepare($sql);
+    $stmt->bindValue(":email", $email);
+        
+    // 2.3. Executer la requête
+    $stmt->execute();
+
+    // 2.4. Obtenir l'array résultat avec fetchAll
+    $arrayUtilisateurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
     // - vérifier la taille de l'array avec count()
     // - si l'array n'est pas vide, afficher une erreur
     // autrement continuer l'execution pour stocker l'utilisateur
-
-
+    
+    // l'email est déjà pris!!
+    if (!empty ($arrayUtilisateurs)){
+        print ("L'addresse mail est déjà prise<br>");
+        print ("<a href='./accueil.php'>Retourner à l'inscription</a>");
+        die();
+    }
 
 
     // 3. Créer la requête d'insertion (string)
     $sql = "INSERT INTO utilisateur (id, nom, email, password) VALUES (null, :nom, :email, :password)";
 
-    // 4. Préparer la requête
-    $stmt = $cnx->prepare ($sql);
+    // 3.1. Préparer la requête
+    $stmt = $cnx->prepare($sql);
     $stmt->bindValue(":nom", $nom);
     $stmt->bindValue(":email", $email);
 
     $passwordHash = password_hash($password, PASSWORD_DEFAULT, ['cost' => 12]);
 
-
-
     $stmt->bindValue(":password", $passwordHash);
 
-    // 5. Lancer (execute) la requête
+    // 3.2. Lancer (execute) la requête
     $stmt->execute();
 
-    // 6. Vérifier si l'inscription à été faite correctement
+    // 3.3. Vérifier si l'inscription à été faite correctement
 
 
     ?>
