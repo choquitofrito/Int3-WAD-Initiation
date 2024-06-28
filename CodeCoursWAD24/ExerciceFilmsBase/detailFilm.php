@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css"> 
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- plugin étoiles -->
+    <script src="https://jsuites.net/v4/jsuites.js"></script>
+    <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+
     <title>Document</title>
 </head>
 
@@ -52,8 +57,21 @@
     print("<p>Durée: " . $film['duree'] . "</p>");
     print("<img class='affiche' src='./uploads/" . $film['image'] . "'>");
 
+    print ("<div>Valoration Utilisateurs
+            <div id='divNote'></div>
+            </div>");
 
     ?>
+
+    <script>
+    // Création des étoiles dans le div
+    let divNote = document.getElementById("divNote");
+    let menuEtoiles = jSuites.rating (divNote, {
+        value: 1,
+        tooltip: ['Horrible', 'Moyen', 'Plutôt bien', 'Très bon', 'Génial']
+    });
+
+    </script>
 </body>
 
 </html>
