@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css"> 
     <title>Document</title>
 </head>
 
@@ -11,6 +12,9 @@
     <!-- Afficher les détails du film et permettre de mettre une note -->
 
     <?php
+
+    include "./checkSession.php";
+    include "./nav.php";
 
     // obtenir les données du formulaire
     // (dans ce cas, l'id du film)
@@ -43,8 +47,10 @@
 
     $film = $stmt->fetch(PDO::FETCH_ASSOC); // le prémier (et unique) résultat de la requête
 
-    var_dump ($film);
-
+    print("<h1>" . $film['titre'] . "</h1>");
+    print("<p>Description: " . $film['description'] . "</p>");
+    print("<p>Durée: " . $film['duree'] . "</p>");
+    print("<img class='affiche' src='./uploads/" . $film['image'] . "'>");
 
 
     ?>
