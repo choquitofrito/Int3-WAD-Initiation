@@ -63,17 +63,54 @@
             <div data-moyenne='" . $film['moyenne'] . "' id='divNote'></div>
             </div>");
 
+    print("<div>Votre note:
+            <div data-valeur='" . $film['valeur'] . "' id='divNoteUtilisateur'></div>
+            </div>");
+
     ?>
 
     <script>
-        // Création des étoiles dans le div
+        // Création des étoiles dans le div (Valoration moyenne de tous les utilisateurs)
         let divNote = document.getElementById("divNote");
-        
+
         let menuEtoiles = jSuites.rating(divNote, {
-            value: divNote.dataset.moyenne ,
-            tooltip: ['Horrible', 'Moyen', 'Plutôt bien', 'Très bon', 'Génial']
+            value: divNote.dataset.moyenne,
+            tooltip: ['Horrible', 'Moyen', 'Plutôt bien', 'Très bon', 'Génial'],
         });
 
+        // Création des étoiles dans le div (Valoration de cet Utilisateur pour ce Film)
+        let divNoteUtilisateur = document.getElementById("divNoteUtilisateur");
+
+        let menuEtoilesUtilisateur = jSuites.rating(divNoteUtilisateur, {
+            value: divNoteUtilisateur.dataset.valeur,
+            tooltip: ['Horrible', 'Moyen', 'Plutôt bien', 'Très bon', 'Génial'],
+            onchange: stockerNote
+        });
+
+        // faire appel AJAX pour insérer / mettre à jour
+        // la note de cet utilisateur pour ce film
+        function stockerNote() {
+
+            // Vérifier s'il s'agit d'une nouvelle note
+            let nouvelleNote = true;
+            if (divNoteUtilisateur.data.valeur !== "") {
+                nouvelleNote = false; // ce film est déjà noté par cet utilisateur
+            }
+
+            let xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4) {
+
+                    console.log("fini");
+                }
+            }
+            // on doit envoyer:
+            // - s'il s'agit d'une nouvelle note
+            // - la note
+            xhr.open("GET", "./noteUpdate.php");
+            xhr.send();
+        }
     </script>
 </body>
 

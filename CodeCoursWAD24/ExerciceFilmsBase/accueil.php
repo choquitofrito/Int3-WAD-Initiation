@@ -46,6 +46,7 @@
 
     // 2. Créer la requête
     $sql = "SELECT * FROM film ORDER BY id DESC LIMIT 3";
+    // $sql = "SELECT *, AVG(note.valeur) as moyenne FROM film LEFT JOIN note ON film.id = note.idFilm group by film.id ORDER BY film.id DESC LIMIT 3";
 
 
     // 3. Préparer la requête

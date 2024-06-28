@@ -35,7 +35,10 @@ Les utilisateurs peuvent noter les films existants
 
 Plan:
 - Rajouter un form pour chaque film (input pour la note et submit). 
-L'utilisateur pourra saisir une valeur 
+L'utilisateur pourra saisir une valeur qui sera inséré ou mise à jour dans la BD
+
+
+
 
 
 
