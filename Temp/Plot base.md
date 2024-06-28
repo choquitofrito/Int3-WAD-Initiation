@@ -2,8 +2,6 @@
 
 <br>
 
-
-
 - Concepts de page dynamique et statique (architecture client-server):
    
 https://github.com/choquitofrito/Int3-WAD-Initiation/blob/main/Notes/Les%20sites%20dynamiques%20et%20l'installation%20de%20XAMPP.docx
