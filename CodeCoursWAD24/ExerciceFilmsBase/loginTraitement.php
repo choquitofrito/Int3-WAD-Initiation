@@ -65,6 +65,8 @@
         // dans la session ($_SESSION)
         // N'oubliez pas de demarrer la session! (tout en haut)
         $_SESSION['nomUtilisateur'] = $nomUtilisateur;
+
+        $_SESSION['idUtilisateur'] = $arrayUtilisateurs[0]['id'];
         // var_dump ($_SESSION);
         // die();
 

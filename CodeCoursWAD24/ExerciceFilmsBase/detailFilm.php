@@ -25,6 +25,9 @@
     // (dans ce cas, l'id du film)
     $idFilm = $_GET['idFilm'];
 
+    // obtenir l'utilisateur de la session (il faut le stocker dans le loginTraitement.php)
+    $idUtilisateur = $_SESSION['idUtilisateur'];
+
     // Connecter à la BD (PDO)
     include "./db/config.php";
 
@@ -52,14 +55,18 @@
 
     $film = $stmt->fetch(PDO::FETCH_ASSOC); // le prémier (et unique) résultat de la requête
 
+    // On crée un div et on met l'id de l'Utilisateur et l'id du Film dans 
+    // son dataset
+    print("<div id='divFilm' data-idutilisateur=" . $idUtilisateur . " data-idfilm=" . $idFilm . ">");
     print("<h1>" . $film['titre'] . "</h1>");
     print("<p>Description: " . $film['description'] . "</p>");
     print("<p>Durée: " . $film['duree'] . "</p>");
     print("<img class='affiche' src='./uploads/" . $film['image'] . "'>");
+    print("</div>");
 
     // print ("moyenne: " . $film['moyenne']);
 
-    print("<div>Valoration Utilisateurs
+    print("<div class='divInactif'>Valoration Utilisateurs
             <div data-moyenne='" . $film['moyenne'] . "' id='divNote'></div>
             </div>");
 
@@ -76,6 +83,7 @@
         let menuEtoiles = jSuites.rating(divNote, {
             value: divNote.dataset.moyenne,
             tooltip: ['Horrible', 'Moyen', 'Plutôt bien', 'Très bon', 'Génial'],
+            readonly: true
         });
 
         // Création des étoiles dans le div (Valoration de cet Utilisateur pour ce Film)
@@ -93,7 +101,7 @@
 
             // Vérifier s'il s'agit d'une nouvelle note
             let nouvelleNote = true;
-            if (divNoteUtilisateur.data.valeur !== "") {
+            if (divNoteUtilisateur.dataset.valeur !== "") {
                 nouvelleNote = false; // ce film est déjà noté par cet utilisateur
             }
 
@@ -101,15 +109,30 @@
 
             xhr.onreadystatechange = function() {
                 if (xhr.readyState == 4) {
-
-                    console.log("fini");
+                    let response = JSON.parse(xhr.responseText);
+                    if (response.etat === "success") {
+                        alert("tout ok!"); 
+                    } else {
+                        console.log ("error!");
+                    }
                 }
             }
             // on doit envoyer:
             // - s'il s'agit d'une nouvelle note
-            // - la note
-            xhr.open("GET", "./noteUpdate.php");
-            xhr.send();
+            // - la note, l'idFilm, l'idUtilisateur
+            // Obtention des id de l'utilisateur et du film
+
+            // On créer un FormData vide qui n'est pas associé a un formulaire existant 
+            // dans la page
+            // On rajoute de pairs clé-valeur avec append
+            let formTemp = new FormData();
+            formTemp.append('idFilm', divFilm.dataset.idfilm); // du dataset
+            formTemp.append('idUtilisateur', divFilm.dataset.idutilisateur); // du dataset
+            formTemp.append('valeur', menuEtoilesUtilisateur.getValue()); // du plugin, getValue est une méthode 
+            formTemp.append('nouvelleNote', nouvelleNote); // true s'il n'y avait pas une note --> INSERT, false s'il y avait une note --> UPDATE
+
+            xhr.open("POST", "./noteUpdate.php");
+            xhr.send(formTemp);
         }
     </script>
 </body>
