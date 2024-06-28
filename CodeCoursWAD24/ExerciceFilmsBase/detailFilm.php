@@ -43,7 +43,7 @@
         die();
     }
 
-    $sql = "SELECT * FROM film WHERE id=:id";
+    $sql = "SELECT *, AVG(valeur) AS moyenne FROM film INNER JOIN note ON film.id = note.idFilm WHERE film.id = :id";
 
     $stmt = $cnx->prepare($sql);
     $stmt->bindValue(":id", $idFilm);
@@ -57,19 +57,22 @@
     print("<p>Durée: " . $film['duree'] . "</p>");
     print("<img class='affiche' src='./uploads/" . $film['image'] . "'>");
 
-    print ("<div>Valoration Utilisateurs
-            <div id='divNote'></div>
+    // print ("moyenne: " . $film['moyenne']);
+
+    print("<div>Valoration Utilisateurs
+            <div data-moyenne='" . $film['moyenne'] . "' id='divNote'></div>
             </div>");
 
     ?>
 
     <script>
-    // Création des étoiles dans le div
-    let divNote = document.getElementById("divNote");
-    let menuEtoiles = jSuites.rating (divNote, {
-        value: 1,
-        tooltip: ['Horrible', 'Moyen', 'Plutôt bien', 'Très bon', 'Génial']
-    });
+        // Création des étoiles dans le div
+        let divNote = document.getElementById("divNote");
+        
+        let menuEtoiles = jSuites.rating(divNote, {
+            value: divNote.dataset.moyenne ,
+            tooltip: ['Horrible', 'Moyen', 'Plutôt bien', 'Très bon', 'Génial']
+        });
 
     </script>
 </body>
