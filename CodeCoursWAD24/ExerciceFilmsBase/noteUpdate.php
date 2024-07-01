@@ -1,7 +1,8 @@
 <?php
 
-var_dump ($_POST);
-die();
+session_start();
+// var_dump ($_POST);
+// die();
 $idFilm = $_POST['idFilm'];
 $valeur = $_POST['valeur'];
 $idUtilisateur = $_SESSION['idUtilisateur'];
@@ -32,6 +33,12 @@ if ($nouvelleNote === "true" ){
 else {
     $sql = "UPDATE note SET valeur = :valeur WHERE idUtilisateur=:idUtilisateur AND idFilm=:idFilm";
 }
+$stmt = $cnx->prepare($sql);
+$stmt->bindValue(":idUtilisateur", $idUtilisateur);
+$stmt->bindValue(":idFilm", $idFilm);
+$stmt->bindValue(":valeur", $valeur);
+
+$stmt->execute();
 
 
 
