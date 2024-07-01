@@ -48,10 +48,10 @@
 
     $stmt = $cnx->prepare($sql);
     $stmt->bindValue(":id", $idFilm);
-    
+
     $stmt->execute();
     $filmMoyenne = $stmt->fetch(PDO::FETCH_ASSOC); // le prémier (et unique) résultat de la requête
-    
+
     // requête pour obtenir la note (valeur) du film pour l'utilisateur connecté
     // on doit obtenir l'utilisateur de la session
     $idUtilisateur = $_SESSION['idUtilisateur'];
@@ -76,63 +76,25 @@
             </div>");
 
     print("<div>Votre note:
-            <div data-idfilm=". $idFilm .        
-            " data-valeur='" . ($filmUtilisateur ? $filmUtilisateur['valeur'] : "") . "' id='divNoteUtilisateur'></div>
-            <div>" . ($filmUtilisateur ? "" : "Pas de note") .  
-            "</div>");
+            <div data-idfilm=" . $idFilm .
+        " data-valeur='" . ($filmUtilisateur ? $filmUtilisateur['valeur'] : "") . "' id='divNoteUtilisateur'></div>
+            <div>" . ($filmUtilisateur ? "" : "Pas de note") .
+        "</div>");
+
+    // Contrôles pour le panier 
+    print ("<br><button id='btnRajouterPanier'>Rajouter</button>");
+    print ("<select data-idfilm=" . $idFilm . 
+            " id='quantite'>");
+    for ($i = 1; $i <= 50; $i++){
+        print ("<option value=" . $i . ">" . $i . "</option>");
+    }
+    print ("</select>");
+
+
 
     ?>
-
-    <script>
-        // Création des étoiles dans le div (Valoration moyenne de tous les utilisateurs)
-        let divNote = document.getElementById("divNote");
-
-        let menuEtoiles = jSuites.rating(divNote, {
-            value: divNote.dataset.moyenne,
-            tooltip: ['Horrible', 'Moyen', 'Plutôt bien', 'Très bon', 'Génial'],
-        });
-
-        // Création des étoiles dans le div (Valoration de cet Utilisateur pour ce Film)
-        let divNoteUtilisateur = document.getElementById("divNoteUtilisateur");
-
-        let menuEtoilesUtilisateur = jSuites.rating(divNoteUtilisateur, {
-            value: divNoteUtilisateur.dataset.valeur,
-            tooltip: ['Horrible', 'Moyen', 'Plutôt bien', 'Très bon', 'Génial'],
-            onchange: stockerNote
-        });
-
-        // faire appel AJAX pour insérer / mettre à jour
-        // la note de cet utilisateur pour ce film
-        function stockerNote() {
-
-            // Vérifier s'il s'agit d'une nouvelle note
-            let nouvelleNote = true;
-            console.log (divNoteUtilisateur.dataset.valeur);
-            if (divNoteUtilisateur.dataset.valeur !== "") {
-                nouvelleNote = false; // ce film est déjà noté par cet utilisateur
-            }
-            console.log ("nouvelle note?: " + nouvelleNote);
-
-            let xhr = new XMLHttpRequest();
-
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4) {
-
-                    console.log("fini");
-                }
-            }
-            // on doit envoyer:
-            // - s'il s'agit d'une nouvelle note
-            // - la note
-
-            let formData = new FormData();
-            formData.append ("idFilm", divNoteUtilisateur.dataset.idfilm);
-            formData.append ("valeur", menuEtoilesUtilisateur.getValue());
-            formData.append ("nouvelleNote", nouvelleNote);
-            xhr.open("POST", "./noteUpdate.php");
-            xhr.send(formData);
-        }
-    </script>
+    <script src="./js/notes.js"></script>
+    <script src="./js/panier.js"></script>
 </body>
 
 </html>

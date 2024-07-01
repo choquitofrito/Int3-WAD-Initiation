@@ -71,8 +71,7 @@
         print ("<li>Durée: " . $film['duree'] . "</li>");
         print ("<img class='affiche' src='./uploads/" . $film['image'] . "'>");
 
-        // form pour noter le film
-        print ("<input type='number' class='note'>");
+       
     }
     print ("</ul>");
 

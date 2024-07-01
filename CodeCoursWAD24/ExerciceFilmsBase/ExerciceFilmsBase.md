@@ -39,7 +39,11 @@ L'utilisateur pourra saisir une valeur qui sera inséré ou mise à jour dans la
 
 
 
+## Panier
 
+- Dans la page DetailFilm on peut rajouter des unités du film au panier
+- Le panier est toujours visible dans/en dessous de la nav
+  
 
 
 

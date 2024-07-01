@@ -24,7 +24,7 @@
     <div id="divFilms">
         Ici on affichera les films
     </div>
-    <script src="./filmRechercheAjax.js"></script>
+    <script src="./js/filmRechercheAjax.js"></script>
 </body>
 
 </html>
