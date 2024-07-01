@@ -1,6 +1,11 @@
 <?php
 
-
+var_dump ($_POST);
+die();
+$idFilm = $_POST['idFilm'];
+$valeur = $_POST['valeur'];
+$idUtilisateur = $_SESSION['idUtilisateur'];
+$nouvelleNote = $_POST['nouvelleNote'];
 
 // Connecter à la BD (PDO)
 include "./db/config.php";
@@ -20,11 +25,13 @@ try {
     die();
 }
 
-// $valeur = $_GET....
+if ($nouvelleNote === "true" ){
+    $sql = "INSERT INTO note (id, valeur, idUtilisateur, idFilm) VALUES (null, :valeur, :idUtilisateur, :idFilm)";
 
-$sql = "UPDATE note SET valeur=:valeur WHERE note.id =:id";
-
-$sql = "INSERT INTO note (id, valeur, idUtilisateur, idFilm) VALUES (null, :valeur, :idUtilisateur, :idFilm)";
+}
+else {
+    $sql = "UPDATE note SET valeur = :valeur WHERE idUtilisateur=:idUtilisateur AND idFilm=:idFilm";
+}
 
 
 

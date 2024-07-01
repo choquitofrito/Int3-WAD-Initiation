@@ -76,7 +76,7 @@
             </div>");
 
     print("<div>Votre note:
-            <div data-idFilm=". $idFilm .        
+            <div data-idfilm=". $idFilm .        
             " data-valeur='" . ($filmUtilisateur ? $filmUtilisateur['valeur'] : "") . "' id='divNoteUtilisateur'></div>
             <div>" . ($filmUtilisateur ? "" : "Pas de note") .  
             "</div>");
@@ -124,14 +124,13 @@
             // on doit envoyer:
             // - s'il s'agit d'une nouvelle note
             // - la note
+
             let formData = new FormData();
-            
-            formData.append ("idFilm", )
-
-
-
-            xhr.open("GET", "./noteUpdate.php");
-            xhr.send();
+            formData.append ("idFilm", divNoteUtilisateur.dataset.idfilm);
+            formData.append ("valeur", menuEtoilesUtilisateur.getValue());
+            formData.append ("nouvelleNote", nouvelleNote);
+            xhr.open("POST", "./noteUpdate.php");
+            xhr.send(formData);
         }
     </script>
 </body>
