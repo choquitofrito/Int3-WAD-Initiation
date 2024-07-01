@@ -52,6 +52,8 @@
     $passwordHashBD = $arrayUtilisateurs[0]['password'];
     // obtenir le nom de l'utilisateur
     $nomUtilisateur = $arrayUtilisateurs[0]['nom'];
+    // obtenir l'id de l'utilisateur
+    $idUtilisateur = $arrayUtilisateurs[0]['id'];
 
 
     if (password_verify($password, $passwordHashBD) == false){
@@ -61,10 +63,11 @@
     }
     else {
         // le password est ok!
-        // On va écrire le nom de l'utilisateur 
+        // On va écrire le nom de l'utilisateur et son ID 
         // dans la session ($_SESSION)
         // N'oubliez pas de demarrer la session! (tout en haut)
         $_SESSION['nomUtilisateur'] = $nomUtilisateur;
+        $_SESSION['idUtilisateur'] = $idUtilisateur; 
         // var_dump ($_SESSION);
         // die();
 

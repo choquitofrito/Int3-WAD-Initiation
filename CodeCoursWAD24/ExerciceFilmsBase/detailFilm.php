@@ -43,28 +43,38 @@
         die();
     }
 
+    // requête pour obtenir la moyenne (valoration de tous les utilisateurs)
     $sql = "SELECT *, AVG(valeur) AS moyenne FROM film INNER JOIN note ON film.id = note.idFilm WHERE film.id = :id";
 
     $stmt = $cnx->prepare($sql);
     $stmt->bindValue(":id", $idFilm);
+    
+    $stmt->execute();
+    $filmMoyenne = $stmt->fetch(PDO::FETCH_ASSOC); // le prémier (et unique) résultat de la requête
+    
+    // requête pour obtenir la note (valeur) du film pour l'utilisateur connecté
+    // on doit obtenir l'utilisateur de la session
+    $idUtilisateur = $_SESSION['idUtilisateur'];
+
+    $sql = "SELECT * FROM note WHERE note.idUtilisateur=:idUtilisateur AND note.idFilm = :idFilm";
+    $stmt = $cnx->prepare($sql);
+    $stmt->bindValue(":idUtilisateur", $idUtilisateur);
+    $stmt->bindValue(":idFilm", $idFilm);
 
     $stmt->execute();
+    $filmUtilisateur = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $film = $stmt->fetch(PDO::FETCH_ASSOC); // le prémier (et unique) résultat de la requête
-
-    print("<h1>" . $film['titre'] . "</h1>");
-    print("<p>Description: " . $film['description'] . "</p>");
-    print("<p>Durée: " . $film['duree'] . "</p>");
-    print("<img class='affiche' src='./uploads/" . $film['image'] . "'>");
-
-    // print ("moyenne: " . $film['moyenne']);
+    print("<h1>" . $filmMoyenne['titre'] . "</h1>");
+    print("<p>Description: " . $filmMoyenne['description'] . "</p>");
+    print("<p>Durée: " . $filmMoyenne['duree'] . "</p>");
+    print("<img class='affiche' src='./uploads/" . $filmMoyenne['image'] . "'>");
 
     print("<div>Valoration Utilisateurs
-            <div data-moyenne='" . $film['moyenne'] . "' id='divNote'></div>
+            <div data-moyenne='" . $filmMoyenne['moyenne'] . "' id='divNote'></div>
             </div>");
 
     print("<div>Votre note:
-            <div data-valeur='" . $film['valeur'] . "' id='divNoteUtilisateur'></div>
+            <div data-valeur='" . $filmUtilisateur['valeur'] . "' id='divNoteUtilisateur'></div>
             </div>");
 
     ?>
