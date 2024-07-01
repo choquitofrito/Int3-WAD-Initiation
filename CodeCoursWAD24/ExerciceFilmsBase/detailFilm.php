@@ -44,7 +44,7 @@
     }
 
     // requête pour obtenir la moyenne (valoration de tous les utilisateurs)
-    $sql = "SELECT *, AVG(valeur) AS moyenne FROM film INNER JOIN note ON film.id = note.idFilm WHERE film.id = :id";
+    $sql = "SELECT *, AVG(valeur) AS moyenne FROM film LEFT JOIN note ON film.id = note.idFilm WHERE film.id = :id";
 
     $stmt = $cnx->prepare($sql);
     $stmt->bindValue(":id", $idFilm);
@@ -62,7 +62,9 @@
     $stmt->bindValue(":idFilm", $idFilm);
 
     $stmt->execute();
+    // $filmUtilisateur contiendra l'array d'un film ou false
     $filmUtilisateur = $stmt->fetch(PDO::FETCH_ASSOC);
+
 
     print("<h1>" . $filmMoyenne['titre'] . "</h1>");
     print("<p>Description: " . $filmMoyenne['description'] . "</p>");
@@ -74,8 +76,10 @@
             </div>");
 
     print("<div>Votre note:
-            <div data-valeur='" . $filmUtilisateur['valeur'] . "' id='divNoteUtilisateur'></div>
-            </div>");
+            <div data-idFilm=". $idFilm .        
+            " data-valeur='" . ($filmUtilisateur ? $filmUtilisateur['valeur'] : "") . "' id='divNoteUtilisateur'></div>
+            <div>" . ($filmUtilisateur ? "" : "Pas de note") .  
+            "</div>");
 
     ?>
 
@@ -103,9 +107,11 @@
 
             // Vérifier s'il s'agit d'une nouvelle note
             let nouvelleNote = true;
-            if (divNoteUtilisateur.data.valeur !== "") {
+            console.log (divNoteUtilisateur.dataset.valeur);
+            if (divNoteUtilisateur.dataset.valeur !== "") {
                 nouvelleNote = false; // ce film est déjà noté par cet utilisateur
             }
+            console.log ("nouvelle note?: " + nouvelleNote);
 
             let xhr = new XMLHttpRequest();
 
@@ -118,6 +124,12 @@
             // on doit envoyer:
             // - s'il s'agit d'une nouvelle note
             // - la note
+            let formData = new FormData();
+            
+            formData.append ("idFilm", )
+
+
+
             xhr.open("GET", "./noteUpdate.php");
             xhr.send();
         }
