@@ -13,7 +13,7 @@
     include "./nav.php";
     include "./checkSession.php";
 
-    var_dump ($_SESSION['panier']);
+    var_dump($_SESSION['panier']);
 
     // connecter à la BD
     include "./db/config.php";
@@ -32,19 +32,19 @@
         die();
     }
 
-    print ("IDs FILMS");
+    print("IDs FILMS");
     // on obtient tous les ids dans un array
     $ids = array_keys($_SESSION['panier']);
 
-    var_dump ($ids);
+    var_dump($ids);
 
     // on crée un string de la forme : 3,4,7,2... etc...
-    $stringIds = implode (",", $ids);
+    $stringIds = implode(",", $ids);
 
-    print ("string ids: " . $stringIds);
-    $sql = "SELECT * FROM film WHERE film.id IN (" . $stringIds . ")"; 
+    print("string ids: " . $stringIds);
+    $sql = "SELECT * FROM film WHERE film.id IN (" . $stringIds . ")";
 
-    $stmt = $cnx->prepare ($sql);
+    $stmt = $cnx->prepare($sql);
     $stmt->execute();
 
     $tabFilms = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -53,18 +53,26 @@
     // récupérer le panier de la session (facilité)
     $panier = $_SESSION['panier'];
 
-    foreach ($tabFilms as $film){
+    foreach ($tabFilms as $film) {
         // afficher les données du film (ex: titre, image)
-        print ("<div>");
-        print ("<h3>". $film['titre'] . "</h3>");
-        print ("<img class='affiche' src='./uploads/" . $film['image'] . "'>");
-        print ("</div>");
+        print("<div>");
+        print("<h3>" . $film['titre'] . "</h3>");
+        print("<img class='affiche' src='./uploads/" . $film['image'] . "'>");
+        print("</div>");
         // afficher la quantité qui correspond à ce film dans le panier
-        print ("Qté: " . $panier[$film['id']]);
+        // print("Qté: " . $panier[$film['id']]);
 
+        print("<select data-idfilm=" . $film['id'] .
+            " id='selectQuantite'>");
+
+        print("<option select value=" . $panier[$film['id']] . ">" . $panier[$film['id']] . "</option>");
+        for ($i = 1; $i <= 500; $i++) {
+            print("<option value=" . $i . ">" . $i . "</option>");
+        }
+        print("</select>");
     }
 
-    
+
 
     ?>
 </body>
