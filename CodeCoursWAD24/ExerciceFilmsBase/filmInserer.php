@@ -11,8 +11,8 @@
 
 <body>
     <?php
-    include "./checkSession.php";
     include "./nav.php";
+    include "./checkSession.php";
     ?> 
     <h3>Tapez les données du film</h3>
     <form action="./filmInsererTraitement.php" method="POST" enctype="multipart/form-data">

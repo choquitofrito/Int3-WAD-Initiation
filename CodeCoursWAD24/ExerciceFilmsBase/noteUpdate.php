@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+
 // var_dump ($_POST);
 // die();
 $idFilm = $_POST['idFilm'];

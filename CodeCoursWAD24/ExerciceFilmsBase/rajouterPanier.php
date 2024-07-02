@@ -6,12 +6,8 @@ session_start();
 if (empty($_SESSION['panier'])){
     $panier = [];
     $_SESSION['panier'] = $panier;
-    print ("nouveau panier");
+}
 
-}
-else{
-    print ("le panier existe");
-}
 
 // obtenir les données du formulaire (idFilm et quantite)
 // var_dump ($_POST);
@@ -25,24 +21,44 @@ $panier = $_SESSION['panier']; // obtenir le panier de la session
 if (isset ($panier[$idFilm])){
     // le Film est déjà dans la session
     // rajouter la nouvelle quantité
-    $panier[$idFilm] += $quantite;
+    $panier[$idFilm] += (int)$quantite;
 }
 else {
     // le film n'était pas dans le panier
     $panier[$idFilm] = (int)$quantite; // rajouté l'élément
 }
 
-
-
-
 $_SESSION['panier'] = $panier; // stocker à nouveau le panier dans la session
 
-print ("voici la session");
-var_dump ($_SESSION);
-print ("voici la variable panier");
-var_dump ($panier);
+$quantiteTotale = 0;
+foreach ($panier as $quantite){
+    $quantiteTotale += $quantite;
+}
+$_SESSION['quantiteTotale'] = $quantiteTotale; 
 
-var_dump ($panier);
+
+// print ($quantiteTotale);
+
+$response = ['message' => 'Produit rajouté au panier',
+            'quantiteTotale' => $quantiteTotale];
+
+
+print (json_encode($response));
+
+
+
+
+
+
+
+
+
+// print ("voici la session");
+// var_dump ($_SESSION);
+// print ("voici la variable panier");
+// var_dump ($panier);
+
+// var_dump ($panier);
 
 
 // $_SESSION['panier']

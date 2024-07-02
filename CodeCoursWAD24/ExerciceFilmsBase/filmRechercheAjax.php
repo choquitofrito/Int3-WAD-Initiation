@@ -12,8 +12,8 @@
 
 <body>
     <?php
-        include "./checkSession.php";
         include "./nav.php";
+        include "./checkSession.php";
     ?>
     <form id="formHTML">
         <label for="termRecherche">Rechercher</label>

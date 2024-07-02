@@ -1,4 +1,5 @@
 const btnRajouterPanier = document.getElementById ("btnRajouterPanier");
+const divPanier = document.querySelector(".divPanier");
 
 btnRajouterPanier.addEventListener ("click", function (){
     // Récupérer la valeur du select 'quantite'
@@ -15,7 +16,11 @@ btnRajouterPanier.addEventListener ("click", function (){
             if (xhr.status === 200 || xhr.status === 304){
                 // afficher la reponse
                 console.log ("RESPONSE:");
-                console.log (xhr.responseText);
+                // console.log (xhr.responseText);
+                let response = JSON.parse (xhr.responseText);
+                console.log (response);
+                divPanier.textContent = response.quantiteTotale;
+
             }
             else if (xhr.status === 404){
                 console.log ("Not found");

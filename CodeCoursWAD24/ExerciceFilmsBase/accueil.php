@@ -11,9 +11,8 @@
 
 <body>
     <?php
-        include "./checkSession.php";
-
         include "./nav.php";
+        include "./checkSession.php";
 
 
     ?>
