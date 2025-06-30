@@ -1,0 +1,1 @@
+On encode le footer dans la page footer.php
