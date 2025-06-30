@@ -1,6 +1,7 @@
 **Installation de XDebug : debugging en PHP**
 =============================================
 
+
 <br>
 
 **1.**  Vérifiez **si vous avez déjà** le fichier du module XDebug dans votre disque : allez dans **xampp/php/ext** et cherchez le fichier **php\_xdebug.dll**
