@@ -22,7 +22,7 @@ foreach ($res as $cle => $arrGroupe) {
     print ('<div class="card-body">');
     print ('<h5 class="card-title">' . $arrGroupe['nom'] . '</h5>');
     print ('<p class="card-text">Description</p>');
-    print ('<a href="#" class="btn btn-primary">Go somewhere</a>');
+    print ('<a href="./includes/affichageMorceaux.php?idGroupe=' . $arrGroupe['id']. '" class="btn btn-primary">Go somewhere</a>');
     print ('</div>');
     print ('</div>');
 }
