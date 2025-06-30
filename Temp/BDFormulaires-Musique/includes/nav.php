@@ -7,7 +7,7 @@
           <a class="nav-link active" aria-current="page" href="#">Recherche</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Insérer</a>
+          <a class="nav-link" href="./forms/formInsererGroupe.php">Insérer un groupe</a>
         </li>
       </ul>
     </div>

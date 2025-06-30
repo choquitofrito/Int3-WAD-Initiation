@@ -32,7 +32,7 @@
     var_dump ($res);
     foreach ($res as $cle => $morceau){
         print ('<h3>' . $morceau['titre'] . '</h3>');
-        print ('<h4>' . $morceau['anne_sortie'] . '</h4>');
+        print ('<h4>' . $morceau['annee_sortie'] . '</h4>');
     }
 
     ?>
