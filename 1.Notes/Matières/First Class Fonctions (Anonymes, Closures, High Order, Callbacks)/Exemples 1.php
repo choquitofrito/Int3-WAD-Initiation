@@ -1,26 +1,27 @@
 <?php
+declare(strict_types=1);
 
 // fonction normale bonjour
-function bonjour ($nom){
+function bonjour (string $nom): void {
 	print ("<br/>Bonjour ".$nom."!");
 }
 bonjour ("Melinda");
 
 // fonction anonyme stockée dans une variable : car le langage traite les fonctions
 // comme membres "first class" du langage
-$direBonjour = function ($nom){ 
+$direBonjour = function (string $nom): void { 
 	print ("<br/>Bonjour ".$nom."!"); 
 };
 $direBonjour("Melinda");
 
 // un autre exemple, même situation
-$addition=function ($val1,$val2){
+$addition = function (int|float $val1, int|float $val2): void {
 	print ("<br/>L'addition est: ".($val1+$val2));
 };
 $addition(50,60);
 
 // un autre exemple, même situation avec return
-$additionRet=function ($val1,$val2){
+$additionRet = function (int|float $val1, int|float $val2): int|float {
 	return($val1+$val2);
 };
 $res=$additionRet(50,60);
@@ -31,7 +32,7 @@ print ("<br/>L'addition est: ".$res);
 // elle "capture" l'état de l'environnement où elle se trouve,
 // elle devient une "closure"
 $max=10;
-$tableMult = function ($chiffre) use ($max){
+$tableMult = function (int $chiffre) use (int $max): void {
 	// $max n'est pas accéssible si on n'utilise pas "use". Pas besoin en JS
 	for ($i=0;$i<=$max;$i++){
 		print ("<br/>La multip de ".$chiffre."x".$i."=".($chiffre*$i));
@@ -44,7 +45,7 @@ $tableMult(5);
 // fonction qui génére de fonctions qui affichent des tableaux
 // de multiplication. Voir l'utilisation pour mieux comprendre
 $genTables = function ($maxVals): callable{ 
-    return (function ($chiffre) use ($maxVals): void {
+    return (function (int $chiffre) use (int $maxVals): void {
         // $max n'est pas accéssible si on n'utilise pas
         // "use". Pas besoin d'use en JS
         for ($i=0;$i<=$maxVals;$i++){
@@ -79,7 +80,7 @@ $multMax5 (4); // pour le chiffre 3, 5 valeurs
 $x=50;
 $y=100;
 
-$echange= function () use (&$x,&$y){
+$echange = function () use (&$x, &$y): void {
 	$temp=$x;
 	$x=$y;
 	$y=$temp;

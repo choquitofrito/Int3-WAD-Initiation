@@ -10,6 +10,7 @@
 
 <body>
     <?php
+declare(strict_types=1);
     // 1. Fonctions anonymes
 
     // fonction standard, pas anonyme
@@ -141,7 +142,7 @@
     // Ex: générer une fonction qui affiche un message au choix suivi d'un nom
 
     // Avec Closures, on peut créer un générateur de fonctions
-    function afficheMessage($msg)
+    function afficheMessage(string $msg): callable
     {
         $nombreFois = 5;
         return function (string $nom) use ($nombreFois, $msg): void {
@@ -209,10 +210,10 @@
 
 
     // Exemples : Exo. 8,9,10,11,12
-    $somme = function ($v1, $v2) {
+    $somme = function (int|float $v1, int|float $v2): int|float {
         return $v1 + $v2;
     };
-    $multip = function ($v1, $v2) {
+    $multip = function (int|float $v1, int|float $v2): int|float {
         return $v1 * $v2;
     };
     echo "<br>";
@@ -233,7 +234,7 @@
 
     // Exemples fonctions renvoyées dans return 
 
-    function generateurAffiche()
+    function generateurAffiche(): callable
     {
         return (function ($msg): void {
             echo "<br>Je suis la nouvelle fonction et j'affiche " . $msg;
@@ -244,7 +245,7 @@
     $fn("Alice");
     $fn("Julie");
 
-    function generateurCalcul()
+    function generateurCalcul(): callable
     {
         return (function ($v1, $v2): int {
             return $v1 + $v2;
@@ -276,7 +277,7 @@
     {
         echo "<br>Je génére une fonction pour créer des headers: " . $typeHeader;
 
-        $fn = function ($texte) use ($typeHeader) {
+        $fn = function (string $texte) use ($typeHeader): void {
             echo "<" . $typeHeader . ">" . $texte . "</" . $typeHeader . ">";
         };
         return $fn;

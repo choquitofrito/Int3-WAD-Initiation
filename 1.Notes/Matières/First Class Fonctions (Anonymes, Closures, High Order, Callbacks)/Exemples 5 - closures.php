@@ -12,10 +12,11 @@
 
 
     <?php
+declare(strict_types=1);
 
     // pas besoin de créer de fonctions génératrices à chaque fois
     $transformation = "majuscules";
-    $maFonction = function ($texte) use ($transformation) {
+    $maFonction = function (string $texte) use ($transformation): void {
         if ($transformation == "majuscules"){
             $texte = strtoupper($texte);
         }
@@ -26,7 +27,7 @@
     echo "<br><br>";
     
     // fonction qui génére de fonctions qui CHANGENT une variable, ici un string
-    function genChangeTexte($typeChange): callable
+    function genChangeTexte(string $typeChange): callable
     {
         $fn = function (string &$texte) use ($typeChange): void  {
             switch ($typeChange) {

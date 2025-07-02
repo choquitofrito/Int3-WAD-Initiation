@@ -1,10 +1,11 @@
 <?php
+declare(strict_types=1);
 
 
 $array1=[40,60,70];
 
 // fonction qui affiche un array
-function afficherArray($unArray){
+function afficherArray(array $unArray): void {
 	foreach ($unArray as $val){
 		var_dump ($val);
 		print("<br/>");
@@ -15,19 +16,19 @@ afficherArray($array1);
 
 // fonction qui parcourt un array
 // en appliquant une autre fonction reçue en paramétre
-function parcourirArray($unArray, $callback){
+function parcourirArray(array $unArray, callable $callback): void {
 	foreach ($unArray as $val){
 		$callback($val);
 	}
 }
 
 // fonction qui agit sur UN élément
-function afficheElement($elem){
+function afficheElement(mixed $elem): void {
 	print ("L'élément est: ".$elem."</br>");
 }
 
 // fonction qui agit sur UN élément
-function afficherFois10($unVal){
+function afficherFois10(int|float $unVal): void {
 	print ("<br/>".$unVal*10);
 }
 
@@ -42,7 +43,7 @@ print ("<br/>Afficher toutes les valeurs *10");
 parcourirArray($array1,"afficherFois10");
 
 
-function afficheTVAC($unVal){
+function afficheTVAC(int|float $unVal): void {
 	print ("<br/>".$unVal*1.21);
 }
 // encore pareil ici :)
@@ -50,7 +51,7 @@ print ("<br/>Afficher toutes les valeurs TVAC");
 parcourirArray($array1,"afficheTVAC");
 
 
-function afficherPlusGrand50($val){
+function afficherPlusGrand50(int|float $val): void {
 	if($val>50){
 		print ("<br/>".$val);		
 	}
@@ -61,17 +62,17 @@ parcourirArray($array1,"afficherPlusGrand50");
 
 // parcourir en lançant deux callbacks!
 $arrayVilles=["Bruxelles","Paris","Londres"];
-function parcourirArrayDoubleCallback ($unArray, $callback1,$callback2){
+function parcourirArrayDoubleCallback(array $unArray, callable $callback1, callable $callback2): void {
 	foreach ($unArray as $val){
 		$callback1($val);
 		$callback2($val);
 	}
 }
 
-function afficheMayuscules($val){
+function afficheMayuscules(string $val): void {
 	print ("<br/>".strtoupper($val));
 }
-function afficheTroisPremieresLettres($val){
+function afficheTroisPremieresLettres(string $val): void {
 	print ("<br/>".substr($val,0,3));
 }
 parcourirArrayDoubleCallback($arrayVilles,"afficheMayuscules","afficheTroisPremieresLettres");

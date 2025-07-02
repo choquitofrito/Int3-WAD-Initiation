@@ -25,25 +25,35 @@ function saluer(nom = "visiteur") {
     console.log(`Bonjour ${nom}!`);
 }
 
-// 6. Rest parameters
+// 6. Rest parameters (avancé)
 function somme(...nombres) {
+    // reduce parcourt le tableau et accumule les valeurs
+    // (total, num) => total + num : fonction qui prend l'accumulateur (total) et l'élément courant (num)
+    // 0 : valeur initiale de l'accumulateur
+    // Exemple: [1,2,3,4].reduce(...) fait:
+    // 1er tour: total=0, num=1 => 0+1 = 1
+    // 2e tour:  total=1, num=2 => 1+2 = 3
+    // 3e tour:  total=3, num=3 => 3+3 = 6
+    // 4e tour:  total=6, num=4 => 6+4 = 10
     return nombres.reduce((total, num) => total + num, 0);
 }
 
-// 7. Retour de valeurs
+
+
+// 7. Retour de valeurs, quand on veut retourner plusieurs valeurs d'un coup
 function calculer(a, b) {
     const somme = a + b;
     const produit = a * b;
     return { somme, produit }; // Retourne un objet
 }
 
-// 8. Fonctions comme valeurs de première classe
+// 8. Fonctions comme valeurs de première classe (avancé)
 const operations = {
     addition: (a, b) => a + b,
     soustraction: (a, b) => a - b
 };
 
-// 9. Closure (fermeture)
+// 9. Closure (fermeture - avancé)
 function compteur() {
     let count = 0;
     return function() {

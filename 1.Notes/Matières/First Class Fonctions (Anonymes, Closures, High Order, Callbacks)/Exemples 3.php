@@ -1,13 +1,14 @@
 <?php
+declare(strict_types=1);
 // fonction pour parcourir l'array
-function parcourirArray($unArray,$callback){
+function parcourirArray(array $unArray, callable $callback): void {
 	foreach ($unArray as $val){
 		$callback ($val);
 	}
 	
 }
 // fonction callback nommée, pas mise dans une variable
-function fois2($val){
+function fois2(int|float $val): void {
 	print ("<br/>".($val*2));
 }
 
@@ -45,7 +46,7 @@ print ("<br/>Le total est: ".$total);
 
 print ("<br/><br/>Callback avec fonction anonyme et use dans une autre fonction");
 print ("<br/>Pour simplifier l'appel.");
-function calculerSomme ($unArray){
+function calculerSomme(array $unArray): int|float {
 	$total=0;
 	parcourirArray($unArray,function($val) use (&$total){
 		$total=$total+$val;	
@@ -69,7 +70,7 @@ print ("<br/><br/>Array_map avec fois3");
 array_map ($fois3,$arr1);
 
 print ("<br/><br/>Array_map avec plusieurs arrays");
-function fois2V2($val1,$val2,$val3){
+function fois2V2(int|float $val1, int|float $val2, int|float $val3): void {
 	print ("<br/>".($val1*2));
 	print ("<br/>".($val2*2));
 	print ("<br/>".($val3*2));
@@ -79,7 +80,7 @@ array_map ("fois2V2",[4,5,8],[20,30,50],[-4,-6,8]);
 // array_map peut renvoyer un array 
 // contenant les éléments de l'array original une 
 // fois qu'on a appliqué le callback sur chaque élément
-function rajouteTva($val){
+function rajouteTva(int|float $val): float {
 	$prixTvac= $val*1.21;
 	return ($prixTvac);
 }
@@ -89,7 +90,7 @@ $tabTvac=array_map ("rajouteTva",[100,200,300]);
 print_r($tabTvac);
 
 // addition de deux tableaux en utilisant un callback
-function additionner($val1,$val2){
+function additionner(int|float $val1, int|float $val2): int|float {
 	return ($val1+$val2);	
 }
 $addition=array_map ("additionner",[10,20,30],[50,30,50]);

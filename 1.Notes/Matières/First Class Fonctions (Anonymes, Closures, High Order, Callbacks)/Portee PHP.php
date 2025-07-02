@@ -8,17 +8,18 @@
 </head>
 <body>
     <?php
+declare(strict_types=1);
         $val1 = "Loli"; // portée globale, mais pas accéssible dans les fonctions
         // echo $val1;
 
-        function uneFonction (){
+        function uneFonction(): void {
             // global $val1;
             echo $val1; // pas accésible depuis la fonction, elle est déclarée dans une portée externe
         };
 
         function f1 (){
             $v1 = 3;
-            function f2(){
+            function f2(): void {
                 echo $v1; // pas accésible depuis la fonction, elle est déclarée dans une portée externe
             }
         }
