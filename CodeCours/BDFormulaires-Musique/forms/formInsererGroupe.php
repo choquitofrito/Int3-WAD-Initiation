@@ -10,6 +10,8 @@
     Nom du groupe<input type="text" name="nom">
     Anée de formation<input type="number" name="annee_formation">
     <?php 
+    
+
 
     ?>
     </form>
