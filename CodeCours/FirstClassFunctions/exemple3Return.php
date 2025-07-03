@@ -1,3 +1,6 @@
+<?php
+declare (strict_types = 1);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +22,8 @@
         switch ($typeFonction) {
             case "UL":
                 // print("On génère une fonction pour afficher en UL");
-                return (function (array $tab) {
+                return (function (array $tab, string $message = "hello") {
+                    echo "<h5>" . $message . "</h5>";
                     echo "<ul>";
                     foreach ($tab as $key => $nom) {
                         echo "<li>" . $nom . "</li>";
@@ -39,13 +43,15 @@
                 break;
         }
     }
-
     // on utilise le générateur pour crée une fonction
     // qui nous convient
-    $maFonctionSelect = genererFonctionAffichage("SELECT");
-    $maFonctionSelect($tab);
+    // $maFonctionSelect = genererFonctionAffichage("SELECT");
+    // $maFonctionSelect($tab);
     $maFonctionUL = genererFonctionAffichage("UL");
-    $maFonctionUL($tab);
+    $maFonctionUL($tab, "Un message");
+
+    genererFonctionAffichage("SELECT")($tab);
+
     ?>
 </body>
 
