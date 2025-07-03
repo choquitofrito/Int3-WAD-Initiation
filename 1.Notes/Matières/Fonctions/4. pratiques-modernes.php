@@ -15,6 +15,8 @@ function trouverUtilisateur(int $id): ?array {
 // 2. Types de retour union (PHP 8.0+)
 // Utilité: Permet à une fonction de retourner différents types de données
 // Pratique pour la validation de données ou la conversion de types
+// mixed signifie que la fonction peut accepter n'importe quel type de données :
+// array, bool, callable, float, int, null, object, resource, string
 function validerDonnee(mixed $donnee): int|float|string {
     if (is_numeric($donnee)) {
         return is_int($donnee) ? (int)$donnee : (float)$donnee;
