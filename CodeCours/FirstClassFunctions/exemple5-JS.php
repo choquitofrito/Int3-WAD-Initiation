@@ -17,23 +17,27 @@
             case "UL":
                 // print("On génère une fonction pour afficher en UL");
                 return (function (tab, message = "hello") {
-                    console.log ( "<h5>" + message + "</h5>");
-                    console.log ( "<ul>");
+                    document.write ( "<h5>" + message + "</h5>");
+                    document.write ( "<ul>");
                     
-                    foreach ($tab as $key => $nom) {
-                        console.log ( "<li>" + nom + "</li>";
-                    }
-                    console.log ( "</ul>";
+                    tab.forEach (function (nom){
+                        document.write ("<li>" + nom  + "</li>")
+                    });
+
+                    // foreach ($tab as $key => $nom) {
+                    //     console.log ( "<li>" + nom + "</li>";
+                    // }
+                    console.log ("</ul>");
                 });
                 break;
             case "SELECT":
                 // print("On génère une fonction pour afficher un SELECT");
                 return (function (tab) {
-                    console.log ( "<select>");
-                    foreach ($tab as $key => $nom) {
-                        console.log ( "<option>" + nom + "</option>");
-                    }
-                    console.log ( "</select>");
+                    document.write ( "<select>");
+                    tab.forEach (function (nom) {
+                        document.write( "<option>" + nom + "</option>");
+                    });
+                    document.write ("</select>");
                 });
                 break;
         }
@@ -42,10 +46,13 @@
     // qui nous convient
     // $maFonctionSelect = genererFonctionAffichage("SELECT");
     // $maFonctionSelect($tab);
-    $maFonctionUL = genererFonctionAffichage("UL");
-    $maFonctionUL($tab, "Un message");
+    let maFonctionUL = genererFonctionAffichage("UL");
+    maFonctionUL(tab, "Un message");
 
-    genererFonctionAffichage("SELECT")($tab);
+    let maFonctionSELECT = genererFonctionAffichage("SELECT");
+    maFonctionSELECT(tab);
+
+    genererFonctionAffichage("SELECT")(tab);
 
 
 
