@@ -38,7 +38,10 @@ print_r ($_FILES);
 
 // 1. créer le nom du fichier
 $uploadDir = "./uploadFolder/";
-$uploadFile= $uploadDir.basename ($_FILES['userFile']['name']);
+
+$idUnique = uniqid() . date("Y-m-d-H-i-s");
+
+$uploadFile= $uploadDir.$idUnique.basename ($_FILES['userFile']['name']);
 
 print_r($uploadFile);
 // 2. le déplacer dans le dossier définitif

@@ -42,10 +42,9 @@
                 break;
         }
     }
+    
     // on utilise le générateur pour crée une fonction
     // qui nous convient
-    // $maFonctionSelect = genererFonctionAffichage("SELECT");
-    // $maFonctionSelect($tab);
     let maFonctionUL = genererFonctionAffichage("UL");
     maFonctionUL(tab, "Un message");
 
