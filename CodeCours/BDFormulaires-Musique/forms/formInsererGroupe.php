@@ -33,8 +33,9 @@
         foreach ($res as $style){
             echo "<option value=" . $style['id'] . ">" . $style['nom'] . "</option>";
         }
-        ?>
         
+        ?>
+
     </select>
     <br>
     
