@@ -23,10 +23,14 @@
     $stmt = $cnx->prepare($sql);
 
     $stmt->bindValue (":nom", $_POST['nom'] );
-    $stmt->bindValue (":annee_formation", $_POST['annee_formation'] );
-    $stmt->bindValue (":style_id", $_POST['style_id'] );
+    $stmt->bindValue (":lienImage", "" ); // on fera cette partie après
+    $stmt->bindValue (":annee_formation", $_POST['annee_formation'], PDO::PARAM_INT );
+    $stmt->bindValue (":style_id", $_POST['style_id'], PDO::PARAM_INT );
 
-    
+    $stmt->execute();
+
+    var_dump ($stmt->errorInfo());
+
     ?>
 </body>
 </html>
