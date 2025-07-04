@@ -9,6 +9,20 @@
     <?php
     // récuperer les données du form
     var_dump ($_POST);
+    var_dump ($_FILES);
+
+    // créer un nom pour le fichier
+    $dossier = "../images";
+    $nomFichierDisque = $dossier . "/". uniqid() . date("y-m-d") . $_FILES['photoGroupe']['name'];
+
+    move_uploaded_file($_FILES['photoGroupe']['tmp_name'] , $nomFichierDisque);
+
+    var_dump ($nomFichierDisque);
+    die();
+
+
+
+
 
     // connecter à la bd
     include "../db/config.php";
