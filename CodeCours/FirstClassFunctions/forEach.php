@@ -21,9 +21,9 @@
 
         // encore plus simple! une seule instruction,
         // pas besoin d'accolades
-        noms.forEach ( nom => console.log (nom) );
+        noms.forEach ( nom => nom.toLowerCase() );
 
-        
+
     </script>
 </body>
 </html>
