@@ -10,11 +10,8 @@
     <form action="./formInsererGroupeTraitement.php" method="POST">
     Nom du groupe<input type="text" name="nom">
     <br>Anée de formation<input type="number" name="annee_formation">
-
     <br>
-
-    
-    <select>
+    <select name="style_id">
     
         <?php
         // obtenir tous les styles et générer un select
