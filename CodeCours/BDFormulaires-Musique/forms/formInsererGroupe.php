@@ -34,6 +34,7 @@
             echo "<option value=" . $style['id'] . ">" . $style['nom'] . "</option>";
         }
         ?>
+        
     </select>
     <br>
     
