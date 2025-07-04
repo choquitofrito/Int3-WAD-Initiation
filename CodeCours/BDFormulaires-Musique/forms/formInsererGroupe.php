@@ -40,10 +40,7 @@
 
         </select>
         Upload photo:<input type="file" name="photoGroupe">
-
-
         <br>
-
         <input type="submit" value="Enregistrer">
 
     </form>

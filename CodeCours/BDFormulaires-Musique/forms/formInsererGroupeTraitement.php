@@ -13,22 +13,22 @@
 
     // créer un nom pour le fichier
     $dossier = "../images";
-    $nomFichierDisque = $dossier . "/". uniqid() . date("y-m-d") . $_FILES['photoGroupe']['name'];
+    $nomFichierBD = uniqid() . date("y-m-d") . $_FILES['photoGroupe']['name'];
+    $nomFichierDisque = $dossier . "/" . $nomFichierBD;
 
+    if ($_FILES['photoGroupe']['size'] / 1000000 > 1) {
+        throw new Exception ("Accès interdit");
+    }
+    // enregistrer le fichier dans le disque
     move_uploaded_file($_FILES['photoGroupe']['tmp_name'] , $nomFichierDisque);
-
-    var_dump ($nomFichierDisque);
-    die();
-
-
-
-
-
     // connecter à la bd
     include "../db/config.php";
-
-    $cnx = new PDO (DSN, USER, PASSWORD);
-
+    try{
+        $cnx = new PDO (DSN, USER, PASSWORD);
+    }
+    catch (Exception $e){
+        die();
+    }
     // INSERT INTO `groupes` (`id`, `nom`, `annee_formation`, `lienImage`, `style_id`) VALUES (NULL, 'Michael Jackson', '1980', '', '5'); 
 
     $sql = "INSERT INTO groupes (id, nom, annee_formation, lienImage, style_id) VALUES " . 
@@ -37,7 +37,7 @@
     $stmt = $cnx->prepare($sql);
 
     $stmt->bindValue (":nom", $_POST['nom'] );
-    $stmt->bindValue (":lienImage", "" ); // on fera cette partie après
+    $stmt->bindValue (":lienImage", $nomFichierBD ); // on fera cette partie après
     $stmt->bindValue (":annee_formation", $_POST['annee_formation'], PDO::PARAM_INT );
     $stmt->bindValue (":style_id", $_POST['style_id'], PDO::PARAM_INT );
 
