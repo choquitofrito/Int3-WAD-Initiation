@@ -10,12 +10,12 @@
 
     var_dump ($_POST);
 
-
     // recevoir les données du form d'inscription
     $nom = $_POST['nom'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $rePassword = $_POST['rePassword'];
+    $dateNaissance = $_POST['dateNaissance'];
 
     // nettoyer et vérifier les données (ignoré pour le moment)
 
@@ -42,7 +42,7 @@
     // 5. Bindvalue (donner valeurs aux paramètres)
     $stmt->bindValue(":nom", $nom);
     $stmt->bindValue(":email", $email);
-    $stmt->bindValue(":dateNaissance", (new DateTime())->format("Y-m-d"));
+    $stmt->bindValue(":dateNaissance", $dateNaissance);
     $stmt->bindValue(":hobby", "chanter");
     $stmt->bindValue(":password", $password);
 

@@ -11,6 +11,8 @@
         Email<input type="email" name="email"><br>
         Password<input type="password" name="password"><br>
         Ré-tapez Password<input type="password" name="rePassword"><br>
+        Date de naissance<input type="date" name="dateNaissance"><br>
+        Hobby<input type="text" name="hobby"><br>
         <input type="submit" value="S'inscrire!">
     </form>
     
