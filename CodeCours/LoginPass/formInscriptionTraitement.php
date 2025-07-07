@@ -21,7 +21,7 @@
 
     // enregistrer l'user dans la bd
     // 1. Inclure la config de la bd
-    include "./config/db.php";
+    include "./db/config.php";
 
     // 2. Connecter à la BD 
     try {
