@@ -10,7 +10,7 @@
         Nom<input type="text" name="nom"><br>
         Email<input type="email" name="email"><br>
         Password<input type="password" name="password"><br>
-        Ré-tapez Password<input type="password" name="re-password"><br>
+        Ré-tapez Password<input type="password" name="rePassword"><br>
         <input type="submit" value="S'inscrire!">
     </form>
     
