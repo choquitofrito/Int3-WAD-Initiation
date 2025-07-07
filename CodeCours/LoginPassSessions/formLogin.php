@@ -6,6 +6,18 @@
     <title>Document</title>
 </head>
 <body>
+
+    <?php
+    session_start();
+    if (isset($_SESSION['email'])){
+        echo "<h5>Vous êtes connecté en tant que " . $_SESSION['email'];
+    }
+    else {
+        echo "<h5>Connectez-vous</h5>";
+    }
+
+    ?>
+
     <form action="./formLoginTraitement.php" method="POST">
         Login<input type="email" name="email"><br>
         Password<input type="password" name="password"><br>
