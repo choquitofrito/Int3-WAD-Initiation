@@ -16,6 +16,7 @@
     $password = $_POST['password'];
     $rePassword = $_POST['rePassword'];
     $dateNaissance = $_POST['dateNaissance'];
+    $hobby = $_POST['hobby'];
 
     // nettoyer et vérifier les données (ignoré pour le moment)
 
@@ -43,8 +44,8 @@
     $stmt->bindValue(":nom", $nom);
     $stmt->bindValue(":email", $email);
     $stmt->bindValue(":dateNaissance", $dateNaissance);
-    $stmt->bindValue(":hobby", "chanter");
-    $stmt->bindValue(":password", $password);
+    $stmt->bindValue(":hobby", $hobby);
+    $stmt->bindValue(":password", password_hash($password, PASSWORD_DEFAULT));
 
     // 6. Lancer la requête
     $stmt->execute();
