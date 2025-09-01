@@ -12,7 +12,7 @@
     </form>
     <div id="divResponse">Ici on aura la réponse</div>
 
-    
+
     <script>
         const btnSubmit = document.querySelector ("#btnSubmit");
         const divResponse = document.querySelector ("#divResponse");
@@ -30,7 +30,7 @@
                 if (xhr.readyState == 4){
                     console.log ("Réponse: ");
                     console.log (xhr.responseText);
-                    divResponse.innerHTML = xhr.responseText;
+                    // divResponse.innerHTML = xhr.responseText;
                 }
             }
 
