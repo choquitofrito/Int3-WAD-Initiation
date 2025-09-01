@@ -12,6 +12,12 @@
     <h1>Bienvenue au site
         <?php
         session_start();
+
+        // vérifier si un user est connecté. Autrement aller vers le login
+        if ( isset($_SESSION['email']) == false){
+            header ('location: ./formLogin.php');
+        }
+
         echo $_SESSION['nom'];
         
         ?>

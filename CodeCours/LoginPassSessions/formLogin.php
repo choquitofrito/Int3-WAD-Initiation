@@ -21,7 +21,6 @@
     <form action="./formLoginTraitement.php" method="POST">
         Login<input type="email" name="email"><br>
         Password<input type="password" name="password"><br>
-        
         <input type="submit" value="Se connecter">
     </form>
 </body>
