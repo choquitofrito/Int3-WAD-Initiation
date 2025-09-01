@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="./formFilmTraitement.php" method="POST">
+    <form id="formFilm">
         Titre<input type="text" name="titre">
         <br><input type="submit" value="Envoyer" id="btnSubmit">
     </form>
@@ -15,6 +15,7 @@
     <script>
         const btnSubmit = document.querySelector ("#btnSubmit");
         const divResponse = document.querySelector ("#divResponse");
+        const formFilm = document.querySelector ("#formFilm");
 
         // Fonctionnement AJAX
         btnSubmit.addEventListener ("click", (event) => {
@@ -24,8 +25,7 @@
             let xhr = new XMLHttpRequest();
 
             xhr.onreadystatechange = function (){
-                // console.log ("l'état de xhr change!!");
-                // console.log (xhr.readyState);
+
                 if (xhr.readyState == 4){
                     console.log ("Réponse: ");
                     console.log (xhr.responseText);
@@ -35,8 +35,10 @@
 
 
 
-            xhr.open ("GET", "./formFilmTraitement.php");
-            xhr.send (null);
+            // on doit envoyer un formulaire!
+            let unForm = new FormData (formFilm);
+            xhr.open ("POST", "./formFilmTraitement.php");
+            xhr.send (unForm);
 
             // console.log (xhr.responseText);
 
