@@ -12,6 +12,7 @@
     </form>
     <div id="divResponse">Ici on aura la réponse</div>
 
+    
     <script>
         const btnSubmit = document.querySelector ("#btnSubmit");
         const divResponse = document.querySelector ("#divResponse");
